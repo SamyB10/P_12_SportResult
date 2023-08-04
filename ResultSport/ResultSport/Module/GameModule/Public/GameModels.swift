@@ -120,20 +120,20 @@ public enum GameModels: Equatable {
             public let frenchLeague: [Game]
             public let englishLeague: [Game]
             public let italyLeague: [Game]
-            public let germany: [Game]
+            public let germanyLeague: [Game]
             public let word: [Game]
 
             public init(spanishLeague: [Game],
                         frenchLeague: [Game],
                         englishLeague: [Game],
                         italyLeague: [Game],
-                        germany: [Game],
+                        germanyLeague: [Game],
                         word: [Game]) {
                 self.spanishLeague = spanishLeague
                 self.frenchLeague = frenchLeague
                 self.englishLeague = englishLeague
                 self.italyLeague = italyLeague
-                self.germany = germany
+                self.germanyLeague = germanyLeague
                 self.word = word
             }
         }

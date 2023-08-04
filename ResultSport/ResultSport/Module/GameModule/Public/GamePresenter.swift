@@ -13,7 +13,7 @@ public protocol GamePresentationLogic: AnyObject {
     func presentError()
 }
 
-enum League: String {
+enum League: String, CaseIterable {
     case englishLeague = "152"
     case frenchLeague = "168"
     case italyLeague = "207"
@@ -26,6 +26,8 @@ public final class GamePresenter {
     private weak var display: GameDisplayLogic?
     private var interactor: GameBusinessLogic
     private var viewModels: [GameModels.ViewModel] = []
+    private var viewModelsChampionship: GameModels.ViewModel.Championship?
+
 
     public init(interactor: GameBusinessLogic) {
         self.interactor = interactor
@@ -85,39 +87,7 @@ public final class GamePresenter {
         display?.displayInterface(with: viewModels)
     }
 
-//    private func mapResponseGame(with response: [GameModels.Response]) -> [GameModels.ViewModel.Game] {
-//        return response.compactMap { gameResponse in
-//            guard let countryName = gameResponse.countryName,
-//                  let leagueId = gameResponse.leagueId,
-//                  let leagueName = gameResponse.leagueName,
-//                  let matchStatus = gameResponse.matchStatus,
-//                  let matchTime = gameResponse.matchTime,
-//                  let homeTeamName = gameResponse.homeTeamName,
-//                  let homeTeamScore = gameResponse.homeTeamScore,
-//                  let awayTeamName = gameResponse.awayTeamName,
-//                  let awayTeamScore = gameResponse.awayTeamScore,
-//                  let stadium = gameResponse.stadium,
-//                  let homeBadge = gameResponse.homeBadge,
-//                  let awayBadge = gameResponse.awayBadge,
-//                  let leagueLogo = gameResponse.leagueLogo else { return nil }
-//
-//            return GameModels.ViewModel.Game(countryName: countryName,
-//                                             leagueId: leagueId,
-//                                             leagueName: leagueName,
-//                                             matchStatus: matchStatus,
-//                                             matchTime: matchTime,
-//                                             homeTeamName: homeTeamName,
-//                                             homeTeamScore: homeTeamScore,
-//                                             awayTeamName: awayTeamName,
-//                                             awayTeamScore: awayTeamScore,
-//                                             stadium: stadium,
-//                                             homeBadge: homeBadge,
-//                                             awayBadge: awayBadge,
-//                                             leagueLogo: leagueLogo)
-//        }
-//    }
-
-    private func mapResponseGameTest(with response: [GameModels.Response]) -> GameModels.ViewModel.Championship {
+    private func mapResponseGame(with response: [GameModels.Response]) -> GameModels.ViewModel.Championship {
         var englishLeague: [GameModels.ViewModel.Game] = []
         var frenchLeague: [GameModels.ViewModel.Game] = []
         var spanishLeague: [GameModels.ViewModel.Game] = []
@@ -147,15 +117,34 @@ public final class GamePresenter {
                                                  frenchLeague: frenchLeague,
                                                  englishLeague: englishLeague,
                                                  italyLeague: italyLeague,
-                                                 germany: germanyLeague,
+                                                 germanyLeague: germanyLeague,
                                                  word: word)
+    }
+
+    private func selectLeague(id: String) {
+        guard let viewModel = viewModelsChampionship else { return }
+        switch id {
+        case League.englishLeague.rawValue:
+            display?.updateInterfaceGame(with: viewModel.englishLeague)
+        case League.frenchLeague.rawValue:
+            display?.updateInterfaceGame(with: viewModel.frenchLeague)
+        case League.spanishLeague.rawValue:
+            display?.updateInterfaceGame(with: viewModel.spanishLeague)
+        case League.italyLeague.rawValue:
+            display?.updateInterfaceGame(with: viewModel.italyLeague)
+        case League.germanyLeague.rawValue:
+            display?.updateInterfaceGame(with: viewModel.germanyLeague)
+        default:
+            display?.updateInterfaceGame(with: viewModel.word)
+        }
     }
 }
 
 
 extension GamePresenter: GamePresentationLogic {
     public func presentInterface(with response: [GameModels.Response]) {
-        let viewModel = mapResponseGameTest(with: response)
+        let viewModel = mapResponseGame(with: response)
+        self.viewModelsChampionship = viewModel
         display?.displayInterfaceGame(with: viewModel)
     }
 
@@ -167,7 +156,6 @@ extension GamePresenter: GamePresentationLogic {
 }
 
 extension GamePresenter: GameInteractionLogic {
-
     func didLoad() {
         day()
     }
@@ -180,5 +168,9 @@ extension GamePresenter: GameInteractionLogic {
 
     func didSelectItem(indexPath: Int) {
         selectItem(indexPath: indexPath)
+    }
+
+    func didSelectLeague(id: String) {
+        selectLeague(id: id)
     }
 }

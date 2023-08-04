@@ -11,4 +11,5 @@ protocol GameInteractionLogic {
     func didLoad()
     func fetchGame(from: String, to: String)
     func didSelectItem(indexPath: Int)
+    func didSelectLeague(id: String)
 }

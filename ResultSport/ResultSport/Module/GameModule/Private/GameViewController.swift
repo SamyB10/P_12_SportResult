@@ -9,14 +9,15 @@ import UIKit
 
 class GameViewController: UIViewController {
 
+    let viewModelPicker = GameModels.ViewModel.ViewModelPicker()
     private var presenter: GameInteractionLogic?
-    private let viewModelPicker = GameModels.ViewModel.ViewModelPicker()
     private var viewModel: [GameModels.ViewModel]? {
         didSet {
             guard let viewModel, viewModel != oldValue else { return }
             dateCollectionView.snapShot(withViewModel: viewModel)
             viewModel.forEach {
                 if $0.isActive == true {
+                    activityIndicatorStart()
                     presenter?.fetchGame(from: $0.dayNumber, to: $0.dayNumber)
                 }
             }
@@ -27,6 +28,9 @@ class GameViewController: UIViewController {
         didSet {
             guard let viewModelGame, viewModelGame != oldValue else { return }
             gameCollectionView.inject(viewModel: viewModelGame)
+            DispatchQueue.main.async {
+                self.activityIndicatorEnd()
+            }
         }
     }
 
@@ -50,18 +54,24 @@ class GameViewController: UIViewController {
         let separator = UIView()
         separator.translatesAutoresizingMaskIntoConstraints = false
         separator.backgroundColor = .white
-
         return separator
+    }()
+
+
+    private var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .white
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return activityIndicator
     }()
 
     private lazy var pickerLeague: UIPickerView = {
         let pickerLeague = UIPickerView()
         pickerLeague.translatesAutoresizingMaskIntoConstraints = false
-        pickerLeague.backgroundColor = .clear
+        pickerLeague.backgroundColor = .mainColorTest
         pickerLeague.delegate = self
         pickerLeague.dataSource = self
         pickerLeague.isHidden = true
-        pickerLeague.backgroundColor = .white
         return pickerLeague
     }()
 
@@ -89,6 +99,7 @@ class GameViewController: UIViewController {
         view.addSubview(separatorView)
         view.addSubview(gameCollectionView)
         view.addSubview(pickerLeague)
+        gameCollectionView.addSubview(activityIndicator)
     }
 
     private func setupConstraints() {
@@ -108,11 +119,13 @@ class GameViewController: UIViewController {
             gameCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gameCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 
-            pickerLeague.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pickerLeague.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            pickerLeague.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             pickerLeague.heightAnchor.constraint(equalToConstant: 200),
-            pickerLeague.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            pickerLeague.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            pickerLeague.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            pickerLeague.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+
+            activityIndicator.centerXAnchor.constraint(equalTo: gameCollectionView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: gameCollectionView.centerYAnchor),
         ])
     }
 
@@ -123,6 +136,16 @@ class GameViewController: UIViewController {
     @objc func displayPickerLeague() {
         pickerLeague.isHidden = false
     }
+
+    private func activityIndicatorStart() {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+
+    private func activityIndicatorEnd() {
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+    }
 }
 
 extension GameViewController: UICollectionViewDelegate {
@@ -130,6 +153,7 @@ extension GameViewController: UICollectionViewDelegate {
         presenter?.didSelectItem(indexPath: indexPath.row)
     }
 }
+
 
 extension GameViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -140,14 +164,33 @@ extension GameViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return viewModelPicker.leagues.count
     }
 
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let leagues = Array(viewModelPicker.leagues.keys)
-        self.pickerLeague.isHidden = true
-    }
-
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let leagues = Array(viewModelPicker.leagues.values)
         return leagues[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let leagues = Array(viewModelPicker.leagues.values)
+
+        var label: UILabel
+        if let view = view as? UILabel {
+            label = view
+        } else {
+            label = UILabel()
+        }
+
+        let title = leagues[row]
+        label.text = title
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 25)
+        label.textColor = .white
+        return label
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let leagues = Array(viewModelPicker.leagues.keys)
+        presenter?.didSelectLeague(id: leagues[row])
+        self.pickerLeague.isHidden = true
     }
 }
 

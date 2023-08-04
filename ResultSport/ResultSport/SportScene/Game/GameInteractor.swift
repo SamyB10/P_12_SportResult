@@ -37,8 +37,9 @@ class GameInteractor {
     }
 
     private func fetchGame(from: String, to: String) async {
+//        let test = "2023-03-05"
 //        contextGame.willLoadContent()
-//        switch await request.fetchSchedule(from: from, to: to) {
+//        switch await request.fetchSchedule(from: test, to: test) {
 //        case .success(let game):
 //            contextGame.gameContext = game
 //        case .failure:

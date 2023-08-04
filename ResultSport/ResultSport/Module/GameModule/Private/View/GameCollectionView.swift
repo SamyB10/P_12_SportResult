@@ -50,13 +50,13 @@ final class GameCollectionView: UICollectionView {
 
     private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Int, GameModels.ViewModel.Game> = {
         let dataSource = UICollectionViewDiffableDataSource<Int, GameModels.ViewModel.Game>(collectionView: self) { collectionView, indexPath, itemIdentifier in
-               let cell = collectionView.dequeueConfiguredReusableCell(using: self.cellRegistration,
-                                                                       for: indexPath,
-                                                                       item: itemIdentifier)
-               return cell
-           }
-           return dataSource
-       }()
+            let cell = collectionView.dequeueConfiguredReusableCell(using: self.cellRegistration,
+                                                                    for: indexPath,
+                                                                    item: itemIdentifier)
+            return cell
+        }
+        return dataSource
+    }()
 
     init() {
         super.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
