@@ -23,6 +23,7 @@ class StandingInteractor {
 }
 
 extension StandingInteractor: StandingBusinessLogic {
+
     func start() async {
         presenter?.presentError()
     }

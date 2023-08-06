@@ -11,4 +11,6 @@ import UIKit
 public protocol SportBusinessLogic {
     func start() async
     func fetch() async
+    func nextPage()
+    func fetchCountry(id: String) async
 }

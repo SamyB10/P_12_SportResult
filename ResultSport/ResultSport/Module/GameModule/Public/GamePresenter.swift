@@ -19,6 +19,8 @@ enum League: String, CaseIterable {
     case italyLeague = "207"
     case germanyLeague = "175"
     case spanishLeague = "302"
+    case championsLeague = "3"
+    case europaLeague = "4"
 }
 
 public final class GamePresenter {
@@ -93,6 +95,8 @@ public final class GamePresenter {
         var spanishLeague: [GameModels.ViewModel.Game] = []
         var italyLeague: [GameModels.ViewModel.Game] = []
         var germanyLeague: [GameModels.ViewModel.Game] = []
+        var championsLeague: [GameModels.ViewModel.Game] = []
+        var europaLeague: [GameModels.ViewModel.Game] = []
         var word: [GameModels.ViewModel.Game] = []
 
         response.forEach { gameResponse in
@@ -109,6 +113,10 @@ public final class GamePresenter {
                 italyLeague.append(gameViewModel)
             case League.germanyLeague.rawValue:
                 germanyLeague.append(gameViewModel)
+            case League.championsLeague.rawValue:
+                championsLeague.append(gameViewModel)
+            case League.europaLeague.rawValue:
+                europaLeague.append(gameViewModel)
             default:
                 word.append(gameViewModel)
             }
@@ -118,7 +126,9 @@ public final class GamePresenter {
                                                  englishLeague: englishLeague,
                                                  italyLeague: italyLeague,
                                                  germanyLeague: germanyLeague,
-                                                 word: word)
+                                                 word: word,
+                                                 championsLeague: championsLeague,
+                                                 europaLeague: europaLeague)
     }
 
     private func selectLeague(id: String) {
@@ -139,7 +149,6 @@ public final class GamePresenter {
         }
     }
 }
-
 
 extension GamePresenter: GamePresentationLogic {
     public func presentInterface(with response: [GameModels.Response]) {

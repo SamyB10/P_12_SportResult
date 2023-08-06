@@ -9,4 +9,6 @@ import Foundation
 
 protocol SportInteractionLogic {
     func didLoad()
+    func didSelect(index: Int)
+    func searchCompetition(country: String)
 }

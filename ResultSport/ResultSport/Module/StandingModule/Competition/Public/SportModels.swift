@@ -40,17 +40,20 @@ public enum SportModels: Equatable {
         public let leagueName: String
         public let leagueLogo: String
         public let countryLogo: String
+        public let countryId: String
 
         public init(countryName: String,
                     leagueId: String,
                     leagueName: String,
                     leagueLogo: String,
-                    countryLogo: String) {
+                    countryLogo: String,
+                    countryId: String) {
             self.countryName = countryName
             self.leagueId = leagueId
             self.leagueName = leagueName
             self.leagueLogo = leagueLogo
             self.countryLogo = countryLogo
+            self.countryId = countryId
         }
     }
 }

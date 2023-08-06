@@ -13,13 +13,6 @@ import Kingfisher
 class CompetitionCell: UICollectionViewCell {
 
     // MARK: - Subviews
-//    private lazy var imageCountry: UIImageView = {
-//        let image = UIImageView()
-//        image.contentMode = .scaleAspectFit
-//        image.translatesAutoresizingMaskIntoConstraints = false
-//        return image
-//    }()
-
     private lazy var imageCountry: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .clear
@@ -95,11 +88,6 @@ class CompetitionCell: UICollectionViewCell {
 
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-//            imageCountry.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-//            imageCountry.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-//            imageCountry.widthAnchor.constraint(equalToConstant: 40),
-//            imageCountry.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
-
             imageCountry.heightAnchor.constraint(equalToConstant: 55),
             imageCountry.widthAnchor.constraint(equalToConstant: 55),
             imageCountry.trailingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 40),

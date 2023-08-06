@@ -1,5 +1,3 @@
-//
-//  SearchViewController.swift
 //  
 //
 //  Created by Samy Boussair on 28/07/2023.
@@ -13,8 +11,7 @@ class StandingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        self.navigationController?.navigationBar.backgroundColor = .white
+        view.backgroundColor = .mainColorTest
         setupInterface()
         setupConstraints()
     }

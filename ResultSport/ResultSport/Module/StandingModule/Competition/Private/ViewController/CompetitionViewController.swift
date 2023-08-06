@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import GameModuleKit
 
 class CompetitionViewController: UIViewController {
 
@@ -16,8 +15,16 @@ class CompetitionViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.delegate = self
         collectionView.backgroundColor = .clear
-
         return collectionView
+    }()
+
+    private var textField: UITextField = {
+        let textField = UITextField()
+        textField.accessibilityLabel = "Country ?"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Germany, England, French..."
+        textField.backgroundColor = .white
+        return textField
     }()
 
     // MARK: - Properties
@@ -45,11 +52,18 @@ class CompetitionViewController: UIViewController {
     
     private func setupInterface() {
         view.addSubview(competitionCollectionView)
+        view.addSubview(textField)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            competitionCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+
+            textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            textField.trailingAnchor .constraint(equalTo: view.trailingAnchor, constant: -25),
+            textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            textField.bottomAnchor.constraint(equalTo: competitionCollectionView.topAnchor, constant: -20),
+
+            competitionCollectionView.topAnchor.constraint(equalTo: textField.bottomAnchor),
             competitionCollectionView.trailingAnchor .constraint(equalTo: view.trailingAnchor),
             competitionCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             competitionCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -63,11 +77,22 @@ class CompetitionViewController: UIViewController {
 
 extension CompetitionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let viewCOntroller = StandingViewController()
-        navigationController?.pushViewController(StandingViewController(), animated: true)
-//        print(viewModel?[indexPath.item].leagueName)
+        presenter?.didSelect(index: indexPath.row)
+    }
+}
+
+extension CompetitionViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+        guard let country = textField.text else { return }
+        presenter?.searchCompetition(country: country)
+    }
 }
 
 extension CompetitionViewController: SportDisplayLogic {

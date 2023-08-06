@@ -122,19 +122,25 @@ public enum GameModels: Equatable {
             public let italyLeague: [Game]
             public let germanyLeague: [Game]
             public let word: [Game]
+            public let championsLeague: [Game]
+            public let europaLeague: [Game]
 
             public init(spanishLeague: [Game],
                         frenchLeague: [Game],
                         englishLeague: [Game],
                         italyLeague: [Game],
                         germanyLeague: [Game],
-                        word: [Game]) {
+                        word: [Game],
+                        championsLeague: [Game],
+                        europaLeague: [Game]) {
                 self.spanishLeague = spanishLeague
                 self.frenchLeague = frenchLeague
                 self.englishLeague = englishLeague
                 self.italyLeague = italyLeague
                 self.germanyLeague = germanyLeague
                 self.word = word
+                self.championsLeague = championsLeague
+                self.europaLeague = europaLeague
             }
         }
 
@@ -144,7 +150,9 @@ public enum GameModels: Equatable {
                                              "152" : "Premiere League",
                                              "207" : "Serie A",
                                              "175" : "Bundesliga",
-                                             "0" : "Word"]
+                                             "0" : "Word",
+                                             "3" : "ChampionsLeague",
+                                             "4" : "EuropaLeague"]
         }
     }
 }

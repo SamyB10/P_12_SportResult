@@ -22,6 +22,6 @@ final class Router {
 
 extension Router: SportRoutingLogic {
     func routeToNextPage(viewController: UIViewController) {
-        self.viewController = viewController
+        self.viewController?.navigationController?.pushViewController(viewController, animated: true)
     }
 }

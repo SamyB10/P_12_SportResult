@@ -426,10 +426,10 @@
 		0DB1A6DE2A7CF0DE008D0ECE /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				0DB1A6DF2A7CF0DE008D0ECE /* SportInteractionLogic.swift */,
 				0DB1A6E02A7CF0DE008D0ECE /* Cell */,
-				0DB1A6E22A7CF0DE008D0ECE /* SportDisplayLogic.swift */,
 				0DB1A6E32A7CF0DE008D0ECE /* View */,
+				0DB1A6DF2A7CF0DE008D0ECE /* SportInteractionLogic.swift */,
+				0DB1A6E22A7CF0DE008D0ECE /* SportDisplayLogic.swift */,
 				0DB1A6E52A7CF0DE008D0ECE /* ViewController */,
 			);
 			path = Private;

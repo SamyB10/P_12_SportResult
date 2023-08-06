@@ -36,18 +36,30 @@ class Interactor {
         }
     }
     
-    private func fetchCompetions() async {
-        //        contextSport.willLoadContent()
-        //        switch await request.fetchCountryAndLeague() {
-        //        case .success(let competitions):
-        //            contextSport.sportContext = competitions
-        //        case .failure:
-        //            contextSport.didFailLoading = true
-        //        }
+    private func fetchCompetionsWithId(id: String) async {
+        contextSport.willLoadContent()
+        switch await request.fetchCountryAndLeague(id: id) {
+        case .success(let competitions):
+            contextSport.sportContext = competitions
+        case .failure:
+            contextSport.didFailLoading = true
+        }
+//        // MARK: Simulate response
+//        let competitions = await simulateFetchingCompetitions()
+//        presenteResponseCompetitions(with: competitions)
+    }
 
-        // MARK: Simulate response
-        let competitions = await simulateFetchingCompetitions()
-        presenteResponseCompetitions(with: competitions)
+    private func fetchCompetions() async {
+        contextSport.willLoadContent()
+        switch await request.fetchCountryAndLeague() {
+        case .success(let competitions):
+            contextSport.sportContext = competitions
+        case .failure:
+            contextSport.didFailLoading = true
+        }
+//        // MARK: Simulate response
+//        let competitions = await simulateFetchingCompetitions()
+//        presenteResponseCompetitions(with: competitions)
     }
 
     // MARK: Simulate response
@@ -98,9 +110,18 @@ class Interactor {
 }
 
 extension Interactor: SportBusinessLogic {
+
     func start() async {
         await fetchCompetions()
     }
+
+    func fetchCountry(id: String) async {
+        await fetchCompetionsWithId(id: id)
+    }
     
     func fetch() async {}
+
+    func nextPage() {
+        router?.routeToNextPage(viewController: StandingViewController())
+    }
 }

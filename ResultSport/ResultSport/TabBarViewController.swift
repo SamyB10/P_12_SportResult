@@ -14,8 +14,8 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.backgroundColor = .white
-        tabBar.barTintColor = .white
+        tabBar.backgroundColor = .mainColorTest
+        tabBar.barTintColor = .mainColorTest
     }
 
     func setUpTabs() {
@@ -25,7 +25,7 @@ class TabBarController: UITabBarController {
                                                   and: UIImage(systemName: "text.justify"),
                                                   viewController: viewControllerCompetiton)
         let searchViewController = self.createNav(with: "Game",
-                                                  and: UIImage(systemName: "magnifyingglass"),
+                                                  and: UIImage(systemName: "sportscourt"),
                                                   viewController: viewControllerSearch)
         self.setViewControllers([searchViewController, competitionViewController], animated: false)
     }
@@ -39,9 +39,9 @@ class TabBarController: UITabBarController {
         nav.tabBarItem.title = title
         nav.tabBarItem.image = image
 
-        let selectedAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        let selectedAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UITabBarItem.appearance().setTitleTextAttributes(selectedAttributes, for: .selected)
-        tabBar.tintColor = UIColor.black
+        tabBar.tintColor = UIColor.white
 
         let titleFont = UIFont.systemFont(ofSize: 18)
         nav.tabBarItem.setTitleFont(titleFont)
