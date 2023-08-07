@@ -41,6 +41,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = TabBarController()
         tabBarController.viewControllerSearch = gameModule.viewController
         tabBarController.viewControllerCompetiton = sportModule.viewController
+        guard let viewController = sportModule.viewController as? CompetitionViewController else { return }
+        viewController.inject(viewController: standingModule.viewController)
         tabBarController.setUpTabs()
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()

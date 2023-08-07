@@ -63,6 +63,8 @@
 		0DB1A7042A7CF0DE008D0ECE /* CompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6E62A7CF0DE008D0ECE /* CompetitionViewController.swift */; };
 		0DB1A7072A7CF1D6008D0ECE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0DB1A7062A7CF1D6008D0ECE /* Kingfisher */; };
 		0DB1A7092A7CFA0B008D0ECE /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7082A7CFA0B008D0ECE /* GameResponse.swift */; };
+		0DB1A7132A81827A008D0ECE /* StandingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7122A81827A008D0ECE /* StandingCollectionView.swift */; };
+		0DB1A7152A8183DE008D0ECE /* RestStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7142A8183DE008D0ECE /* RestStanding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,8 @@
 		0DB1A6E42A7CF0DE008D0ECE /* CompetitionCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionCollectionView.swift; sourceTree = "<group>"; };
 		0DB1A6E62A7CF0DE008D0ECE /* CompetitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionViewController.swift; sourceTree = "<group>"; };
 		0DB1A7082A7CFA0B008D0ECE /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
+		0DB1A7122A81827A008D0ECE /* StandingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingCollectionView.swift; sourceTree = "<group>"; };
+		0DB1A7142A8183DE008D0ECE /* RestStanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestStanding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +274,7 @@
 			children = (
 				0DB1A69F2A7CF00B008D0ECE /* RestSchedule.swift */,
 				0DB1A6A02A7CF00B008D0ECE /* RestCompetitions.swift */,
+				0DB1A7142A8183DE008D0ECE /* RestStanding.swift */,
 			);
 			path = RestModels;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 		0DB1A6D12A7CF0DE008D0ECE /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				0DB1A7112A818266008D0ECE /* View */,
 				0DB1A6D22A7CF0DE008D0ECE /* StandingInteractionLogic.swift */,
 				0DB1A6D32A7CF0DE008D0ECE /* StandingDisplayLogic.swift */,
 				0DB1A6D42A7CF0DE008D0ECE /* StandingViewController.swift */,
@@ -457,6 +463,14 @@
 				0DB1A6E62A7CF0DE008D0ECE /* CompetitionViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0DB1A7112A818266008D0ECE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0DB1A7122A81827A008D0ECE /* StandingCollectionView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -610,6 +624,7 @@
 				0DB1A6FF2A7CF0DE008D0ECE /* SportPresenter.swift in Sources */,
 				0DB1A6EF2A7CF0DE008D0ECE /* DateCell.swift in Sources */,
 				0DB1A6FE2A7CF0DE008D0ECE /* SportProtocols.swift in Sources */,
+				0DB1A7152A8183DE008D0ECE /* RestStanding.swift in Sources */,
 				0DB1A6F52A7CF0DE008D0ECE /* StandingModuleKit.swift in Sources */,
 				0DB1A6B62A7CF043008D0ECE /* TabBarViewController.swift in Sources */,
 				0DB1A6ED2A7CF0DE008D0ECE /* GameViewController.swift in Sources */,
@@ -639,6 +654,7 @@
 				0DB1A69C2A7CF003008D0ECE /* SportModule.swift in Sources */,
 				0DB1A6B42A7CF02A008D0ECE /* HTTPRequest.swift in Sources */,
 				0DB1A6952A7CF003008D0ECE /* GameRouter.swift in Sources */,
+				0DB1A7132A81827A008D0ECE /* StandingCollectionView.swift in Sources */,
 				0DB1A6932A7CF003008D0ECE /* GameContext.swift in Sources */,
 				0DB1A6EB2A7CF0DE008D0ECE /* GameBusinessLogic.swift in Sources */,
 				0DB1A7012A7CF0DE008D0ECE /* CompetitionCell.swift in Sources */,

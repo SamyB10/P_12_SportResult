@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import UIKit
 
 public protocol SportBusinessLogic {
     func start() async
     func fetch() async
-    func nextPage()
+    func nextPage(id: String)
     func fetchCountry(id: String) async
 }

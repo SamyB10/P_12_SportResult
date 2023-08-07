@@ -110,7 +110,6 @@ class Interactor {
 }
 
 extension Interactor: SportBusinessLogic {
-
     func start() async {
         await fetchCompetions()
     }
@@ -121,7 +120,7 @@ extension Interactor: SportBusinessLogic {
     
     func fetch() async {}
 
-    func nextPage() {
-        router?.routeToNextPage(viewController: StandingViewController())
+    func nextPage(id: String) {
+        router?.routeToNextPage(id: id)
     }
 }

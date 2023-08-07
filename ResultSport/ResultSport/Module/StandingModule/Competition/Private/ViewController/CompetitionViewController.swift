@@ -9,6 +9,8 @@ import UIKit
 
 class CompetitionViewController: UIViewController {
 
+    private var standingViewController: UIViewController?
+
     // MARK: - Subviews
     private lazy var competitionCollectionView: CompetitionCollectionView = {
         let collectionView = CompetitionCollectionView()
@@ -27,15 +29,24 @@ class CompetitionViewController: UIViewController {
         return textField
     }()
 
+    private var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .white
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return activityIndicator
+    }()
+
+
     // MARK: - Properties
     private var presenter: SportInteractionLogic?
     private var viewModel: [SportModels.ViewModel]? {
         didSet {
             guard let viewModel, viewModel != oldValue else { return }
+            activityIndicatorEnd()
             competitionCollectionView.snapShot(withViewModel: viewModel)
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let gradientLayer = CAGradientLayer()
@@ -49,10 +60,19 @@ class CompetitionViewController: UIViewController {
         setupConstraints()
         presenter?.didLoad()
     }
+
+    func inject(viewController: UIViewController) {
+        self.standingViewController = viewController
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        activityIndicatorStart()
+    }
     
     private func setupInterface() {
         view.addSubview(competitionCollectionView)
         view.addSubview(textField)
+        competitionCollectionView.addSubview(activityIndicator)
     }
     
     private func setupConstraints() {
@@ -67,17 +87,31 @@ class CompetitionViewController: UIViewController {
             competitionCollectionView.trailingAnchor .constraint(equalTo: view.trailingAnchor),
             competitionCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             competitionCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+
+            activityIndicator.centerXAnchor.constraint(equalTo: competitionCollectionView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: competitionCollectionView.centerYAnchor),
         ])
     }
     
     func inject(presenter: SportInteractionLogic) {
         self.presenter = presenter
     }
+
+    private func activityIndicatorStart() {
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+
+    private func activityIndicatorEnd() {
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+    }
 }
 
 extension CompetitionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter?.didSelect(index: indexPath.row)
+        guard let leagueId = viewModel?[indexPath.row].leagueId else { return }
+        presenter?.didSelect(viewController: standingViewController, id: leagueId)
     }
 }
 
@@ -106,5 +140,7 @@ extension CompetitionViewController: SportDisplayLogic {
     
     func displayError(with error: Error) {}
     
-    func displayLoader() {}
+    func displayLoader() {
+        activityIndicatorStart()
+    }
 }

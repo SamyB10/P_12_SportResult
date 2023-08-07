@@ -8,6 +8,12 @@ import UIKit
 class StandingViewController: UIViewController {
 
     private var presenter: StandingInteractionLogic?
+    private var idLeague: String? {
+        didSet {
+            guard let idLeague, idLeague != oldValue else { return }
+            presenter?.didFetchLeague(leagueId: idLeague)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +22,12 @@ class StandingViewController: UIViewController {
         setupConstraints()
     }
 
+    func inject(leagueId: String) {
+        self.idLeague = leagueId
+    }
+
     private func setupInterface() {
+
     }
 
     private func setupConstraints() {
@@ -28,7 +39,9 @@ class StandingViewController: UIViewController {
 }
 
 extension StandingViewController: StandingDisplayLogic {
-    func displayInterface(with viewModel: [StandingModels.ViewModel]) {}
+    func displayInterface(with viewModel: [StandingModels.ViewModel]) {
+        print(viewModel)
+    }
 
     func updateInterface(with viewModel: [StandingModels.ViewModel]) {}
 

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol SportRoutingLogic: AnyObject {
-    func routeToNextPage(viewController: UIViewController)
+    func routeToNextPage(viewController: UIViewController, id: String)
 }
 
 final class Router {
@@ -21,7 +21,10 @@ final class Router {
 }
 
 extension Router: SportRoutingLogic {
-    func routeToNextPage(viewController: UIViewController) {
+    func routeToNextPage(viewController: UIViewController, id: String) {
+        guard let standingViewController = viewController as? StandingViewController else { return }
         self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+        standingViewController.inject(leagueId: id)
+
     }
 }

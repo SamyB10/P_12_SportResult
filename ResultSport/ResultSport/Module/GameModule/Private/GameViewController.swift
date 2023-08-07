@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
             dateCollectionView.snapShot(withViewModel: viewModel)
             viewModel.forEach {
                 if $0.isActive == true {
-                    activityIndicatorStart()
+//                    activityIndicatorStart()
                     presenter?.fetchGame(from: $0.dayNumber, to: $0.dayNumber)
                 }
             }
@@ -213,5 +213,7 @@ extension GameViewController: GameDisplayLogic {
 
     func displayError(with error: Error) {}
 
-    func displayLoader() {}
+    func displayLoader() {
+        activityIndicatorStart()
+    }
 }

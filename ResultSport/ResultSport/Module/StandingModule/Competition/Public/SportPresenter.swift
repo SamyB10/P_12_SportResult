@@ -45,12 +45,12 @@ public final class SportPresenter {
 
     private func mapResponseCompetitions(with response: [SportModels.Response]) -> [SportModels.ViewModel] {
         response.compactMap {
-            return .init(countryName: $0.countryName,
-                         leagueId: $0.leagueId,
-                         leagueName: $0.leagueName,
-                         leagueLogo: $0.leagueLogo,
-                         countryLogo: $0.countryLogo,
-                         countryId: $0.countryId)
+            return SportModels.ViewModel(countryName: $0.countryName,
+                                         leagueId: $0.leagueId,
+                                         leagueName: $0.leagueName,
+                                         leagueLogo: $0.leagueLogo,
+                                         countryLogo: $0.countryLogo,
+                                         countryId: $0.countryId)
         }
     }
 }
@@ -67,7 +67,9 @@ extension SportPresenter: SportPresentationLogic {
         display?.displayInterface(with: viewModel)
     }
     
-    public func presentLoader() {}
+    public func presentLoader() {
+        display?.displayLoader()
+    }
     
     public func presentError() {
         display?.displayLoader()
@@ -81,8 +83,8 @@ extension SportPresenter: SportInteractionLogic {
         }
     }
 
-    func didSelect(index: Int) {
-        interactor.nextPage()
+    func didSelect(id: String) {
+        interactor.nextPage(id: id)
     }
 
     func searchCompetition(country: String) {

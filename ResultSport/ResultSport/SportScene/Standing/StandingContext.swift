@@ -6,15 +6,14 @@
 //
 
 import Foundation
-//import SportModuleKit
 
 struct StandingContext: Equatable {
     
-//    var searchContext: [RestCompetitions]?
-//    var didFailLoading: Bool = false
-//    
-//    mutating func willLoadContent() {
-//        searchContext = nil
-//        didFailLoading = false
-//    }
+    var standingContext: [RestStanding]?
+    var didFailLoading: Bool = false
+
+    mutating func willLoadContent() {
+        standingContext = nil
+        didFailLoading = false
+    }
 }

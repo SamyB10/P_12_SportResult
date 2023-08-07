@@ -157,7 +157,9 @@ extension GamePresenter: GamePresentationLogic {
         display?.displayInterfaceGame(with: viewModel)
     }
 
-    public func presentLoader() {}
+    public func presentLoader() {
+        display?.displayLoader()
+    }
 
     public func presentError() {
         display?.displayLoader()
