@@ -57,7 +57,7 @@ class CompetitionCell: UICollectionViewCell {
 //        return season
 //    }()
 
-    private var viewModel: SportModels.ViewModel? {
+    private var viewModel: CompetitionModels.ViewModel? {
         didSet {
             guard let viewModel, viewModel != oldValue else { return }
             updateInterface()
@@ -124,7 +124,7 @@ class CompetitionCell: UICollectionViewCell {
         nameLeague.text = viewModel.leagueName
     }
 
-    func configure(viewModel: SportModels.ViewModel) {
+    func configure(viewModel: CompetitionModels.ViewModel) {
         self.viewModel = viewModel
     }
 

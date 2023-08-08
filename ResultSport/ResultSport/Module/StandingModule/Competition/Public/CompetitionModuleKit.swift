@@ -1,8 +1,8 @@
 import UIKit
 
-public struct SportModuleKit {
+public struct CompetitionModuleKit {
 
-    public static func createViewController(presenter: SportPresenter) -> UIViewController {
+    public static func createViewController(presenter: CompetitionPresenter) -> UIViewController {
         
         let viewController = CompetitionViewController()
 

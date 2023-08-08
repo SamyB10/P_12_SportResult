@@ -7,17 +7,17 @@
 
 import Foundation
 
-public protocol SportPresentationLogic: AnyObject {
-    func presentInterface(with response: [SportModels.Response])
+public protocol CompetitionPresentationLogic: AnyObject {
+    func presentInterface(with response: [CompetitionModels.Response])
     func presentLoader()
     func presentError()
 }
 
-public final class SportPresenter {
+public final class CompetitionPresenter {
     
-    private weak var display: SportDisplayLogic?
-    private var interactor: SportBusinessLogic
-    private var viewModel: SportModels.ViewModel?
+    private weak var display: CompetitionDisplayLogic?
+    private var interactor: CompetitionBusinessLogic
+    private var viewModel: CompetitionModels.ViewModel?
     private var countryId: [String : String]? = [:] {
         didSet {
             guard let countryId, countryId != oldValue else { return }
@@ -35,29 +35,29 @@ public final class SportPresenter {
         }
     }
 
-    public init(interactor: SportBusinessLogic) {
+    public init(interactor: CompetitionBusinessLogic) {
         self.interactor = interactor
     }
     
-    func inject(display: SportDisplayLogic) {
+    func inject(display: CompetitionDisplayLogic) {
         self.display = display
     }
 
-    private func mapResponseCompetitions(with response: [SportModels.Response]) -> [SportModels.ViewModel] {
+    private func mapResponseCompetitions(with response: [CompetitionModels.Response]) -> [CompetitionModels.ViewModel] {
         response.compactMap {
-            return SportModels.ViewModel(countryName: $0.countryName,
-                                         leagueId: $0.leagueId,
-                                         leagueName: $0.leagueName,
-                                         leagueLogo: $0.leagueLogo,
-                                         countryLogo: $0.countryLogo,
-                                         countryId: $0.countryId)
+            return CompetitionModels.ViewModel(countryName: $0.countryName,
+                                               leagueId: $0.leagueId,
+                                               leagueName: $0.leagueName,
+                                               leagueLogo: $0.leagueLogo,
+                                               countryLogo: $0.countryLogo,
+                                               countryId: $0.countryId)
         }
     }
 }
 
 
-extension SportPresenter: SportPresentationLogic {
-    public func presentInterface(with response: [SportModels.Response]) {
+extension CompetitionPresenter: CompetitionPresentationLogic {
+    public func presentInterface(with response: [CompetitionModels.Response]) {
         let viewModel = mapResponseCompetitions(with: response)
         if countryId?.count == 0 {
             viewModel.forEach {
@@ -76,7 +76,7 @@ extension SportPresenter: SportPresentationLogic {
     }
 }
 
-extension SportPresenter: SportInteractionLogic {
+extension CompetitionPresenter: CompetitionInteractionLogic {
     func didLoad() {
         Task {
             await interactor.start()

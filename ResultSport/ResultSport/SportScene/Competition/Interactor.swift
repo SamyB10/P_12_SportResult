@@ -8,17 +8,17 @@
 import Foundation
 //import SportModuleKit
 
-class Interactor {
+class CompetitionInteractor {
 
-    private weak var presenter: SportPresenter?
-    private var router: SportRoutingLogic?
+    private weak var presenter: CompetitionPresenter?
+    private var router: CompetitionRoutingLogic?
     private let request = HttpRequest()
     
-    init(router: SportRoutingLogic) {
+    init(router: CompetitionRoutingLogic) {
         self.router = router
     }
     
-    func inject(presenter: SportPresenter) {
+    func inject(presenter: CompetitionPresenter) {
         self.presenter = presenter
     }
     
@@ -50,16 +50,16 @@ class Interactor {
     }
 
     private func fetchCompetions() async {
-        contextSport.willLoadContent()
-        switch await request.fetchCountryAndLeague() {
-        case .success(let competitions):
-            contextSport.sportContext = competitions
-        case .failure:
-            contextSport.didFailLoading = true
-        }
-//        // MARK: Simulate response
-//        let competitions = await simulateFetchingCompetitions()
-//        presenteResponseCompetitions(with: competitions)
+//        contextSport.willLoadContent()
+//        switch await request.fetchCountryAndLeague() {
+//        case .success(let competitions):
+//            contextSport.sportContext = competitions
+//        case .failure:
+//            contextSport.didFailLoading = true
+//        }
+        // MARK: Simulate response
+        let competitions = await simulateFetchingCompetitions()
+        presenteResponseCompetitions(with: competitions)
     }
 
     // MARK: Simulate response
@@ -88,7 +88,7 @@ class Interactor {
         presenter?.presentInterface(with: response)
     }
 
-    private func mapCompetitons(with competitions: [RestCompetitions]) -> [SportModels.Response] {
+    private func mapCompetitons(with competitions: [RestCompetitions]) -> [CompetitionModels.Response] {
         return competitions.compactMap { competition in
             guard let countryId = competition.countryId,
                   let name = competition.countryName,
@@ -98,7 +98,7 @@ class Interactor {
                   let leagueLogo = competition.leagueLogo,
                   let countryLogo = competition.countryLogo else { return nil }
             
-            return SportModels.Response(countryId: countryId,
+            return CompetitionModels.Response(countryId: countryId,
                                         countryName: name,
                                         leagueId: leagueId,
                                         leagueName: leagueName,
@@ -109,7 +109,7 @@ class Interactor {
     }
 }
 
-extension Interactor: SportBusinessLogic {
+extension CompetitionInteractor: CompetitionBusinessLogic {
     func start() async {
         await fetchCompetions()
     }

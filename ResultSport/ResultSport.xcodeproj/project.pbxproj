@@ -51,14 +51,14 @@
 		0DB1A6F72A7CF0DE008D0ECE /* StandingInteractionLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6D22A7CF0DE008D0ECE /* StandingInteractionLogic.swift */; };
 		0DB1A6F82A7CF0DE008D0ECE /* StandingDisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6D32A7CF0DE008D0ECE /* StandingDisplayLogic.swift */; };
 		0DB1A6F92A7CF0DE008D0ECE /* StandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6D42A7CF0DE008D0ECE /* StandingViewController.swift */; };
-		0DB1A6FA2A7CF0DE008D0ECE /* SportModuleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6D72A7CF0DE008D0ECE /* SportModuleKit.swift */; };
+		0DB1A6FA2A7CF0DE008D0ECE /* CompetitionModuleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6D72A7CF0DE008D0ECE /* CompetitionModuleKit.swift */; };
 		0DB1A6FC2A7CF0DE008D0ECE /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6DA2A7CF0DE008D0ECE /* NavigationController.swift */; };
-		0DB1A6FD2A7CF0DE008D0ECE /* SportModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6DB2A7CF0DE008D0ECE /* SportModels.swift */; };
-		0DB1A6FE2A7CF0DE008D0ECE /* SportProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6DC2A7CF0DE008D0ECE /* SportProtocols.swift */; };
-		0DB1A6FF2A7CF0DE008D0ECE /* SportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6DD2A7CF0DE008D0ECE /* SportPresenter.swift */; };
-		0DB1A7002A7CF0DE008D0ECE /* SportInteractionLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6DF2A7CF0DE008D0ECE /* SportInteractionLogic.swift */; };
+		0DB1A6FD2A7CF0DE008D0ECE /* CompetitionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6DB2A7CF0DE008D0ECE /* CompetitionModels.swift */; };
+		0DB1A6FE2A7CF0DE008D0ECE /* CompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6DC2A7CF0DE008D0ECE /* CompetitionProtocols.swift */; };
+		0DB1A6FF2A7CF0DE008D0ECE /* CompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6DD2A7CF0DE008D0ECE /* CompetitionPresenter.swift */; };
+		0DB1A7002A7CF0DE008D0ECE /* CompetitionInteractionLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6DF2A7CF0DE008D0ECE /* CompetitionInteractionLogic.swift */; };
 		0DB1A7012A7CF0DE008D0ECE /* CompetitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6E12A7CF0DE008D0ECE /* CompetitionCell.swift */; };
-		0DB1A7022A7CF0DE008D0ECE /* SportDisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6E22A7CF0DE008D0ECE /* SportDisplayLogic.swift */; };
+		0DB1A7022A7CF0DE008D0ECE /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6E22A7CF0DE008D0ECE /* Competition.swift */; };
 		0DB1A7032A7CF0DE008D0ECE /* CompetitionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6E42A7CF0DE008D0ECE /* CompetitionCollectionView.swift */; };
 		0DB1A7042A7CF0DE008D0ECE /* CompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6E62A7CF0DE008D0ECE /* CompetitionViewController.swift */; };
 		0DB1A7072A7CF1D6008D0ECE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0DB1A7062A7CF1D6008D0ECE /* Kingfisher */; };
@@ -133,14 +133,14 @@
 		0DB1A6D22A7CF0DE008D0ECE /* StandingInteractionLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingInteractionLogic.swift; sourceTree = "<group>"; };
 		0DB1A6D32A7CF0DE008D0ECE /* StandingDisplayLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingDisplayLogic.swift; sourceTree = "<group>"; };
 		0DB1A6D42A7CF0DE008D0ECE /* StandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingViewController.swift; sourceTree = "<group>"; };
-		0DB1A6D72A7CF0DE008D0ECE /* SportModuleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportModuleKit.swift; sourceTree = "<group>"; };
+		0DB1A6D72A7CF0DE008D0ECE /* CompetitionModuleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionModuleKit.swift; sourceTree = "<group>"; };
 		0DB1A6DA2A7CF0DE008D0ECE /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		0DB1A6DB2A7CF0DE008D0ECE /* SportModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportModels.swift; sourceTree = "<group>"; };
-		0DB1A6DC2A7CF0DE008D0ECE /* SportProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportProtocols.swift; sourceTree = "<group>"; };
-		0DB1A6DD2A7CF0DE008D0ECE /* SportPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportPresenter.swift; sourceTree = "<group>"; };
-		0DB1A6DF2A7CF0DE008D0ECE /* SportInteractionLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportInteractionLogic.swift; sourceTree = "<group>"; };
+		0DB1A6DB2A7CF0DE008D0ECE /* CompetitionModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionModels.swift; sourceTree = "<group>"; };
+		0DB1A6DC2A7CF0DE008D0ECE /* CompetitionProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionProtocols.swift; sourceTree = "<group>"; };
+		0DB1A6DD2A7CF0DE008D0ECE /* CompetitionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionPresenter.swift; sourceTree = "<group>"; };
+		0DB1A6DF2A7CF0DE008D0ECE /* CompetitionInteractionLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionInteractionLogic.swift; sourceTree = "<group>"; };
 		0DB1A6E12A7CF0DE008D0ECE /* CompetitionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionCell.swift; sourceTree = "<group>"; };
-		0DB1A6E22A7CF0DE008D0ECE /* SportDisplayLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportDisplayLogic.swift; sourceTree = "<group>"; };
+		0DB1A6E22A7CF0DE008D0ECE /* Competition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
 		0DB1A6E42A7CF0DE008D0ECE /* CompetitionCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionCollectionView.swift; sourceTree = "<group>"; };
 		0DB1A6E62A7CF0DE008D0ECE /* CompetitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionViewController.swift; sourceTree = "<group>"; };
 		0DB1A7082A7CFA0B008D0ECE /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
@@ -411,10 +411,10 @@
 		0DB1A6D62A7CF0DE008D0ECE /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				0DB1A6D72A7CF0DE008D0ECE /* SportModuleKit.swift */,
-				0DB1A6DB2A7CF0DE008D0ECE /* SportModels.swift */,
-				0DB1A6DC2A7CF0DE008D0ECE /* SportProtocols.swift */,
-				0DB1A6DD2A7CF0DE008D0ECE /* SportPresenter.swift */,
+				0DB1A6D72A7CF0DE008D0ECE /* CompetitionModuleKit.swift */,
+				0DB1A6DB2A7CF0DE008D0ECE /* CompetitionModels.swift */,
+				0DB1A6DC2A7CF0DE008D0ECE /* CompetitionProtocols.swift */,
+				0DB1A6DD2A7CF0DE008D0ECE /* CompetitionPresenter.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -434,8 +434,8 @@
 			children = (
 				0DB1A6E02A7CF0DE008D0ECE /* Cell */,
 				0DB1A6E32A7CF0DE008D0ECE /* View */,
-				0DB1A6DF2A7CF0DE008D0ECE /* SportInteractionLogic.swift */,
-				0DB1A6E22A7CF0DE008D0ECE /* SportDisplayLogic.swift */,
+				0DB1A6DF2A7CF0DE008D0ECE /* CompetitionInteractionLogic.swift */,
+				0DB1A6E22A7CF0DE008D0ECE /* Competition.swift */,
 				0DB1A6E52A7CF0DE008D0ECE /* ViewController */,
 			);
 			path = Private;
@@ -612,7 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB1A6992A7CF003008D0ECE /* StandingRouter.swift in Sources */,
-				0DB1A6FA2A7CF0DE008D0ECE /* SportModuleKit.swift in Sources */,
+				0DB1A6FA2A7CF0DE008D0ECE /* CompetitionModuleKit.swift in Sources */,
 				0DB1A6F72A7CF0DE008D0ECE /* StandingInteractionLogic.swift in Sources */,
 				0DB1A6982A7CF003008D0ECE /* StandingInteractor.swift in Sources */,
 				0DB1A7042A7CF0DE008D0ECE /* CompetitionViewController.swift in Sources */,
@@ -621,9 +621,9 @@
 				0DB1A6F82A7CF0DE008D0ECE /* StandingDisplayLogic.swift in Sources */,
 				0DB1A6B02A7CF012008D0ECE /* AppDelegate.swift in Sources */,
 				0DB1A6F22A7CF0DE008D0ECE /* DateCollectionView.swift in Sources */,
-				0DB1A6FF2A7CF0DE008D0ECE /* SportPresenter.swift in Sources */,
+				0DB1A6FF2A7CF0DE008D0ECE /* CompetitionPresenter.swift in Sources */,
 				0DB1A6EF2A7CF0DE008D0ECE /* DateCell.swift in Sources */,
-				0DB1A6FE2A7CF0DE008D0ECE /* SportProtocols.swift in Sources */,
+				0DB1A6FE2A7CF0DE008D0ECE /* CompetitionProtocols.swift in Sources */,
 				0DB1A7152A8183DE008D0ECE /* RestStanding.swift in Sources */,
 				0DB1A6F52A7CF0DE008D0ECE /* StandingModuleKit.swift in Sources */,
 				0DB1A6B62A7CF043008D0ECE /* TabBarViewController.swift in Sources */,
@@ -633,17 +633,17 @@
 				0DB1A6A22A7CF00B008D0ECE /* RestCompetitions.swift in Sources */,
 				0DB1A6F12A7CF0DE008D0ECE /* GameCollectionView.swift in Sources */,
 				0DB1A6FC2A7CF0DE008D0ECE /* NavigationController.swift in Sources */,
-				0DB1A7022A7CF0DE008D0ECE /* SportDisplayLogic.swift in Sources */,
+				0DB1A7022A7CF0DE008D0ECE /* Competition.swift in Sources */,
 				0DB1A6B12A7CF012008D0ECE /* SceneDelegate.swift in Sources */,
 				0DB1A6E92A7CF0DE008D0ECE /* GameModuleKit.swift in Sources */,
 				0DB1A69D2A7CF003008D0ECE /* Router.swift in Sources */,
-				0DB1A7002A7CF0DE008D0ECE /* SportInteractionLogic.swift in Sources */,
+				0DB1A7002A7CF0DE008D0ECE /* CompetitionInteractionLogic.swift in Sources */,
 				0DB1A6EA2A7CF0DE008D0ECE /* GameModels.swift in Sources */,
 				0DB1A6E72A7CF0DE008D0ECE /* GamePresenter.swift in Sources */,
 				0DB1A6EC2A7CF0DE008D0ECE /* GameInteractionLogic.swift in Sources */,
 				0DB1A6EE2A7CF0DE008D0ECE /* GameCell.swift in Sources */,
 				0DB1A6962A7CF003008D0ECE /* StandingContext.swift in Sources */,
-				0DB1A6FD2A7CF0DE008D0ECE /* SportModels.swift in Sources */,
+				0DB1A6FD2A7CF0DE008D0ECE /* CompetitionModels.swift in Sources */,
 				0DB1A6922A7CF003008D0ECE /* GameInteractor.swift in Sources */,
 				0DB1A6F02A7CF0DE008D0ECE /* GameDisplayLogic.swift in Sources */,
 				0DB1A6E82A7CF0DE008D0ECE /* Color.swift in Sources */,

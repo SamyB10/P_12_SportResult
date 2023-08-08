@@ -38,8 +38,8 @@ class CompetitionViewController: UIViewController {
 
 
     // MARK: - Properties
-    private var presenter: SportInteractionLogic?
-    private var viewModel: [SportModels.ViewModel]? {
+    private var presenter: CompetitionInteractionLogic?
+    private var viewModel: [CompetitionModels.ViewModel]? {
         didSet {
             guard let viewModel, viewModel != oldValue else { return }
             activityIndicatorEnd()
@@ -93,7 +93,7 @@ class CompetitionViewController: UIViewController {
         ])
     }
     
-    func inject(presenter: SportInteractionLogic) {
+    func inject(presenter: CompetitionInteractionLogic) {
         self.presenter = presenter
     }
 
@@ -111,7 +111,7 @@ class CompetitionViewController: UIViewController {
 extension CompetitionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let leagueId = viewModel?[indexPath.row].leagueId else { return }
-        presenter?.didSelect(viewController: standingViewController, id: leagueId)
+        presenter?.didSelect(id: leagueId)
     }
 }
 
@@ -129,12 +129,12 @@ extension CompetitionViewController: UITextFieldDelegate {
     }
 }
 
-extension CompetitionViewController: SportDisplayLogic {
-    func displayInterface(with viewModel: [SportModels.ViewModel]) {
+extension CompetitionViewController: CompetitionDisplayLogic {
+    func displayInterface(with viewModel: [CompetitionModels.ViewModel]) {
         updateInterface(with: viewModel)
     }
     
-    func updateInterface(with viewModel: [SportModels.ViewModel]) {
+    func updateInterface(with viewModel: [CompetitionModels.ViewModel]) {
         self.viewModel = viewModel
     }
     

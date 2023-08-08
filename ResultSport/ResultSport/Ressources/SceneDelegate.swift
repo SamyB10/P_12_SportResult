@@ -17,9 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        let router = Router()
-        let interactor = Interactor(router: router)
-        let presenter = SportPresenter(interactor: interactor)
+        let router = CompetitionRouter()
+        let interactor = CompetitionInteractor(router: router)
+        let presenter = CompetitionPresenter(interactor: interactor)
         let sportModule = SportModule(interactor: interactor,
                                       presenter: presenter,
                                       router: router)
@@ -41,8 +41,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = TabBarController()
         tabBarController.viewControllerSearch = gameModule.viewController
         tabBarController.viewControllerCompetiton = sportModule.viewController
-        guard let viewController = sportModule.viewController as? CompetitionViewController else { return }
-        viewController.inject(viewController: standingModule.viewController)
+        guard let viewController = standingModule.viewController as? StandingViewController else { return }
+        router.injectStandingViewController(viewController: viewController)
+
         tabBarController.setUpTabs()
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()

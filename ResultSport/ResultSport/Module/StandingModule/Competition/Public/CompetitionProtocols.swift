@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol SportBusinessLogic {
+public protocol CompetitionBusinessLogic {
     func start() async
     func fetch() async
     func nextPage(id: String)

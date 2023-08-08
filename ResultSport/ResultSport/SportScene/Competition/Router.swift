@@ -8,22 +8,27 @@
 import Foundation
 import UIKit
 
-protocol SportRoutingLogic: AnyObject {
-    func routeToNextPage(viewController: UIViewController, id: String)
+protocol CompetitionRoutingLogic: AnyObject {
+    func routeToNextPage(id: String)
 }
 
-final class Router {
+final class CompetitionRouter {
     private weak var viewController: UIViewController?
+    private var standingViewController: UIViewController?
     
     func inject(viewController: UIViewController) {
         self.viewController = viewController
     }
+
+    func injectStandingViewController(viewController: UIViewController) {
+        self.standingViewController = viewController
+    }
 }
 
-extension Router: SportRoutingLogic {
-    func routeToNextPage(viewController: UIViewController, id: String) {
-        guard let standingViewController = viewController as? StandingViewController else { return }
-        self.viewController?.navigationController?.pushViewController(viewController, animated: true)
+extension CompetitionRouter: CompetitionRoutingLogic {
+    func routeToNextPage(id: String) {
+        guard let standingViewController = standingViewController as? StandingViewController else { return }
+        self.viewController?.navigationController?.pushViewController(standingViewController, animated: true)
         standingViewController.inject(leagueId: id)
 
     }

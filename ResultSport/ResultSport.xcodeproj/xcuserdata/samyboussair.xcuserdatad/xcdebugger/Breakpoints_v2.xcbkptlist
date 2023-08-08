@@ -71,38 +71,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FCD36275-1DED-4B5B-8657-4E084DA097B7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ResultSport/SportScene/Standing/StandingInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "contextStanding"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9F1AD4A7-2CD7-43A1-AF5D-9678FF14B665"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ResultSport/Module/StandingModule/Standing/Private/StandingViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "idLeague"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "39EB7CE7-5F16-4686-9E05-61BCE6E81F84"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -114,85 +82,6 @@
             endingLineNumber = "87"
             landmarkName = "didSelect(id:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "62DAE7E4-53EC-489D-BC13-49C2C530A0F4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ResultSport/SportScene/Competition/Interactor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "nextPage(id:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CE2B2DE1-5CAA-4C77-8C71-0FB7C80BA9FD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ResultSport/Module/StandingModule/Standing/Public/StandingPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "didFetchLeague(leagueId:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CE2B2DE1-5CAA-4C77-8C71-0FB7C80BA9FD - e4e34da78a355622"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in ResultSport.StandingPresenter.didFetchLeague(leagueId: Swift.String) -&gt; ()"
-                  moduleName = "ResultSport"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samyboussair/Desktop/OC_Parcours/P12/ResultSport/ResultSport/Module/StandingModule/Standing/Public/StandingPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  uuid = "CE2B2DE1-5CAA-4C77-8C71-0FB7C80BA9FD - 53b877014758ed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in ResultSport.StandingPresenter.didFetchLeague(leagueId: Swift.String) -&gt; ()"
-                  moduleName = "ResultSport"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samyboussair/Desktop/OC_Parcours/P12/ResultSport/ResultSport/Module/StandingModule/Standing/Public/StandingPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "CE2B2DE1-5CAA-4C77-8C71-0FB7C80BA9FD - 55e1f70cd4da1220"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in ResultSport.StandingPresenter.didFetchLeague(leagueId: Swift.String) -&gt; ()"
-                  moduleName = "ResultSport"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samyboussair/Desktop/OC_Parcours/P12/ResultSport/ResultSport/Module/StandingModule/Standing/Public/StandingPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

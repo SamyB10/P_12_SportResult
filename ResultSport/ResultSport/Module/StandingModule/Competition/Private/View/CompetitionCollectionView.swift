@@ -34,14 +34,14 @@ final class CompetitionCollectionView: UICollectionView {
         return layout
     }
 
-    private lazy var cellRegistration: UICollectionView.CellRegistration<CompetitionCell, SportModels.ViewModel> = {
-        UICollectionView.CellRegistration<CompetitionCell, SportModels.ViewModel> { [weak self] cell, indexPath, item in
+    private lazy var cellRegistration: UICollectionView.CellRegistration<CompetitionCell, CompetitionModels.ViewModel> = {
+        UICollectionView.CellRegistration<CompetitionCell, CompetitionModels.ViewModel> { [weak self] cell, indexPath, item in
             cell.configure(viewModel: item)
         }
     }()
 
-    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Int, SportModels.ViewModel> = {
-        let dataSource = UICollectionViewDiffableDataSource<Int, SportModels.ViewModel>(collectionView: self) {
+    private lazy var diffableDataSource: UICollectionViewDiffableDataSource<Int, CompetitionModels.ViewModel> = {
+        let dataSource = UICollectionViewDiffableDataSource<Int, CompetitionModels.ViewModel>(collectionView: self) {
             collectionView, indexPath, itemIdentifier in
             let cell = collectionView.dequeueConfiguredReusableCell(using: self.cellRegistration,
                                                                     for: indexPath,
@@ -59,8 +59,8 @@ final class CompetitionCollectionView: UICollectionView {
     @available(*, unavailable)
     required init?(coder: NSCoder) { fatalError() }
 
-    func snapShot(withViewModel viewModel: [SportModels.ViewModel]) {
-        var snapShot = NSDiffableDataSourceSnapshot<Int, SportModels.ViewModel>()
+    func snapShot(withViewModel viewModel: [CompetitionModels.ViewModel]) {
+        var snapShot = NSDiffableDataSourceSnapshot<Int, CompetitionModels.ViewModel>()
         snapShot.appendSections([0])
         snapShot.appendItems(viewModel, toSection: 0)
         DispatchQueue.main.async {

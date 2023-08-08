@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SportModels: Equatable {
+public enum CompetitionModels: Equatable {
     public struct Response: Equatable {
         public let countryId: String
         public let countryName: String

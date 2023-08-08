@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SportInteractionLogic {
+protocol CompetitionInteractionLogic {
     func didLoad()
     func didSelect(id: String)
     func searchCompetition(country: String)

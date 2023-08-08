@@ -13,11 +13,11 @@ final class SportModule {
     
     var viewController: UIViewController
 
-    init(interactor: Interactor,
-         presenter: SportPresenter,
-         router: Router) {
+    init(interactor: CompetitionInteractor,
+         presenter: CompetitionPresenter,
+         router: CompetitionRouter) {
 
-        self.viewController = SportModuleKit.createViewController(presenter: presenter)
+        self.viewController = CompetitionModuleKit.createViewController(presenter: presenter)
         interactor.inject(presenter: presenter)
         router.inject(viewController: viewController)
     }
