@@ -30,6 +30,5 @@ extension CompetitionRouter: CompetitionRoutingLogic {
         guard let standingViewController = standingViewController as? StandingViewController else { return }
         self.viewController?.navigationController?.pushViewController(standingViewController, animated: true)
         standingViewController.inject(leagueId: id)
-
     }
 }

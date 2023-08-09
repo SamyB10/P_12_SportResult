@@ -9,8 +9,6 @@ import UIKit
 
 class CompetitionViewController: UIViewController {
 
-    private var standingViewController: UIViewController?
-
     // MARK: - Subviews
     private lazy var competitionCollectionView: CompetitionCollectionView = {
         let collectionView = CompetitionCollectionView()
@@ -25,7 +23,8 @@ class CompetitionViewController: UIViewController {
         textField.accessibilityLabel = "Country ?"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Germany, England, French..."
-        textField.backgroundColor = .white
+        textField.backgroundColor = .clear
+        textField.textColor = .white
         return textField
     }()
 
@@ -41,8 +40,8 @@ class CompetitionViewController: UIViewController {
     private var presenter: CompetitionInteractionLogic?
     private var viewModel: [CompetitionModels.ViewModel]? {
         didSet {
-            guard let viewModel, viewModel != oldValue else { return }
             activityIndicatorEnd()
+            guard let viewModel, viewModel != oldValue else { return }
             competitionCollectionView.snapShot(withViewModel: viewModel)
         }
     }
@@ -52,8 +51,8 @@ class CompetitionViewController: UIViewController {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
-            UIColor.mainColorTest.cgColor,
-            UIColor.cellColorTest.cgColor,
+            UIColor.mainColor.cgColor,
+            UIColor.cellColor.cgColor,
         ]
         view.layer.addSublayer(gradientLayer)
         setupInterface()
@@ -61,14 +60,6 @@ class CompetitionViewController: UIViewController {
         presenter?.didLoad()
     }
 
-    func inject(viewController: UIViewController) {
-        self.standingViewController = viewController
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        activityIndicatorStart()
-    }
-    
     private func setupInterface() {
         view.addSubview(competitionCollectionView)
         view.addSubview(textField)
@@ -103,8 +94,10 @@ class CompetitionViewController: UIViewController {
     }
 
     private func activityIndicatorEnd() {
-        activityIndicator.isHidden = true
-        activityIndicator.stopAnimating()
+        Task {
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+        }
     }
 }
 
@@ -125,6 +118,7 @@ extension CompetitionViewController: UITextFieldDelegate {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
         guard let country = textField.text else { return }
+        activityIndicatorStart()
         presenter?.searchCompetition(country: country)
     }
 }

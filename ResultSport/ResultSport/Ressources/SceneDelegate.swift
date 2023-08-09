@@ -6,8 +6,6 @@
 //
 
 import UIKit
-//import SportModuleKit
-//import GameModuleKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     

@@ -58,13 +58,14 @@
 		0DB1A6FF2A7CF0DE008D0ECE /* CompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6DD2A7CF0DE008D0ECE /* CompetitionPresenter.swift */; };
 		0DB1A7002A7CF0DE008D0ECE /* CompetitionInteractionLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6DF2A7CF0DE008D0ECE /* CompetitionInteractionLogic.swift */; };
 		0DB1A7012A7CF0DE008D0ECE /* CompetitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6E12A7CF0DE008D0ECE /* CompetitionCell.swift */; };
-		0DB1A7022A7CF0DE008D0ECE /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6E22A7CF0DE008D0ECE /* Competition.swift */; };
+		0DB1A7022A7CF0DE008D0ECE /* CompetitionDisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6E22A7CF0DE008D0ECE /* CompetitionDisplayLogic.swift */; };
 		0DB1A7032A7CF0DE008D0ECE /* CompetitionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6E42A7CF0DE008D0ECE /* CompetitionCollectionView.swift */; };
 		0DB1A7042A7CF0DE008D0ECE /* CompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6E62A7CF0DE008D0ECE /* CompetitionViewController.swift */; };
 		0DB1A7072A7CF1D6008D0ECE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0DB1A7062A7CF1D6008D0ECE /* Kingfisher */; };
 		0DB1A7092A7CFA0B008D0ECE /* GameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7082A7CFA0B008D0ECE /* GameResponse.swift */; };
 		0DB1A7132A81827A008D0ECE /* StandingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7122A81827A008D0ECE /* StandingCollectionView.swift */; };
 		0DB1A7152A8183DE008D0ECE /* RestStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7142A8183DE008D0ECE /* RestStanding.swift */; };
+		0DB1A7182A82D9FF008D0ECE /* StandingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7172A82D9FF008D0ECE /* StandingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,12 +141,13 @@
 		0DB1A6DD2A7CF0DE008D0ECE /* CompetitionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionPresenter.swift; sourceTree = "<group>"; };
 		0DB1A6DF2A7CF0DE008D0ECE /* CompetitionInteractionLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionInteractionLogic.swift; sourceTree = "<group>"; };
 		0DB1A6E12A7CF0DE008D0ECE /* CompetitionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionCell.swift; sourceTree = "<group>"; };
-		0DB1A6E22A7CF0DE008D0ECE /* Competition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
+		0DB1A6E22A7CF0DE008D0ECE /* CompetitionDisplayLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionDisplayLogic.swift; sourceTree = "<group>"; };
 		0DB1A6E42A7CF0DE008D0ECE /* CompetitionCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionCollectionView.swift; sourceTree = "<group>"; };
 		0DB1A6E62A7CF0DE008D0ECE /* CompetitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionViewController.swift; sourceTree = "<group>"; };
 		0DB1A7082A7CFA0B008D0ECE /* GameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResponse.swift; sourceTree = "<group>"; };
 		0DB1A7122A81827A008D0ECE /* StandingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingCollectionView.swift; sourceTree = "<group>"; };
 		0DB1A7142A8183DE008D0ECE /* RestStanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestStanding.swift; sourceTree = "<group>"; };
+		0DB1A7172A82D9FF008D0ECE /* StandingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,6 +393,7 @@
 		0DB1A6D12A7CF0DE008D0ECE /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				0DB1A7162A82D9D9008D0ECE /* Cell */,
 				0DB1A7112A818266008D0ECE /* View */,
 				0DB1A6D22A7CF0DE008D0ECE /* StandingInteractionLogic.swift */,
 				0DB1A6D32A7CF0DE008D0ECE /* StandingDisplayLogic.swift */,
@@ -435,7 +438,7 @@
 				0DB1A6E02A7CF0DE008D0ECE /* Cell */,
 				0DB1A6E32A7CF0DE008D0ECE /* View */,
 				0DB1A6DF2A7CF0DE008D0ECE /* CompetitionInteractionLogic.swift */,
-				0DB1A6E22A7CF0DE008D0ECE /* Competition.swift */,
+				0DB1A6E22A7CF0DE008D0ECE /* CompetitionDisplayLogic.swift */,
 				0DB1A6E52A7CF0DE008D0ECE /* ViewController */,
 			);
 			path = Private;
@@ -471,6 +474,14 @@
 				0DB1A7122A81827A008D0ECE /* StandingCollectionView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0DB1A7162A82D9D9008D0ECE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0DB1A7172A82D9FF008D0ECE /* StandingCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -633,10 +644,11 @@
 				0DB1A6A22A7CF00B008D0ECE /* RestCompetitions.swift in Sources */,
 				0DB1A6F12A7CF0DE008D0ECE /* GameCollectionView.swift in Sources */,
 				0DB1A6FC2A7CF0DE008D0ECE /* NavigationController.swift in Sources */,
-				0DB1A7022A7CF0DE008D0ECE /* Competition.swift in Sources */,
+				0DB1A7022A7CF0DE008D0ECE /* CompetitionDisplayLogic.swift in Sources */,
 				0DB1A6B12A7CF012008D0ECE /* SceneDelegate.swift in Sources */,
 				0DB1A6E92A7CF0DE008D0ECE /* GameModuleKit.swift in Sources */,
 				0DB1A69D2A7CF003008D0ECE /* Router.swift in Sources */,
+				0DB1A7182A82D9FF008D0ECE /* StandingCell.swift in Sources */,
 				0DB1A7002A7CF0DE008D0ECE /* CompetitionInteractionLogic.swift in Sources */,
 				0DB1A6EA2A7CF0DE008D0ECE /* GameModels.swift in Sources */,
 				0DB1A6E72A7CF0DE008D0ECE /* GamePresenter.swift in Sources */,

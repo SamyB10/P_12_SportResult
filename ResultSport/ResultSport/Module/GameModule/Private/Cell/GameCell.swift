@@ -104,7 +104,7 @@ class GameCell: UICollectionViewCell {
 
     private func setupInterface() {
         contentView.layer.cornerRadius = 15
-        contentView.backgroundColor = .mainColorTest.withAlphaComponent(0.6)
+        contentView.backgroundColor = .mainColor.withAlphaComponent(0.6)
         contentView.addSubview(nameHomeTeam)
         contentView.addSubview(logoHomeTeam)
         contentView.addSubview(stackViewScore)

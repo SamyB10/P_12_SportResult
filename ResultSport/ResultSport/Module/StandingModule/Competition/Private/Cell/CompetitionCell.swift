@@ -76,7 +76,7 @@ class CompetitionCell: UICollectionViewCell {
     required init?(coder: NSCoder) { fatalError() }
 
     private func setupInterface() {
-        contentView.backgroundColor = .mainColorTest.withAlphaComponent(0.6)
+        contentView.backgroundColor = .mainColor.withAlphaComponent(0.6)
 //        contentView.layer.borderColor = UIColor.black.cgColor
 //        contentView.layer.borderWidth = 1
         contentView.addSubview(imageCountry)

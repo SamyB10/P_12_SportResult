@@ -30,7 +30,8 @@ final class CompetitionCollectionView: UICollectionView {
         let config = UICollectionViewCompositionalLayoutConfiguration()
         config.scrollDirection = .vertical
 
-        let layout = UICollectionViewCompositionalLayout(section: section, configuration: config)
+        let layout = UICollectionViewCompositionalLayout(section: section,
+                                                         configuration: config)
         return layout
     }
 

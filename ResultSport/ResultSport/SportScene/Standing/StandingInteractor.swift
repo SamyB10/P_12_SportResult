@@ -76,6 +76,7 @@ class StandingInteractor {
 extension StandingInteractor: StandingBusinessLogic {
 
     func start() async {
+        
     }
 
     func fetch(leagueId: String) async {

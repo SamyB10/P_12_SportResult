@@ -68,7 +68,7 @@ class GameViewController: UIViewController {
     private lazy var pickerLeague: UIPickerView = {
         let pickerLeague = UIPickerView()
         pickerLeague.translatesAutoresizingMaskIntoConstraints = false
-        pickerLeague.backgroundColor = .mainColorTest
+        pickerLeague.backgroundColor = .mainColor
         pickerLeague.delegate = self
         pickerLeague.dataSource = self
         pickerLeague.isHidden = true
@@ -80,8 +80,8 @@ class GameViewController: UIViewController {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
-            UIColor.mainColorTest.cgColor,
-            UIColor.cellColorTest.cgColor,
+            UIColor.mainColor.cgColor,
+            UIColor.cellColor.cgColor,
         ]
         view.layer.addSublayer(gradientLayer)
         let pickerButton = UIBarButtonItem(image: UIImage(systemName: "text.justify"),

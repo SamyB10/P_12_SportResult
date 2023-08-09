@@ -14,10 +14,30 @@ class StandingViewController: UIViewController {
             presenter?.didFetchLeague(leagueId: idLeague)
         }
     }
+    private var viewModel: [StandingModels.ViewModel]? {
+        didSet {
+            guard let viewModel, viewModel != oldValue else { return }
+            collectionView.snapShot(with: viewModel)
+        }
+    }
+
+    private lazy var collectionView: StandingCollectionView = {
+        let collectionView = StandingCollectionView()
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        //        collectionView.delegate = self
+        collectionView.backgroundColor = .clear
+        return collectionView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .mainColorTest
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [
+            UIColor.mainColor.cgColor,
+            UIColor.cellColor.cgColor,
+        ]
+        view.layer.addSublayer(gradientLayer)
         setupInterface()
         setupConstraints()
     }
@@ -27,10 +47,16 @@ class StandingViewController: UIViewController {
     }
 
     private func setupInterface() {
-
+        view.addSubview(collectionView)
     }
 
     private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+        ])
     }
     
     func inject(presenter: StandingInteractionLogic) {
@@ -40,7 +66,7 @@ class StandingViewController: UIViewController {
 
 extension StandingViewController: StandingDisplayLogic {
     func displayInterface(with viewModel: [StandingModels.ViewModel]) {
-        print(viewModel)
+        self.viewModel = viewModel
     }
 
     func updateInterface(with viewModel: [StandingModels.ViewModel]) {}
