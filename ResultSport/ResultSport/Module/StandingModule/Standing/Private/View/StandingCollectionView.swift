@@ -12,7 +12,14 @@ class StandingCollectionView: UICollectionView {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .absolute(50))
 
+        let headerItemSize = NSCollectionLayoutSize(widthDimension: itemSize.widthDimension,
+                                                    heightDimension: .absolute(30))
+
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize,
+                                                                     elementKind: UICollectionView.elementKindSectionHeader,
+                                                                     alignment: .topLeading)
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .absolute(50))
@@ -21,15 +28,22 @@ class StandingCollectionView: UICollectionView {
                                                      subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [headerItem]
         
         let config = UICollectionViewCompositionalLayoutConfiguration()
         config.scrollDirection = .vertical
+        
 
         let layout = UICollectionViewCompositionalLayout(section: section,
                                                          configuration: config)
         return layout
     }
 
+    private lazy var headerRegistration: UICollectionView.SupplementaryRegistration<HeaderCell> = {
+        UICollectionView.SupplementaryRegistration<HeaderCell>(elementKind: UICollectionView.elementKindSectionHeader) { [weak self] headerView, elementKind, indexPath in
+        }
+    }()
+    
     private lazy var cellRegistration: UICollectionView.CellRegistration<StandingCell, StandingModels.ViewModel> = {
         UICollectionView.CellRegistration<StandingCell, StandingModels.ViewModel> { [weak self] cell, indexPath, item in
             cell.configure(viewModel: item)
@@ -44,6 +58,13 @@ class StandingCollectionView: UICollectionView {
                                                                     item: itemIdentifier)
             return cell
         }
+
+        dataSource.supplementaryViewProvider = { view, kind, index in
+            let headerCell = self.dequeueConfiguredReusableSupplementary(using: self.headerRegistration,
+                                                                         for: index)
+            return headerCell
+        }
+
         return dataSource
     }()
 
@@ -66,6 +87,7 @@ class StandingCollectionView: UICollectionView {
 
     private func configureCollectionView() {
         _ = cellRegistration
+        _ = headerRegistration
         collectionViewLayout = createLayoutStanding()
     }
 }

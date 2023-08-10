@@ -18,13 +18,22 @@ class CompetitionViewController: UIViewController {
         return collectionView
     }()
 
+    private lazy var bottomTextField: UIView = {
+        let barreSearch = UIView()
+        barreSearch.translatesAutoresizingMaskIntoConstraints = false
+        barreSearch.backgroundColor = .systemGray
+        return barreSearch
+    }()
+
     private var textField: UITextField = {
         let textField = UITextField()
+        let placeholderAttributes: [NSAttributedString.Key: Any] = [ .foregroundColor: UIColor.systemGray ]
         textField.accessibilityLabel = "Country ?"
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Germany, England, French..."
         textField.backgroundColor = .clear
         textField.textColor = .white
+        textField.attributedPlaceholder = NSAttributedString(string: "Germany, England, French...",
+                                                             attributes: placeholderAttributes)
         return textField
     }()
 
@@ -58,12 +67,15 @@ class CompetitionViewController: UIViewController {
         setupInterface()
         setupConstraints()
         presenter?.didLoad()
+        activityIndicatorStart()
     }
 
     private func setupInterface() {
         view.addSubview(competitionCollectionView)
         view.addSubview(textField)
         competitionCollectionView.addSubview(activityIndicator)
+        view.addSubview(bottomTextField)
+        textField.delegate = self
     }
     
     private func setupConstraints() {
@@ -81,6 +93,11 @@ class CompetitionViewController: UIViewController {
 
             activityIndicator.centerXAnchor.constraint(equalTo: competitionCollectionView.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: competitionCollectionView.centerYAnchor),
+
+            bottomTextField.leadingAnchor.constraint(equalTo: textField.leadingAnchor),
+            bottomTextField.trailingAnchor.constraint(equalTo: textField.trailingAnchor),
+            bottomTextField.topAnchor.constraint(equalTo: textField.bottomAnchor),
+            bottomTextField.heightAnchor.constraint(equalToConstant: 2)
         ])
     }
     
@@ -111,16 +128,19 @@ extension CompetitionViewController: UICollectionViewDelegate {
 extension CompetitionViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        guard let country = textField.text else { return false }
+        activityIndicatorStart()
+        presenter?.searchCompetition(country: country)
         return true
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-        super.touchesBegan(touches, with: event)
-        guard let country = textField.text else { return }
-        activityIndicatorStart()
-        presenter?.searchCompetition(country: country)
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        view.endEditing(true)
+//        super.touchesBegan(touches, with: event)
+//        guard let country = textField.text else { return }
+//        activityIndicatorStart()
+//        presenter?.searchCompetition(country: country)
+//    }
 }
 
 extension CompetitionViewController: CompetitionDisplayLogic {

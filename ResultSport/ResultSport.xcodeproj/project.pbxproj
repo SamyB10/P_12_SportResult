@@ -66,6 +66,7 @@
 		0DB1A7132A81827A008D0ECE /* StandingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7122A81827A008D0ECE /* StandingCollectionView.swift */; };
 		0DB1A7152A8183DE008D0ECE /* RestStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7142A8183DE008D0ECE /* RestStanding.swift */; };
 		0DB1A7182A82D9FF008D0ECE /* StandingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7172A82D9FF008D0ECE /* StandingCell.swift */; };
+		0DB1A71A2A855AA2008D0ECE /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7192A855AA2008D0ECE /* Header.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		0DB1A7122A81827A008D0ECE /* StandingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingCollectionView.swift; sourceTree = "<group>"; };
 		0DB1A7142A8183DE008D0ECE /* RestStanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestStanding.swift; sourceTree = "<group>"; };
 		0DB1A7172A82D9FF008D0ECE /* StandingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingCell.swift; sourceTree = "<group>"; };
+		0DB1A7192A855AA2008D0ECE /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -480,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				0DB1A7172A82D9FF008D0ECE /* StandingCell.swift */,
+				0DB1A7192A855AA2008D0ECE /* Header.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				0DB1A69B2A7CF003008D0ECE /* SportContext.swift in Sources */,
 				0DB1A6972A7CF003008D0ECE /* StandingModule.swift in Sources */,
 				0DB1A6F62A7CF0DE008D0ECE /* StandingModels.swift in Sources */,
+				0DB1A71A2A855AA2008D0ECE /* Header.swift in Sources */,
 				0DB1A7092A7CFA0B008D0ECE /* GameResponse.swift in Sources */,
 				0DB1A69C2A7CF003008D0ECE /* SportModule.swift in Sources */,
 				0DB1A6B42A7CF02A008D0ECE /* HTTPRequest.swift in Sources */,

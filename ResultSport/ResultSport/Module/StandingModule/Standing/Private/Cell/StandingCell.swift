@@ -36,6 +36,43 @@ class StandingCell: UICollectionViewCell {
         return image
     }()
 
+    private lazy var labelWin: UILabel = {
+        let win = UILabel()
+        win.textAlignment = .center
+        win.font = .systemFont(ofSize: 12, weight: .regular)
+        win.textColor = .white
+        win.translatesAutoresizingMaskIntoConstraints = false
+        return win
+    }()
+
+    private lazy var labelLose: UILabel = {
+        let lose = UILabel()
+        lose.textAlignment = .center
+        lose.font = .systemFont(ofSize: 12, weight: .regular)
+        lose.textColor = .white
+        lose.translatesAutoresizingMaskIntoConstraints = false
+        return lose
+    }()
+
+    private lazy var labelNul: UILabel = {
+        let nul = UILabel()
+        nul.textAlignment = .center
+        nul.font = .systemFont(ofSize: 12, weight: .regular)
+        nul.textColor = .white
+        nul.translatesAutoresizingMaskIntoConstraints = false
+        return nul
+    }()
+
+    private lazy var stackViewGlobalGame: UIStackView = {
+        let stackViewGlobalGame = UIStackView(arrangedSubviews: [labelWin,
+                                                                 labelNul,
+                                                                 labelLose])
+        stackViewGlobalGame.alignment = .center
+        stackViewGlobalGame.distribution = .fillEqually
+        stackViewGlobalGame.translatesAutoresizingMaskIntoConstraints = false
+        return stackViewGlobalGame
+    }()
+
     private var viewModel: StandingModels.ViewModel? {
         didSet {
             guard let viewModel, viewModel != oldValue else { return }
@@ -58,6 +95,7 @@ class StandingCell: UICollectionViewCell {
         contentView.addSubview(teamName)
         contentView.addSubview(teamLogo)
         contentView.addSubview(positionTeam)
+        contentView.addSubview(stackViewGlobalGame)
     }
 
     private func setUpConstraints() {
@@ -78,6 +116,11 @@ class StandingCell: UICollectionViewCell {
             teamName.trailingAnchor.constraint(equalTo: contentView.centerXAnchor),
             teamName.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
+            stackViewGlobalGame.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackViewGlobalGame.leadingAnchor.constraint(equalTo: teamName.trailingAnchor, constant: 20),
+            stackViewGlobalGame.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackViewGlobalGame.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+
         ])
     }
 
@@ -88,6 +131,9 @@ class StandingCell: UICollectionViewCell {
         self.teamLogo.kf.setImage(with: teamLogo)
         teamName.text = viewModel.teamName
         positionTeam.text = viewModel.leaguePosition
+        labelWin.text = viewModel.gameWin
+        labelNul.text = viewModel.gameNul
+        labelLose.text = viewModel.gameLose
     }
 
     private func borderCercle() {
