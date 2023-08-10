@@ -38,17 +38,17 @@ class GameInteractor {
 
     private func fetchGame(from: String, to: String) async {
 //        let test = "2023-03-05"
-//        contextGame.willLoadContent()
-//        switch await request.fetchSchedule(from: test, to: test) {
-//        case .success(let game):
-//            contextGame.gameContext = game
-//        case .failure:
-//            contextGame.didFailLoading = true
-//        }
+        contextGame.willLoadContent()
+        switch await request.fetchSchedule(from: from, to: to) {
+        case .success(let game):
+            contextGame.gameContext = game
+        case .failure:
+            contextGame.didFailLoading = true
+        }
 
-        // MARK: Simulate response
-        let game = await simulateFetchingGame()
-        presenteResponseGame(with: game)
+//        // MARK: Simulate response
+//        let game = await simulateFetchingGame()
+//        presenteResponseGame(with: game)
     }
 
     private func simulateFetchingGame() async -> [RestSchedule] {

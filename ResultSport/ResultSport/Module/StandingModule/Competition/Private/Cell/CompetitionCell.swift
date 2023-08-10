@@ -88,8 +88,8 @@ class CompetitionCell: UICollectionViewCell {
 
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            imageCountry.heightAnchor.constraint(equalToConstant: 55),
-            imageCountry.widthAnchor.constraint(equalToConstant: 55),
+            imageCountry.heightAnchor.constraint(equalToConstant: 65),
+            imageCountry.widthAnchor.constraint(equalToConstant: 65),
             imageCountry.trailingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 40),
             imageCountry.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
 
@@ -136,7 +136,7 @@ class CompetitionCell: UICollectionViewCell {
     }
 
     private func borderCercle() {
-        imageCountry.layer.cornerRadius = 55/2
+        imageCountry.layer.cornerRadius = 65/2
     }
 }
 

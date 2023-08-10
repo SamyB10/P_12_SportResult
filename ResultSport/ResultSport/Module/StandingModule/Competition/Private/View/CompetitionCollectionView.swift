@@ -11,12 +11,12 @@ final class CompetitionCollectionView: UICollectionView {
 
     private func createLayoutCompetition() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.95),
-                                              heightDimension: .absolute(80))
+                                              heightDimension: .absolute(70))
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: .absolute(85))
+                                               heightDimension: .absolute(75))
 
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
                                                      subitems: [item])
