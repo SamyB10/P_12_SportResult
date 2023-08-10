@@ -10,10 +10,17 @@ import Kingfisher
 
 class HeaderCell: UICollectionViewCell {
 
+    private var viewModel: StandingModels.ViewModel? {
+        didSet {
+            guard let viewModel, viewModel != oldValue else { return }
+            updateInterface()
+        }
+    }
+    
     // MARK: - Subviews
     private lazy var labelWin: UILabel = {
         let win = UILabel()
-        win.font = .systemFont(ofSize: 14, weight: .bold)
+        win.font = .systemFont(ofSize: 20, weight: .bold)
         win.textColor = .white
         win.textAlignment = .center
         win.text = "W"
@@ -23,7 +30,7 @@ class HeaderCell: UICollectionViewCell {
 
     private lazy var labelLose: UILabel = {
         let lose = UILabel()
-        lose.font = .systemFont(ofSize: 14, weight: .bold)
+        lose.font = .systemFont(ofSize: 20, weight: .bold)
         lose.textColor = .white
         lose.textAlignment = .center
         lose.text = "L"
@@ -33,12 +40,21 @@ class HeaderCell: UICollectionViewCell {
 
     private lazy var labelNul: UILabel = {
         let nul = UILabel()
-        nul.font = .systemFont(ofSize: 14, weight: .bold)
+        nul.font = .systemFont(ofSize: 20, weight: .bold)
         nul.textColor = .white
         nul.textAlignment = .center
         nul.translatesAutoresizingMaskIntoConstraints = false
         nul.text = "N"
         return nul
+    }()
+
+    private lazy var labelChampionship: UILabel = {
+        let win = UILabel()
+        win.font = .systemFont(ofSize: 20, weight: .bold)
+        win.textColor = .white
+        win.textAlignment = .center
+        win.translatesAutoresizingMaskIntoConstraints = false
+        return win
     }()
 
     private lazy var stackViewGlobalGame: UIStackView = {
@@ -62,6 +78,7 @@ class HeaderCell: UICollectionViewCell {
 
     private func setupInterface() {
         contentView.addSubview(stackViewGlobalGame)
+        contentView.addSubview(labelChampionship)
     }
 
     private func setUpConstraints() {
@@ -70,6 +87,20 @@ class HeaderCell: UICollectionViewCell {
             stackViewGlobalGame.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 20),
             stackViewGlobalGame.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             stackViewGlobalGame.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+
+            labelChampionship.topAnchor.constraint(equalTo: contentView.topAnchor),
+            labelChampionship.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            labelChampionship.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            labelChampionship.trailingAnchor.constraint(equalTo: stackViewGlobalGame.leadingAnchor, constant: -10),
         ])
+    }
+
+    private func updateInterface() {
+        guard let viewModel = viewModel else { return }
+        labelChampionship.text = viewModel.leagueName
+    }
+
+    func configure(viewModel: StandingModels.ViewModel) {
+        self.viewModel = viewModel
     }
 }

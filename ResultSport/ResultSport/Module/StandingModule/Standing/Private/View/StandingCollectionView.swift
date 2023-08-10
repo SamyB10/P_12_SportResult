@@ -8,6 +8,7 @@
 import UIKit
 
 class StandingCollectionView: UICollectionView {
+    private var viewModel: [StandingModels.ViewModel]?
     private func createLayoutStanding() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .absolute(50))
@@ -41,6 +42,8 @@ class StandingCollectionView: UICollectionView {
 
     private lazy var headerRegistration: UICollectionView.SupplementaryRegistration<HeaderCell> = {
         UICollectionView.SupplementaryRegistration<HeaderCell>(elementKind: UICollectionView.elementKindSectionHeader) { [weak self] headerView, elementKind, indexPath in
+            guard let viewModel = self?.viewModel?.first else { return }
+            headerView.configure(viewModel: viewModel)
         }
     }()
     
@@ -77,6 +80,7 @@ class StandingCollectionView: UICollectionView {
     required init?(coder: NSCoder) { fatalError() }
 
     func snapShot(with viewModel: [StandingModels.ViewModel]) {
+        self.viewModel = viewModel
         var snapShot = NSDiffableDataSourceSnapshot<Int, StandingModels.ViewModel>()
         snapShot.appendSections([0])
         snapShot.appendItems(viewModel, toSection: 0)

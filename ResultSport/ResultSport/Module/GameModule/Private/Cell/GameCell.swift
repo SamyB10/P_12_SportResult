@@ -20,6 +20,15 @@ class GameCell: UICollectionViewCell {
         return name
     }()
 
+    private lazy var stadium: UILabel = {
+        let name = UILabel()
+        name.textAlignment = .center
+        name.font = .monospacedSystemFont(ofSize: 14, weight: .semibold)
+        name.textColor = .white
+        name.translatesAutoresizingMaskIntoConstraints = false
+        return name
+    }()
+
     private lazy var scoreHomeTeam: UILabel = {
         let score = UILabel()
         score.textAlignment = .center
@@ -36,6 +45,15 @@ class GameCell: UICollectionViewCell {
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
+    }()
+
+    private lazy var matchTime: UILabel = {
+        let time = UILabel()
+        time.textAlignment = .center
+        time.font = .monospacedSystemFont(ofSize: 14, weight: .semibold)
+        time.textColor = .white
+        time.translatesAutoresizingMaskIntoConstraints = false
+        return time
     }()
 
     private lazy var nameAwayTeam: UILabel = {
@@ -80,7 +98,7 @@ class GameCell: UICollectionViewCell {
                                                    betweenScore,
                                                    scoreAwayTeam])
         score.alignment = .center
-        score.distribution = .fillEqually
+        score.distribution = .fillProportionally
         score.translatesAutoresizingMaskIntoConstraints = false
         return score
     }()
@@ -96,7 +114,6 @@ class GameCell: UICollectionViewCell {
         super.init(frame: frame)
         setupInterface()
         setUpConstraints()
-//        createCercle()
     }
 
     @available(*, unavailable)
@@ -110,6 +127,8 @@ class GameCell: UICollectionViewCell {
         contentView.addSubview(stackViewScore)
         contentView.addSubview(nameAwayTeam)
         contentView.addSubview(logoAwayTeam)
+//        contentView.addSubview(stadium)
+        contentView.addSubview(matchTime)
     }
 
     private func setUpConstraints() {
@@ -128,7 +147,7 @@ class GameCell: UICollectionViewCell {
             stackViewScore.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             stackViewScore.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             stackViewScore.heightAnchor.constraint(equalToConstant: 70),
-            stackViewScore.widthAnchor.constraint(equalToConstant: 70),
+            stackViewScore.widthAnchor.constraint(equalToConstant: 90),
 
             logoAwayTeam.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             logoAwayTeam.centerXAnchor.constraint(equalTo: nameAwayTeam.centerXAnchor),
@@ -139,6 +158,16 @@ class GameCell: UICollectionViewCell {
             nameAwayTeam.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 10),
             nameAwayTeam.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             nameAwayTeam.bottomAnchor.constraint(equalTo: nameHomeTeam.bottomAnchor),
+
+            matchTime.heightAnchor.constraint(equalToConstant: 20),
+            matchTime.leadingAnchor.constraint(equalTo: stackViewScore.leadingAnchor),
+            matchTime.trailingAnchor.constraint(equalTo: stackViewScore.trailingAnchor),
+            matchTime.bottomAnchor.constraint(equalTo: stackViewScore.topAnchor, constant: -10),
+            //
+            //            stadium.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            //            stadium.leadingAnchor.constraint(equalTo: logoHomeTeam.leadingAnchor),
+            //            stadium.trailingAnchor.constraint(equalTo: logoAwayTeam.trailingAnchor),
+            //            stadium.bottomAnchor.constraint(equalTo: stackViewScore.topAnchor, constant: -20),
         ])
     }
 
@@ -147,15 +176,14 @@ class GameCell: UICollectionViewCell {
         let logoHomeTeam = URL(string: "\(viewModel.homeBadge)")
         let logoAwayTeam = URL(string: "\(viewModel.awayBadge)")
 
-        // MARK: Home
+        stadium.text = viewModel.stadium
         nameHomeTeam.text = viewModel.homeTeamName
-        scoreHomeTeam.text = viewModel.homeTeamScore
-        self.logoHomeTeam.kf.setImage(with: logoHomeTeam)
-
-        // MARK: Away
         nameAwayTeam.text = viewModel.awayTeamName
-        scoreAwayTeam.text = viewModel.awayTeamScore
+        self.logoHomeTeam.kf.setImage(with: logoHomeTeam)
         self.logoAwayTeam.kf.setImage(with: logoAwayTeam)
+        scoreHomeTeam.text = viewModel.homeTeamScore
+        scoreAwayTeam.text = viewModel.awayTeamScore
+        matchTime.text = viewModel.matchTime
     }
 
     func configure(viewModel: GameModels.ViewModel.Game) {

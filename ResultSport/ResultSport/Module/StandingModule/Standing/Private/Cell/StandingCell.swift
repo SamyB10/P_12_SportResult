@@ -14,7 +14,7 @@ class StandingCell: UICollectionViewCell {
     private lazy var positionTeam: UILabel = {
         let posititon = UILabel()
         posititon.textAlignment = .center
-        posititon.font = .systemFont(ofSize: 12, weight: .bold)
+        posititon.font = .systemFont(ofSize: 15, weight: .bold)
         posititon.textColor = .white
         posititon.translatesAutoresizingMaskIntoConstraints = false
         return posititon
@@ -23,7 +23,7 @@ class StandingCell: UICollectionViewCell {
     private lazy var teamName: UILabel = {
         let name = UILabel()
         name.textAlignment = .left
-        name.font = .systemFont(ofSize: 12, weight: .regular)
+        name.font = .systemFont(ofSize: 15, weight: .regular)
         name.textColor = .white
         name.translatesAutoresizingMaskIntoConstraints = false
         return name
@@ -39,7 +39,7 @@ class StandingCell: UICollectionViewCell {
     private lazy var labelWin: UILabel = {
         let win = UILabel()
         win.textAlignment = .center
-        win.font = .systemFont(ofSize: 12, weight: .regular)
+        win.font = .systemFont(ofSize: 15, weight: .regular)
         win.textColor = .white
         win.translatesAutoresizingMaskIntoConstraints = false
         return win
@@ -48,7 +48,7 @@ class StandingCell: UICollectionViewCell {
     private lazy var labelLose: UILabel = {
         let lose = UILabel()
         lose.textAlignment = .center
-        lose.font = .systemFont(ofSize: 12, weight: .regular)
+        lose.font = .systemFont(ofSize: 15, weight: .regular)
         lose.textColor = .white
         lose.translatesAutoresizingMaskIntoConstraints = false
         return lose
@@ -57,7 +57,7 @@ class StandingCell: UICollectionViewCell {
     private lazy var labelNul: UILabel = {
         let nul = UILabel()
         nul.textAlignment = .center
-        nul.font = .systemFont(ofSize: 12, weight: .regular)
+        nul.font = .systemFont(ofSize: 15, weight: .regular)
         nul.textColor = .white
         nul.translatesAutoresizingMaskIntoConstraints = false
         return nul
