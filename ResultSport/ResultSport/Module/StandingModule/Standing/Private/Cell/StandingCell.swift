@@ -10,7 +10,6 @@ import UIKit
 class StandingCell: UICollectionViewCell {
 
     // MARK: - Subviews
-
     private lazy var positionTeam: UILabel = {
         let posititon = UILabel()
         posititon.textAlignment = .center
@@ -23,7 +22,7 @@ class StandingCell: UICollectionViewCell {
     private lazy var teamName: UILabel = {
         let name = UILabel()
         name.textAlignment = .left
-        name.font = .systemFont(ofSize: 15, weight: .regular)
+        name.font = .systemFont(ofSize: 13, weight: .regular)
         name.textColor = .white
         name.translatesAutoresizingMaskIntoConstraints = false
         return name
@@ -39,7 +38,7 @@ class StandingCell: UICollectionViewCell {
     private lazy var labelWin: UILabel = {
         let win = UILabel()
         win.textAlignment = .center
-        win.font = .systemFont(ofSize: 15, weight: .regular)
+        win.font = .systemFont(ofSize: 13, weight: .regular)
         win.textColor = .white
         win.translatesAutoresizingMaskIntoConstraints = false
         return win
@@ -48,7 +47,7 @@ class StandingCell: UICollectionViewCell {
     private lazy var labelLose: UILabel = {
         let lose = UILabel()
         lose.textAlignment = .center
-        lose.font = .systemFont(ofSize: 15, weight: .regular)
+        lose.font = .systemFont(ofSize: 13, weight: .regular)
         lose.textColor = .white
         lose.translatesAutoresizingMaskIntoConstraints = false
         return lose
@@ -57,14 +56,24 @@ class StandingCell: UICollectionViewCell {
     private lazy var labelNul: UILabel = {
         let nul = UILabel()
         nul.textAlignment = .center
-        nul.font = .systemFont(ofSize: 15, weight: .regular)
+        nul.font = .systemFont(ofSize: 13, weight: .regular)
         nul.textColor = .white
         nul.translatesAutoresizingMaskIntoConstraints = false
         return nul
     }()
 
+    private lazy var gamePlayed: UILabel = {
+        let win = UILabel()
+        win.font = .systemFont(ofSize: 13, weight: .regular)
+        win.textColor = .white
+        win.textAlignment = .center
+        win.translatesAutoresizingMaskIntoConstraints = false
+        return win
+    }()
+
     private lazy var stackViewGlobalGame: UIStackView = {
-        let stackViewGlobalGame = UIStackView(arrangedSubviews: [labelWin,
+        let stackViewGlobalGame = UIStackView(arrangedSubviews: [gamePlayed,
+                                                                 labelWin,
                                                                  labelNul,
                                                                  labelLose])
         stackViewGlobalGame.alignment = .center
@@ -126,7 +135,12 @@ class StandingCell: UICollectionViewCell {
 
     private func updateInterface() {
         guard let viewModel = viewModel,
-              let logoTeam = viewModel.teamLogo else { return }
+              let logoTeam = viewModel.teamLogo,
+              let gameLose = Int(viewModel.gameLose ?? "0"),
+              let gameNul = Int(viewModel.gameNul ?? "0"),
+              let gameWin = Int(viewModel.gameWin ?? "0") else { return }
+        let gamePlayedInt = gameLose + gameNul + gameWin
+
         let teamLogo = URL(string: logoTeam)
         self.teamLogo.kf.setImage(with: teamLogo)
         teamName.text = viewModel.teamName
@@ -134,6 +148,7 @@ class StandingCell: UICollectionViewCell {
         labelWin.text = viewModel.gameWin
         labelNul.text = viewModel.gameNul
         labelLose.text = viewModel.gameLose
+        gamePlayed.text = String(gamePlayedInt)
     }
 
     private func borderCercle() {

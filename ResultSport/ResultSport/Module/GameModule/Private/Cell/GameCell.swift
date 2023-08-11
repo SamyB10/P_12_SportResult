@@ -127,7 +127,6 @@ class GameCell: UICollectionViewCell {
         contentView.addSubview(stackViewScore)
         contentView.addSubview(nameAwayTeam)
         contentView.addSubview(logoAwayTeam)
-//        contentView.addSubview(stadium)
         contentView.addSubview(matchTime)
     }
 
@@ -163,11 +162,6 @@ class GameCell: UICollectionViewCell {
             matchTime.leadingAnchor.constraint(equalTo: stackViewScore.leadingAnchor),
             matchTime.trailingAnchor.constraint(equalTo: stackViewScore.trailingAnchor),
             matchTime.bottomAnchor.constraint(equalTo: stackViewScore.topAnchor, constant: -10),
-            //
-            //            stadium.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
-            //            stadium.leadingAnchor.constraint(equalTo: logoHomeTeam.leadingAnchor),
-            //            stadium.trailingAnchor.constraint(equalTo: logoAwayTeam.trailingAnchor),
-            //            stadium.bottomAnchor.constraint(equalTo: stackViewScore.topAnchor, constant: -20),
         ])
     }
 
@@ -176,11 +170,21 @@ class GameCell: UICollectionViewCell {
         let logoHomeTeam = URL(string: "\(viewModel.homeBadge)")
         let logoAwayTeam = URL(string: "\(viewModel.awayBadge)")
 
+        if logoAwayTeam == nil {
+            self.logoAwayTeam.image = UIImage(named: "placeholderImage")
+        } else {
+            self.logoAwayTeam.kf.setImage(with: logoAwayTeam)
+        }
+
+        if logoHomeTeam == nil {
+            self.logoHomeTeam.image = UIImage(named: "placeholderImage")
+        } else {
+            self.logoHomeTeam.kf.setImage(with: logoHomeTeam)
+        }
+
         stadium.text = viewModel.stadium
         nameHomeTeam.text = viewModel.homeTeamName
         nameAwayTeam.text = viewModel.awayTeamName
-        self.logoHomeTeam.kf.setImage(with: logoHomeTeam)
-        self.logoAwayTeam.kf.setImage(with: logoAwayTeam)
         scoreHomeTeam.text = viewModel.homeTeamScore
         scoreAwayTeam.text = viewModel.awayTeamScore
         matchTime.text = viewModel.matchTime

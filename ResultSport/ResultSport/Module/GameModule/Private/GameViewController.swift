@@ -91,6 +91,7 @@ class GameViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = pickerButton
         setupInterface()
         setupConstraints()
+        activityIndicatorStart()
         presenter?.didLoad()
     }
 
@@ -138,8 +139,10 @@ class GameViewController: UIViewController {
     }
 
     private func activityIndicatorStart() {
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
+        Task {
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+        }
     }
 
     private func activityIndicatorEnd() {
@@ -151,6 +154,7 @@ class GameViewController: UIViewController {
 extension GameViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter?.didSelectItem(indexPath: indexPath.row)
+        activityIndicatorStart()
     }
 }
 

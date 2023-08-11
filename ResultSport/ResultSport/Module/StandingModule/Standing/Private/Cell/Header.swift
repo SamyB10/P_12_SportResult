@@ -16,11 +16,11 @@ class HeaderCell: UICollectionViewCell {
             updateInterface()
         }
     }
-    
+
     // MARK: - Subviews
     private lazy var labelWin: UILabel = {
         let win = UILabel()
-        win.font = .systemFont(ofSize: 20, weight: .bold)
+        win.font = .systemFont(ofSize: 15, weight: .bold)
         win.textColor = .white
         win.textAlignment = .center
         win.text = "W"
@@ -30,7 +30,7 @@ class HeaderCell: UICollectionViewCell {
 
     private lazy var labelLose: UILabel = {
         let lose = UILabel()
-        lose.font = .systemFont(ofSize: 20, weight: .bold)
+        lose.font = .systemFont(ofSize: 15, weight: .bold)
         lose.textColor = .white
         lose.textAlignment = .center
         lose.text = "L"
@@ -40,7 +40,7 @@ class HeaderCell: UICollectionViewCell {
 
     private lazy var labelNul: UILabel = {
         let nul = UILabel()
-        nul.font = .systemFont(ofSize: 20, weight: .bold)
+        nul.font = .systemFont(ofSize: 15, weight: .bold)
         nul.textColor = .white
         nul.textAlignment = .center
         nul.translatesAutoresizingMaskIntoConstraints = false
@@ -48,9 +48,19 @@ class HeaderCell: UICollectionViewCell {
         return nul
     }()
 
+    private lazy var gamePlayed: UILabel = {
+        let win = UILabel()
+        win.font = .systemFont(ofSize: 15, weight: .bold)
+        win.textColor = .white
+        win.textAlignment = .center
+        win.text = "MJ"
+        win.translatesAutoresizingMaskIntoConstraints = false
+        return win
+    }()
+
     private lazy var labelChampionship: UILabel = {
         let win = UILabel()
-        win.font = .systemFont(ofSize: 20, weight: .bold)
+        win.font = .systemFont(ofSize: 15, weight: .bold)
         win.textColor = .white
         win.textAlignment = .center
         win.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +68,8 @@ class HeaderCell: UICollectionViewCell {
     }()
 
     private lazy var stackViewGlobalGame: UIStackView = {
-        let stackViewGlobalGame = UIStackView(arrangedSubviews: [labelWin,
+        let stackViewGlobalGame = UIStackView(arrangedSubviews: [gamePlayed,
+                                                                 labelWin,
                                                                  labelNul,
                                                                  labelLose])
         stackViewGlobalGame.alignment = .center

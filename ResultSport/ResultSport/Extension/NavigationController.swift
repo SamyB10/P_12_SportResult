@@ -15,7 +15,7 @@ extension UINavigationController {
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .clear
 
-        let titleFont = UIFont.systemFont(ofSize: 25)
+        let titleFont = UIFont.systemFont(ofSize: 18)
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
                                           NSAttributedString.Key.font: titleFont]
         appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
