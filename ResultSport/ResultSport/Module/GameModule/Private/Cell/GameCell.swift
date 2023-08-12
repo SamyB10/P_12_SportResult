@@ -83,6 +83,15 @@ class GameCell: UICollectionViewCell {
         return score
     }()
 
+    private lazy var statusMatch: UILabel = {
+        let score = UILabel()
+        score.textAlignment = .center
+        score.font = .monospacedSystemFont(ofSize: 14, weight: .bold)
+        score.textColor = .white
+        score.translatesAutoresizingMaskIntoConstraints = false
+        return score
+    }()
+
     private lazy var betweenScore: UILabel = {
         let betweenScore = UILabel()
         betweenScore.textAlignment = .center
@@ -128,6 +137,7 @@ class GameCell: UICollectionViewCell {
         contentView.addSubview(nameAwayTeam)
         contentView.addSubview(logoAwayTeam)
         contentView.addSubview(matchTime)
+        stackViewScore.addSubview(statusMatch)
     }
 
     private func setUpConstraints() {
@@ -162,6 +172,11 @@ class GameCell: UICollectionViewCell {
             matchTime.leadingAnchor.constraint(equalTo: stackViewScore.leadingAnchor),
             matchTime.trailingAnchor.constraint(equalTo: stackViewScore.trailingAnchor),
             matchTime.bottomAnchor.constraint(equalTo: stackViewScore.topAnchor, constant: -10),
+
+            statusMatch.topAnchor.constraint(equalTo: betweenScore.bottomAnchor, constant: 10),
+            statusMatch.leadingAnchor.constraint(equalTo: stackViewScore.leadingAnchor),
+            statusMatch.trailingAnchor.constraint(equalTo: stackViewScore.trailingAnchor),
+            statusMatch.bottomAnchor.constraint(equalTo: stackViewScore.bottomAnchor),
         ])
     }
 
@@ -188,6 +203,7 @@ class GameCell: UICollectionViewCell {
         scoreHomeTeam.text = viewModel.homeTeamScore
         scoreAwayTeam.text = viewModel.awayTeamScore
         matchTime.text = viewModel.matchTime
+        statusMatch.text = viewModel.matchStatus
     }
 
     func configure(viewModel: GameModels.ViewModel.Game) {

@@ -1,18 +1,18 @@
 //
-//  ResultSportTests.swift
+//  TestCompetitions.swift
 //  ResultSportTests
 //
-//  Created by Samy Boussair on 04/08/2023.
+//  Created by Samy Boussair on 12/08/2023.
 //
 
 import XCTest
 @testable import ResultSport
 
-final class ResultSportTests: XCTestCase {
+final class TestCompetitionsApi: XCTestCase {
 
     override func setUpWithError() throws {
-        if let jsonData = MockURLProtocol.loadJSONData(filename: "MockGame") {
-            let url = "https://apiv3.apifootball.com/?action=get_events&from=2023-04-05&to=2023-04-05&APIkey=\(Key.apiKey)"
+        if let jsonData = MockURLProtocol.loadJSONData(filename: "MockLeague") {
+            let url = "https://apiv3.apifootball.com/?action=get_leagues&APIkey=\(Key.apiKey)"
             MockURLProtocol.mockData[url] = jsonData
         }
         URLProtocol.registerClass(MockURLProtocol.self)
@@ -25,16 +25,16 @@ final class ResultSportTests: XCTestCase {
     func testApiGameOk() async {
         let request = HttpRequest()
 
-        if let jsonData = MockURLProtocol.loadJSONData(filename: "MockGame") {
-            let url = "https://apiv3.apifootball.com/?action=get_events&from=2023-04-05&to=2023-04-05&APIkey=\(Key.apiKey)"
+        if let jsonData = MockURLProtocol.loadJSONData(filename: "MockLeague") {
+            let url = "https://apiv3.apifootball.com/?action=get_leagues&APIkey=\(Key.apiKey)"
             MockURLProtocol.mockData[url] = jsonData
             let expectation = XCTestExpectation(description: "Network request")
-            let result = await request.fetchSchedule(from: "2023-04-05", to: "2023-04-05")
+            let result = await request.fetchCountryAndLeague()
 
             switch result {
             case .success(let decodedResponse):
                 XCTAssertNotNil(decodedResponse)
-                XCTAssertEqual(decodedResponse.count, 2)
+                XCTAssertEqual(decodedResponse.count, 88)
                 expectation.fulfill()
             case .failure(let error):
                 print("Error during decoding: \(error.localizedDescription)")

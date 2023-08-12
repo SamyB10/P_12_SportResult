@@ -6,8 +6,28 @@
 	<dict>
 		<key>ResultSport.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0DB1A64E2A7CEF6C008D0ECE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0DB1A6642A7CEF6D008D0ECE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0DB1A66E2A7CEF6D008D0ECE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
