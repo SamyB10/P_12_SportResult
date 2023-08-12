@@ -66,6 +66,7 @@
 		0DB1A7152A8183DE008D0ECE /* RestStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7142A8183DE008D0ECE /* RestStanding.swift */; };
 		0DB1A7182A82D9FF008D0ECE /* StandingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7172A82D9FF008D0ECE /* StandingCell.swift */; };
 		0DB1A71A2A855AA2008D0ECE /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A7192A855AA2008D0ECE /* Header.swift */; };
+		0DB1A71C2A878DBA008D0ECE /* ConfigApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A71B2A878DBA008D0ECE /* ConfigApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		0DB1A7142A8183DE008D0ECE /* RestStanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestStanding.swift; sourceTree = "<group>"; };
 		0DB1A7172A82D9FF008D0ECE /* StandingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingCell.swift; sourceTree = "<group>"; };
 		0DB1A7192A855AA2008D0ECE /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		0DB1A71B2A878DBA008D0ECE /* ConfigApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				0DB1A6B32A7CF02A008D0ECE /* HTTPRequest.swift */,
+				0DB1A71B2A878DBA008D0ECE /* ConfigApi.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				0DB1A6932A7CF003008D0ECE /* GameContext.swift in Sources */,
 				0DB1A6EB2A7CF0DE008D0ECE /* GameBusinessLogic.swift in Sources */,
 				0DB1A7012A7CF0DE008D0ECE /* CompetitionCell.swift in Sources */,
+				0DB1A71C2A878DBA008D0ECE /* ConfigApi.swift in Sources */,
 				0DB1A7032A7CF0DE008D0ECE /* CompetitionCollectionView.swift in Sources */,
 				0DB1A6F92A7CF0DE008D0ECE /* StandingViewController.swift in Sources */,
 				0DB1A6F32A7CF0DE008D0ECE /* StandingProtocol.swift in Sources */,

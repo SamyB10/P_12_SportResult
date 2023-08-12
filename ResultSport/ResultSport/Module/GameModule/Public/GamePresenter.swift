@@ -1,5 +1,5 @@
 //
-//  File 3.swift
+//  GamePresenter.swift
 //  
 //
 //  Created by Samy Boussair on 28/07/2023.
@@ -39,13 +39,13 @@ public final class GamePresenter {
         self.display = display
     }
 
-    func day() {
+    private func day() {
         let calendar = Calendar.current
         let currentDate = Date()
 
         var dateComponents = DateComponents()
         dateComponents.day = -3
-        let startDate = calendar.date(byAdding: dateComponents, to: currentDate)!
+        guard let startDate = calendar.date(byAdding: dateComponents, to: currentDate) else { return }
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -57,7 +57,10 @@ public final class GamePresenter {
                 if calendar.isDate(dateForDay, inSameDayAs: currentDate) {
                     isActive = true
                 }
-                let day = weekdays[i]
+
+                let dayIndex = calendar.component(.weekday, from: dateForDay) - 1
+                let day = weekdays[dayIndex]
+
                 let dateString = dateFormatter.string(from: dateForDay)
                 let viewModel = GameModels.ViewModel(day: day,
                                                      dayNumber: dateString,

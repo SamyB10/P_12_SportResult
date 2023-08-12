@@ -18,8 +18,6 @@ enum HTTPError: Error {
 }
 
 struct HttpRequest {
-    let apiKey = "24a604d4019a2d99e8b2769d24ef656e177cbe5d0fdb58c7cb651b04f2ad806f"
-
     func fetchCountryAndLeague() async -> Result<[RestCompetitions], HTTPError> {
 
         var urlComponents = URLComponents()
@@ -28,7 +26,7 @@ struct HttpRequest {
         urlComponents.path = "/"
         urlComponents.queryItems = [
             URLQueryItem(name: "action", value: "get_leagues"),
-            URLQueryItem(name: "APIkey", value: apiKey)
+            URLQueryItem(name: "APIkey", value: Key.apiKey)
         ]
 
         guard let url = urlComponents.url else {
@@ -65,7 +63,7 @@ struct HttpRequest {
         urlComponents.queryItems = [
             URLQueryItem(name: "action", value: "get_leagues"),
             URLQueryItem(name: "country_id", value: id),
-            URLQueryItem(name: "APIkey", value: apiKey)
+            URLQueryItem(name: "APIkey", value: Key.apiKey)
         ]
 
         guard let url = urlComponents.url else {
@@ -104,7 +102,7 @@ struct HttpRequest {
             URLQueryItem(name: "action", value: "get_events"),
             URLQueryItem(name: "from", value: from),
             URLQueryItem(name: "to", value: to),
-            URLQueryItem(name: "APIkey", value: apiKey)
+            URLQueryItem(name: "APIkey", value: Key.apiKey)
         ]
 
         guard let url = urlComponents.url else {
@@ -141,7 +139,7 @@ struct HttpRequest {
         urlComponents.queryItems = [
             URLQueryItem(name: "action", value: "get_standings"),
             URLQueryItem(name: "league_id", value: leagueId),
-            URLQueryItem(name: "APIkey", value: apiKey)
+            URLQueryItem(name: "APIkey", value: Key.apiKey)
         ]
 
         guard let url = urlComponents.url else {

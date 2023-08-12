@@ -15,7 +15,6 @@ class DateCell: UICollectionViewCell {
         let day = UILabel()
         day.textAlignment = .center
         day.font = .systemFont(ofSize: 14, weight: .bold)
-//        day.font = .italicSystemFont(ofSize: 14)
         day.textColor = .white
         day.textAlignment = .center
         day.translatesAutoresizingMaskIntoConstraints = false
