@@ -187,6 +187,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D68C9D22A8922A500106E47 /* Competitions */ = {
+			isa = PBXGroup;
+			children = (
+				0DA6B01F2A87E27C00BC0309 /* TestCompetitionsApi.swift */,
+			);
+			path = Competitions;
+			sourceTree = "<group>";
+		};
 		0DA6B01C2A87E20500BC0309 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,7 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				0DB1A6692A7CEF6D008D0ECE /* ResultSportTests.swift */,
-				0DA6B01F2A87E27C00BC0309 /* TestCompetitionsApi.swift */,
+				0D68C9D22A8922A500106E47 /* Competitions */,
 				0DB1A71E2A879008008D0ECE /* MockUrlSession.swift */,
 				0DA6B01C2A87E20500BC0309 /* Mock */,
 			);
