@@ -22,7 +22,7 @@ final class TestCompetitionsApi: XCTestCase {
         URLProtocol.unregisterClass(MockURLProtocol.self)
     }
 
-    func testApiGameOk() async {
+    func testApiLeagueOk() async {
         let request = HttpRequest()
 
         if let jsonData = MockURLProtocol.loadJSONData(filename: "MockLeague") {
@@ -45,7 +45,7 @@ final class TestCompetitionsApi: XCTestCase {
             XCTFail("Failed to load mock JSON file")
         }
     }
-    //
+
     func testPresentInterface() {
         let interactor = MockInteractor()
         let presenter = CompetitionPresenter(interactor: interactor)
@@ -79,8 +79,9 @@ final class TestCompetitionsApi: XCTestCase {
         let presenter = CompetitionPresenter(interactor: interactor)
         let mockDisplay = MockDisplay()
         presenter.inject(display: mockDisplay)
-        presenter.presentError()
-        XCTAssertTrue(mockDisplay.didDisplayLoader)
+        
+        presenter.presentError(with: NetworkError.failedLoading)
+        XCTAssertTrue(mockDisplay.didDisplayError)
     }
 
     func testDidLoad() {

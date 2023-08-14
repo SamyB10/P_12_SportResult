@@ -215,7 +215,14 @@ extension GameViewController: GameDisplayLogic {
         self.viewModelGame = viewModel
     }
 
-    func displayError(with error: Error) {}
+    func displayError(with error: Error) {
+        let alertController = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        Task {
+            present(alertController, animated: true, completion: nil)
+        }
+    }
 
     func displayLoader() {
         activityIndicatorStart()

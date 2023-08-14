@@ -133,14 +133,6 @@ extension CompetitionViewController: UITextFieldDelegate {
         presenter?.searchCompetition(country: country)
         return true
     }
-
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        view.endEditing(true)
-//        super.touchesBegan(touches, with: event)
-//        guard let country = textField.text else { return }
-//        activityIndicatorStart()
-//        presenter?.searchCompetition(country: country)
-//    }
 }
 
 extension CompetitionViewController: CompetitionDisplayLogic {
@@ -152,7 +144,14 @@ extension CompetitionViewController: CompetitionDisplayLogic {
         self.viewModel = viewModel
     }
     
-    func displayError(with error: Error) {}
+    func displayError(with error: Error) {
+        let alertController = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        Task {
+            present(alertController, animated: true, completion: nil)
+        }
+    }
     
     func displayLoader() {
         activityIndicatorStart()

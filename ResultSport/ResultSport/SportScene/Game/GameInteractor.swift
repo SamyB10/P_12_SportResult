@@ -6,11 +6,10 @@
 //
 
 import Foundation
-//import GameModuleKit
 
 class GameInteractor {
 
-    private weak var presenter: GamePresenter?
+    private weak var presenter: GamePresentationLogic?
     private var router: GameRoutingLogic?
     private let request = HttpRequest()
 
@@ -19,7 +18,8 @@ class GameInteractor {
             guard contextGame != oldValue else { return }
             switch (contextGame.gameContext, contextGame.didFailLoading) {
             case (_, true):
-                self.presenter?.presentError()
+                let error = NetworkError.failedLoading
+                self.presenter?.presentError(with: error)
             case (.none, false):
                 self.presenter?.presentLoader()
             case (.some(let gameContent), false):
@@ -32,12 +32,11 @@ class GameInteractor {
         self.router = router
     }
 
-    func inject(presenter: GamePresenter) {
+    func inject(presenter: GamePresentationLogic) {
         self.presenter = presenter
     }
 
-    private func fetchGame(from: String, to: String) async {
-//        let test = "2023-03-05"
+    private func fetch(from: String, to: String) async {
         contextGame.willLoadContent()
         switch await request.fetchSchedule(from: from, to: to) {
         case .success(let game):
@@ -45,40 +44,6 @@ class GameInteractor {
         case .failure:
             contextGame.didFailLoading = true
         }
-
-//        // MARK: Simulate response
-//        let game = await simulateFetchingGame()
-//        presenteResponseGame(with: game)
-    }
-
-    private func simulateFetchingGame() async -> [RestSchedule] {
-        var games: [RestSchedule] = []
-
-        for i in 0...10 {
-            let countryId = "\(i)"
-            let countryName = "Pays \(i)"
-            let leagueId = "\(i)"
-            let leagueName = "Ligue \(i)"
-            let leagueLogo = "logo\(i)"
-
-            let game = RestSchedule(matchId: "matchId_\(i)",
-                                    countryId: countryId,
-                                    countryName: countryName,
-                                    leagueId: leagueId,
-                                    leagueName: leagueName,
-                                    matchStatus: "Match Status \(i)",
-                                    matchTime: "Match Time \(i)",
-                                    homeTeamName: "Manchester city \(i)",
-                                    homeTeamScore: "\(i)",
-                                    awayTeamName: "Away Team \(i)",
-                                    awayTeamScore: "\(i)",
-                                    stadium: "Stadium \(i)",
-                                    homeBadge: "Home Badge \(i)",
-                                    awayBadge: "Away Badge \(i)",
-                                    leagueLogo: leagueLogo)
-            games.append(game)
-        }
-        return games
     }
 
     private func presenteResponseGame(with game: [RestSchedule]) {
@@ -88,22 +53,6 @@ class GameInteractor {
 
     private func mapGame(with game: [RestSchedule]) -> [GameModels.Response] {
         return game.compactMap { game in
-//            guard let matchId = game.matchId,
-//                  let countryId = game.countryId,
-//                  let countryName = game.countryName,
-//                  let leagueId = game.leagueId,
-//                  let leagueName = game.leagueName,
-//                  let matchStatus = game.matchStatus,
-//                  let matchTime = game.matchTime,
-//                  let homeTeamName = game.homeTeamName,
-//                  let homeTeamScore = game.homeTeamScore,
-//                  let awayTeamName = game.awayTeamName,
-//                  let awayTeamScore = game.awayTeamScore,
-//                  let stadium = game.stadium,
-//                  let homeBadge = game.homeBadge,
-//                  let awayBadge = game.awayBadge,
-//                  let leagueLogo = game.leagueLogo else { return nil }
-
             return GameModels.Response(matchId: game.matchId,
                                        countryId: game.countryId,
                                        countryName: game.countryName,
@@ -126,8 +75,6 @@ class GameInteractor {
 extension GameInteractor: GameBusinessLogic {
 
     func start(from: String, to: String) async {
-        await fetchGame(from: from, to: to)
+        await fetch(from: from, to: to)
     }
-
-    func fetch() async {}
 }

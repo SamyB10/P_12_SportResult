@@ -6,6 +6,9 @@
 //
 
 import Foundation
+public enum NetworkError: Error {
+    case failedLoading
+}
 
 class CompetitionInteractor {
 
@@ -26,7 +29,8 @@ class CompetitionInteractor {
             guard contextSport != oldValue else { return }
             switch (contextSport.sportContext, contextSport.didFailLoading) {
             case (_, true):
-                self.presenter?.presentError()
+                let error = NetworkError.failedLoading
+                self.presenter?.presentError(with: error)
             case (.none, false):
                 self.presenter?.presentLoader()
             case (.some(let competitionsContent), false):

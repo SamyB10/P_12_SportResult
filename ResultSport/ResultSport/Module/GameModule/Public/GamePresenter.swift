@@ -10,7 +10,7 @@ import Foundation
 public protocol GamePresentationLogic: AnyObject {
     func presentInterface(with response: [GameModels.Response])
     func presentLoader()
-    func presentError()
+    func presentError(with error: Error)
 }
 
 enum League: String, CaseIterable {
@@ -29,7 +29,6 @@ public final class GamePresenter {
     private var interactor: GameBusinessLogic
     private var viewModels: [GameModels.ViewModel] = []
     private var viewModelsChampionship: GameModels.ViewModel.Championship?
-
 
     public init(interactor: GameBusinessLogic) {
         self.interactor = interactor
@@ -164,8 +163,8 @@ extension GamePresenter: GamePresentationLogic {
         display?.displayLoader()
     }
 
-    public func presentError() {
-        display?.displayLoader()
+    public func presentError(with error: Error) {
+        display?.displayError(with: error)
     }
 }
 

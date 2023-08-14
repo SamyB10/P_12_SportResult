@@ -8,12 +8,12 @@
 import Foundation
 @testable import ResultSport
 
-class MockPresenter: CompetitionPresentationLogic {
+class MockPresenterGame: GamePresentationLogic {
     var didPresentInterface = false
     var didPresentLoader = false
     var didPresentError = false
 
-    func presentInterface(with response: [CompetitionModels.Response]) {
+    func presentInterface(with response: [GameModels.Response]) {
         didPresentInterface = true
     }
 
@@ -21,7 +21,7 @@ class MockPresenter: CompetitionPresentationLogic {
         didPresentLoader = true
     }
 
-    func presentError() {
+    func presentError(with error: Error) {
         didPresentError = true
     }
 }

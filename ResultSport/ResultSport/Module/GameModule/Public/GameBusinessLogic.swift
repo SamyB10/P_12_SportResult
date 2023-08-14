@@ -10,5 +10,4 @@ import UIKit
 
 public protocol GameBusinessLogic {
     func start(from: String, to: String) async
-    func fetch() async
 }

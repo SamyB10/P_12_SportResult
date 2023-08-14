@@ -18,7 +18,8 @@ class StandingInteractor {
             guard contextStanding != oldValue else { return }
             switch (contextStanding.standingContext, contextStanding.didFailLoading) {
             case (_, true):
-                self.presenter?.presentError()
+                let error = NetworkError.failedLoading
+                self.presenter?.presentError(with: error)
             case (.none, false):
                 self.presenter?.presentLoader()
             case (.some(let standingContent), false):
@@ -43,10 +44,6 @@ class StandingInteractor {
         case .failure:
             contextStanding.didFailLoading = true
         }
-
-        // MARK: Simulate response
-//        let game = await simulateFetchingGame()
-//        presenteResponseGame(with: game)
     }
 
     private func presenteResponse(with standing: [RestStanding]) {

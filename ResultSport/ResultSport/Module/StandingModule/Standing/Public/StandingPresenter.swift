@@ -10,7 +10,7 @@ import Foundation
 public protocol StandingPresentationLogic: AnyObject {
     func presentInterface(with response: [StandingModels.Response])
     func presentLoader()
-    func presentError()
+    func presentError(with error: Error)
 }
 
 public final class StandingPresenter {
@@ -54,8 +54,8 @@ extension StandingPresenter: StandingPresentationLogic {
 
     public func presentLoader() {}
 
-    public func presentError() {
-        display?.displayLoader()
+    public func presentError(with error: Error) {
+        display?.displayError(with: error)
     }
 }
 

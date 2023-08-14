@@ -10,7 +10,7 @@ import Foundation
 public protocol CompetitionPresentationLogic: AnyObject {
     func presentInterface(with response: [CompetitionModels.Response])
     func presentLoader()
-    func presentError()
+    func presentError(with error: Error)
 }
 
 public final class CompetitionPresenter {
@@ -71,8 +71,8 @@ extension CompetitionPresenter: CompetitionPresentationLogic {
         display?.displayLoader()
     }
     
-    public func presentError() {
-        display?.displayLoader()
+    public func presentError(with error: Error) {
+        display?.displayError(with: error)
     }
 }
 
