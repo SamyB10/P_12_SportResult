@@ -45,7 +45,7 @@ final class TestCompetitionsApi: XCTestCase {
             XCTFail("Failed to load mock JSON file")
         }
     }
-//
+    //
     func testPresentInterface() {
         let interactor = MockInteractor()
         let presenter = CompetitionPresenter(interactor: interactor)
@@ -126,47 +126,43 @@ final class TestCompetitionsApi: XCTestCase {
         }
         wait(for: [expectation], timeout: 5.0)
     }
-}
 
-class MockInteractor: CompetitionBusinessLogic {
-    var didStart = false
-    var didFetch = false
-    var didNextPage = false
-    var didFetchCountry = false
+    func testStart() {
+        let mockPresenter = MockPresenter()
+        let mockRouter = MockRouter()
+        let interactor = CompetitionInteractor(router: mockRouter)
+        interactor.inject(presenter: mockPresenter)
 
-    func start() async {
-        didStart = true
+        let expectation = XCTestExpectation(description: "start expectation")
+        Task {
+            await interactor.start()
+            XCTAssertTrue(mockPresenter.didPresentInterface)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
     }
 
-    func fetch() async {
-        didFetch = true
+    func testFetchCountry() {
+        let mockPresenter = MockPresenter()
+        let mockRouter = MockRouter()
+        let interactor = CompetitionInteractor(router: mockRouter)
+        interactor.inject(presenter: mockPresenter)
+
+        let expectation = XCTestExpectation(description: "fetchCountry expectation")
+        Task {
+            await interactor.fetchCountry(id: "6")
+            XCTAssertTrue(mockPresenter.didPresentError)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
     }
 
-    func nextPage(id: String) {
-        didNextPage = true
-    }
-
-    func fetchCountry(id: String) async {
-        didFetchCountry = true
-    }
-}
-
-class MockDisplay: CompetitionDisplayLogic {
-    var didDisplayInterface = false
-    var didDisplayLoader = false
-    var didDisplayError = false
-
-    func displayInterface(with viewModel: [ResultSport.CompetitionModels.ViewModel]) {
-        didDisplayInterface = true
-    }
-
-    func updateInterface(with viewModel: [ResultSport.CompetitionModels.ViewModel]) {}
-
-    func displayError(with error: Error) {
-        didDisplayError = true
-    }
-
-    func displayLoader() {
-        didDisplayLoader = true
+    func testNextPage() {
+        let mockPresenter = MockPresenter()
+        let mockRouter = MockRouter()
+        let interactor = CompetitionInteractor(router: mockRouter)
+        interactor.inject(presenter: mockPresenter)
+        interactor.nextPage(id: "3")
+        XCTAssertTrue(mockRouter.didNextpage)
     }
 }

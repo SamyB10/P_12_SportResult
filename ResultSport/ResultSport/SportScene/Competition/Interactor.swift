@@ -6,11 +6,10 @@
 //
 
 import Foundation
-//import SportModuleKit
 
 class CompetitionInteractor {
 
-    private weak var presenter: CompetitionPresenter?
+    private weak var presenter: CompetitionPresentationLogic?
     private var router: CompetitionRoutingLogic?
     private let request = HttpRequest()
     
@@ -18,7 +17,7 @@ class CompetitionInteractor {
         self.router = router
     }
     
-    func inject(presenter: CompetitionPresenter) {
+    func inject(presenter: CompetitionPresentationLogic) {
         self.presenter = presenter
     }
     
@@ -38,15 +37,12 @@ class CompetitionInteractor {
     
     private func fetchCompetionsWithId(id: String) async {
         contextSport.willLoadContent()
-        switch await request.fetchCountryAndLeague(id: id) {
+          switch await request.fetchCountryAndLeague(id: id) {
         case .success(let competitions):
             contextSport.sportContext = competitions
         case .failure:
             contextSport.didFailLoading = true
         }
-//        // MARK: Simulate response
-//        let competitions = await simulateFetchingCompetitions()
-//        presenteResponseCompetitions(with: competitions)
     }
 
     private func fetchCompetions() async {
@@ -57,30 +53,6 @@ class CompetitionInteractor {
         case .failure:
             contextSport.didFailLoading = true
         }
-//        // MARK: Simulate response
-//        let competitions = await simulateFetchingCompetitions()
-//        presenteResponseCompetitions(with: competitions)
-    }
-
-    // MARK: Simulate response
-    private func simulateFetchingCompetitions() async -> [RestCompetitions] {
-        var competitions: [RestCompetitions] = []
-
-        for i in 1...20 {
-            let countryId = "\(i)"
-            let countryName = "Pays \(i)"
-            let leagueId = "\(i)"
-            let leagueName = "Ligue \(i)"
-            let leagueSeason = "2021"
-            let leagueLogo = "logo\(i)"
-            let countryLogo = "logo_pays\(i)"
-
-            let competition = RestCompetitions(countryId: countryId, countryName: countryName, leagueId: leagueId, leagueName: leagueName, leagueSeason: leagueSeason, leagueLogo: leagueLogo, countryLogo: countryLogo)
-
-            competitions.append(competition)
-        }
-
-        return competitions
     }
 
     private func presenteResponseCompetitions(with competitions: [RestCompetitions]) {
@@ -117,8 +89,6 @@ extension CompetitionInteractor: CompetitionBusinessLogic {
     func fetchCountry(id: String) async {
         await fetchCompetionsWithId(id: id)
     }
-    
-    func fetch() async {}
 
     func nextPage(id: String) {
         router?.routeToNextPage(id: id)

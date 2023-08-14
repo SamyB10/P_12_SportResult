@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1AD3BB2A8A1964001D1E24 /* MockInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AD3BA2A8A1964001D1E24 /* MockInteractor.swift */; };
+		0D1AD3BD2A8A1C1D001D1E24 /* MockDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AD3BC2A8A1C1D001D1E24 /* MockDisplay.swift */; };
+		0D4D52492A8A2CA10096DCA5 /* MockPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4D52482A8A2CA10096DCA5 /* MockPresenter.swift */; };
+		0D4D524B2A8A2D170096DCA5 /* MockRouteur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4D524A2A8A2D170096DCA5 /* MockRouteur.swift */; };
+		0D4D524F2A8A2E660096DCA5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4D524E2A8A2E660096DCA5 /* Game.swift */; };
 		0DA6B01E2A87E22400BC0309 /* MockLeague.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DA6B01D2A87E22400BC0309 /* MockLeague.json */; };
-		0DA6B0202A87E27C00BC0309 /* TestCompetitionsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6B01F2A87E27C00BC0309 /* TestCompetitionsApi.swift */; };
+		0DA6B0202A87E27C00BC0309 /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6B01F2A87E27C00BC0309 /* Competitions.swift */; };
 		0DB1A66A2A7CEF6D008D0ECE /* ResultSportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6692A7CEF6D008D0ECE /* ResultSportTests.swift */; };
 		0DB1A6742A7CEF6D008D0ECE /* ResultSportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6732A7CEF6D008D0ECE /* ResultSportUITests.swift */; };
 		0DB1A6762A7CEF6D008D0ECE /* ResultSportUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6752A7CEF6D008D0ECE /* ResultSportUITestsLaunchTests.swift */; };
@@ -91,9 +96,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1AD3BA2A8A1964001D1E24 /* MockInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInteractor.swift; sourceTree = "<group>"; };
+		0D1AD3BC2A8A1C1D001D1E24 /* MockDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDisplay.swift; sourceTree = "<group>"; };
+		0D4D52482A8A2CA10096DCA5 /* MockPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenter.swift; sourceTree = "<group>"; };
+		0D4D524A2A8A2D170096DCA5 /* MockRouteur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRouteur.swift; sourceTree = "<group>"; };
+		0D4D524E2A8A2E660096DCA5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		0D68C9D12A87E36700106E47 /* ResultSport.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ResultSport.xctestplan; sourceTree = "<group>"; };
 		0DA6B01D2A87E22400BC0309 /* MockLeague.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockLeague.json; sourceTree = "<group>"; };
-		0DA6B01F2A87E27C00BC0309 /* TestCompetitionsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCompetitionsApi.swift; sourceTree = "<group>"; };
+		0DA6B01F2A87E27C00BC0309 /* Competitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competitions.swift; sourceTree = "<group>"; };
 		0DB1A64F2A7CEF6C008D0ECE /* ResultSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResultSport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB1A6602A7CEF6D008D0ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DB1A6652A7CEF6D008D0ECE /* ResultSportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResultSportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,12 +197,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D68C9D22A8922A500106E47 /* Competitions */ = {
+		0D4D524C2A8A2E090096DCA5 /* MockVIPER */ = {
 			isa = PBXGroup;
 			children = (
-				0DA6B01F2A87E27C00BC0309 /* TestCompetitionsApi.swift */,
+				0D1AD3BA2A8A1964001D1E24 /* MockInteractor.swift */,
+				0D4D52482A8A2CA10096DCA5 /* MockPresenter.swift */,
+				0D4D524A2A8A2D170096DCA5 /* MockRouteur.swift */,
+				0D1AD3BC2A8A1C1D001D1E24 /* MockDisplay.swift */,
 			);
-			path = Competitions;
+			path = MockVIPER;
+			sourceTree = "<group>";
+		};
+		0D4D524D2A8A2E390096DCA5 /* TestGame */ = {
+			isa = PBXGroup;
+			children = (
+				0D4D524E2A8A2E660096DCA5 /* Game.swift */,
+			);
+			path = TestGame;
+			sourceTree = "<group>";
+		};
+		0D68C9D22A8922A500106E47 /* TestCompetitions */ = {
+			isa = PBXGroup;
+			children = (
+				0DA6B01F2A87E27C00BC0309 /* Competitions.swift */,
+			);
+			path = TestCompetitions;
 			sourceTree = "<group>";
 		};
 		0DA6B01C2A87E20500BC0309 /* Mock */ = {
@@ -244,7 +273,9 @@
 			isa = PBXGroup;
 			children = (
 				0DB1A6692A7CEF6D008D0ECE /* ResultSportTests.swift */,
-				0D68C9D22A8922A500106E47 /* Competitions */,
+				0D4D524C2A8A2E090096DCA5 /* MockVIPER */,
+				0D4D524D2A8A2E390096DCA5 /* TestGame */,
+				0D68C9D22A8922A500106E47 /* TestCompetitions */,
 				0DB1A71E2A879008008D0ECE /* MockUrlSession.swift */,
 				0DA6B01C2A87E20500BC0309 /* Mock */,
 			);
@@ -716,9 +747,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DA6B0202A87E27C00BC0309 /* TestCompetitionsApi.swift in Sources */,
+				0D1AD3BB2A8A1964001D1E24 /* MockInteractor.swift in Sources */,
+				0DA6B0202A87E27C00BC0309 /* Competitions.swift in Sources */,
 				0DB1A71F2A879008008D0ECE /* MockUrlSession.swift in Sources */,
 				0DB1A66A2A7CEF6D008D0ECE /* ResultSportTests.swift in Sources */,
+				0D4D52492A8A2CA10096DCA5 /* MockPresenter.swift in Sources */,
+				0D1AD3BD2A8A1C1D001D1E24 /* MockDisplay.swift in Sources */,
+				0D4D524B2A8A2D170096DCA5 /* MockRouteur.swift in Sources */,
+				0D4D524F2A8A2E660096DCA5 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
