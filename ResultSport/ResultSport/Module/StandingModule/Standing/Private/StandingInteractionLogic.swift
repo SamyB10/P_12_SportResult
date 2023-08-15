@@ -8,6 +8,5 @@
 import Foundation
 
 protocol StandingInteractionLogic {
-    func didLoad()
     func didFetchLeague(leagueId: String)
 }

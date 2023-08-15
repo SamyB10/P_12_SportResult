@@ -9,7 +9,7 @@ import Foundation
 
 class StandingInteractor {
 
-    private weak var presenter: StandingPresenter?
+    private weak var presenter: StandingPresentationLogic?
     private var router: StandingRoutingLogic?
     private let request = HttpRequest()
 
@@ -32,7 +32,7 @@ class StandingInteractor {
         self.router = router
     }
 
-    func inject(presenter: StandingPresenter) {
+    func inject(presenter: StandingPresentationLogic) {
         self.presenter = presenter
     }
 
@@ -71,12 +71,7 @@ class StandingInteractor {
 }
 
 extension StandingInteractor: StandingBusinessLogic {
-
-    func start() async {
-        
-    }
-
-    func fetch(leagueId: String) async {
+    func start(leagueId: String) async {
         await fetchStanding(leagueId: leagueId)
     }
 }

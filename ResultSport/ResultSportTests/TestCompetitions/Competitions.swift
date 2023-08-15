@@ -11,7 +11,7 @@ import XCTest
 final class TestCompetitionsApi: XCTestCase {
 
     override func setUpWithError() throws {
-        if let jsonData = MockURLProtocol.loadJSONData(filename: "MockLeague") {
+        if let jsonData = MockURLProtocol.loadJSONData(filename: "MockCompetition") {
             let url = "https://apiv3.apifootball.com/?action=get_leagues&APIkey=\(Key.apiKey)"
             MockURLProtocol.mockData[url] = jsonData
         }
@@ -25,7 +25,7 @@ final class TestCompetitionsApi: XCTestCase {
     func testApiLeagueOk() async {
         let request = HttpRequest()
 
-        if let jsonData = MockURLProtocol.loadJSONData(filename: "MockLeague") {
+        if let jsonData = MockURLProtocol.loadJSONData(filename: "MockCompetition") {
             let url = "https://apiv3.apifootball.com/?action=get_leagues&APIkey=\(Key.apiKey)"
             MockURLProtocol.mockData[url] = jsonData
             let expectation = XCTestExpectation(description: "Network request")

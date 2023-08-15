@@ -52,7 +52,9 @@ extension StandingPresenter: StandingPresentationLogic {
         display?.displayInterface(with: viewModel)
     }
 
-    public func presentLoader() {}
+    public func presentLoader() {
+        display?.displayLoader()
+    }
 
     public func presentError(with error: Error) {
         display?.displayError(with: error)
@@ -60,15 +62,9 @@ extension StandingPresenter: StandingPresentationLogic {
 }
 
 extension StandingPresenter: StandingInteractionLogic {
-    func didLoad() {
-        Task {
-            await interactor.start()
-        }
-    }
-
     func didFetchLeague(leagueId: String) {
         Task {
-            await interactor.fetch(leagueId: leagueId)
+            await interactor.start(leagueId: leagueId)
         }
     }
 }

@@ -8,6 +8,5 @@
 import UIKit
 
 public protocol StandingBusinessLogic {
-    func start() async
-    func fetch(leagueId: String) async
+    func start(leagueId: String) async
 }
