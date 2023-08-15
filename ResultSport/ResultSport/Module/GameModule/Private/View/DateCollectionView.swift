@@ -10,7 +10,7 @@ import UIKit
 final class DateCollectionView: UICollectionView {
 
     private func createLayoutDate() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(50),
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                               heightDimension: .fractionalHeight(1))
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)

@@ -43,6 +43,13 @@ class StandingViewController: UIViewController {
         setupConstraints()
     }
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if let gradientLayer = view.layer.sublayers?.first(where: { $0 is CAGradientLayer }) as? CAGradientLayer {
+            gradientLayer.frame = CGRect(origin: .zero, size: size)
+        }
+    }
+
     func inject(leagueId: String) {
         self.idLeague = leagueId
     }

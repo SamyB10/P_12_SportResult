@@ -70,6 +70,13 @@ class CompetitionViewController: UIViewController {
         activityIndicatorStart()
     }
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if let gradientLayer = view.layer.sublayers?.first(where: { $0 is CAGradientLayer }) as? CAGradientLayer {
+            gradientLayer.frame = CGRect(origin: .zero, size: size)
+        }
+    }
+
     private func setupInterface() {
         view.addSubview(competitionCollectionView)
         view.addSubview(textField)

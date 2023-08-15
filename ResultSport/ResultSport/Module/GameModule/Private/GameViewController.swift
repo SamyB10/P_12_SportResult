@@ -17,7 +17,6 @@ class GameViewController: UIViewController {
             dateCollectionView.snapShot(withViewModel: viewModel)
             viewModel.forEach {
                 if $0.isActive == true {
-//                    activityIndicatorStart()
                     presenter?.fetchGame(from: $0.dayNumber, to: $0.dayNumber)
                 }
             }
@@ -93,6 +92,13 @@ class GameViewController: UIViewController {
         setupConstraints()
         activityIndicatorStart()
         presenter?.didLoad()
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if let gradientLayer = view.layer.sublayers?.first(where: { $0 is CAGradientLayer }) as? CAGradientLayer {
+            gradientLayer.frame = CGRect(origin: .zero, size: size)
+        }
     }
 
     private func setupInterface() {
