@@ -100,53 +100,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EAF2EBAA-DCFB-420F-B2D9-F2BAAD259887"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ResultSport/SportScene/Game/GameInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "start(from:to:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EAF2EBAA-DCFB-420F-B2D9-F2BAAD259887 - 5b3f782e0a56e6f9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for ResultSport.GameInteractor.start(from: Swift.String, to: Swift.String) async -&gt; ()"
-                  moduleName = "ResultSport"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samyboussair/Desktop/OC_Parcours/P12/ResultSport/ResultSport/SportScene/Game/GameInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  uuid = "EAF2EBAA-DCFB-420F-B2D9-F2BAAD259887 - aa4b8a639bde8708"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for ResultSport.GameInteractor.start(from: Swift.String, to: Swift.String) async -&gt; ()"
-                  moduleName = "ResultSport"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/samyboussair/Desktop/OC_Parcours/P12/ResultSport/ResultSport/SportScene/Game/GameInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
