@@ -86,6 +86,9 @@
 		0DDC26012A8B77FC004BD42F /* MockRouteurStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDC25FD2A8B77FC004BD42F /* MockRouteurStanding.swift */; };
 		0DDC26022A8B77FC004BD42F /* MockPresenterStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDC25FE2A8B77FC004BD42F /* MockPresenterStanding.swift */; };
 		0DDC26032A8B77FC004BD42F /* MockInteractorStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDC25FF2A8B77FC004BD42F /* MockInteractorStanding.swift */; };
+		0DDC26052A8C0CDA004BD42F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DDC26042A8C0CDA004BD42F /* GoogleService-Info.plist */; };
+		0DDC26062A8C0CDA004BD42F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DDC26042A8C0CDA004BD42F /* GoogleService-Info.plist */; };
+		0DDC26072A8C0CDA004BD42F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DDC26042A8C0CDA004BD42F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +192,7 @@
 		0DDC25FD2A8B77FC004BD42F /* MockRouteurStanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRouteurStanding.swift; sourceTree = "<group>"; };
 		0DDC25FE2A8B77FC004BD42F /* MockPresenterStanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPresenterStanding.swift; sourceTree = "<group>"; };
 		0DDC25FF2A8B77FC004BD42F /* MockInteractorStanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockInteractorStanding.swift; sourceTree = "<group>"; };
+		0DDC26042A8C0CDA004BD42F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +295,7 @@
 			children = (
 				0DB1A6602A7CEF6D008D0ECE /* Info.plist */,
 				0DB1A6B52A7CF043008D0ECE /* TabBarViewController.swift */,
+				0DDC26042A8C0CDA004BD42F /* GoogleService-Info.plist */,
 				0DB1A6A32A7CF012008D0ECE /* Ressources */,
 				0DB1A6B72A7CF0DE008D0ECE /* Module */,
 				0DB1A6822A7CF003008D0ECE /* SportScene */,
@@ -713,6 +718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB1A6AE2A7CF012008D0ECE /* Main.storyboard in Resources */,
+				0DDC26052A8C0CDA004BD42F /* GoogleService-Info.plist in Resources */,
 				0DB1A6AD2A7CF012008D0ECE /* LaunchScreen.storyboard in Resources */,
 				0DB1A6AC2A7CF012008D0ECE /* Assets.xcassets in Resources */,
 			);
@@ -723,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DA6B01E2A87E22400BC0309 /* MockCompetition.json in Resources */,
+				0DDC26062A8C0CDA004BD42F /* GoogleService-Info.plist in Resources */,
 				0DDC25FA2A8B7606004BD42F /* MockStanding.json in Resources */,
 				0DB1A7202A879626008D0ECE /* MockGame.json in Resources */,
 			);
@@ -732,6 +739,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DDC26072A8C0CDA004BD42F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
