@@ -13,6 +13,7 @@ workflows:
         - project_path: $BITRISE_PROJECT_PATH
         - scheme: $BITRISE_SCHEME
         - test_repetition_mode: retry_on_failure
+        - destination: platform=iOS Simulator,id=dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:14.0
         - cache_level: none
     - xcode-archive@4:
         inputs:
