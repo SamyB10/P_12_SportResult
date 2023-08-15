@@ -305,13 +305,13 @@
 			isa = PBXGroup;
 			children = (
 				0DB1A6692A7CEF6D008D0ECE /* ResultSportTests.swift */,
+				0DB1A71E2A879008008D0ECE /* MockUrlSession.swift */,
 				0D4D524C2A8A2E090096DCA5 /* MockCompetition */,
 				0DDC25FB2A8B77FC004BD42F /* MockStanding */,
 				0D4D52502A8AB73D0096DCA5 /* MockGame */,
 				0D4D524D2A8A2E390096DCA5 /* TestGame */,
 				0D68C9D22A8922A500106E47 /* TestCompetitions */,
 				0DDC25F62A8B74A3004BD42F /* TestStanding */,
-				0DB1A71E2A879008008D0ECE /* MockUrlSession.swift */,
 				0DA6B01C2A87E20500BC0309 /* Mock */,
 			);
 			path = ResultSportTests;
