@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  CompetitionCell.swift
 //  
 //
 //  Created by Samy Boussair on 29/07/2023.
@@ -7,8 +7,6 @@
 
 import UIKit
 import Kingfisher
-//import GameModuleKit
-
 
 class CompetitionCell: UICollectionViewCell {
 

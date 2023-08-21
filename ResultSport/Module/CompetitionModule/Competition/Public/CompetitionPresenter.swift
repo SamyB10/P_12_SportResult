@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  CompetitionPresenter.swift
 //  
 //
 //  Created by Samy Boussair on 26/07/2023.
@@ -16,7 +16,6 @@ public protocol CompetitionPresentationLogic: AnyObject {
 enum CountryError: String, Error {
     case containsNonLetters = "The character string contains numbers or special characters."
     case unknownCountry = "Unknown Country"
-//    case countryAlreadyDisplay = "Country already display"
 }
 
 public final class CompetitionPresenter {

@@ -33,10 +33,10 @@
 		0DB1A6972A7CF003008D0ECE /* StandingModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A68A2A7CF003008D0ECE /* StandingModule.swift */; };
 		0DB1A6982A7CF003008D0ECE /* StandingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A68B2A7CF003008D0ECE /* StandingInteractor.swift */; };
 		0DB1A6992A7CF003008D0ECE /* StandingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A68C2A7CF003008D0ECE /* StandingRouter.swift */; };
-		0DB1A69A2A7CF003008D0ECE /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A68E2A7CF003008D0ECE /* Interactor.swift */; };
-		0DB1A69B2A7CF003008D0ECE /* SportContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A68F2A7CF003008D0ECE /* SportContext.swift */; };
-		0DB1A69C2A7CF003008D0ECE /* SportModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6902A7CF003008D0ECE /* SportModule.swift */; };
-		0DB1A69D2A7CF003008D0ECE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6912A7CF003008D0ECE /* Router.swift */; };
+		0DB1A69A2A7CF003008D0ECE /* CompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A68E2A7CF003008D0ECE /* CompetitionInteractor.swift */; };
+		0DB1A69B2A7CF003008D0ECE /* CompetitionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A68F2A7CF003008D0ECE /* CompetitionContext.swift */; };
+		0DB1A69C2A7CF003008D0ECE /* CompetitionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6902A7CF003008D0ECE /* CompetitionModule.swift */; };
+		0DB1A69D2A7CF003008D0ECE /* CompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6912A7CF003008D0ECE /* CompetitionRouter.swift */; };
 		0DB1A6A12A7CF00B008D0ECE /* RestSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A69F2A7CF00B008D0ECE /* RestSchedule.swift */; };
 		0DB1A6A22A7CF00B008D0ECE /* RestCompetitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB1A6A02A7CF00B008D0ECE /* RestCompetitions.swift */; };
 		0DB1A6AC2A7CF012008D0ECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB1A6A42A7CF012008D0ECE /* Assets.xcassets */; };
@@ -139,10 +139,10 @@
 		0DB1A68A2A7CF003008D0ECE /* StandingModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingModule.swift; sourceTree = "<group>"; };
 		0DB1A68B2A7CF003008D0ECE /* StandingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingInteractor.swift; sourceTree = "<group>"; };
 		0DB1A68C2A7CF003008D0ECE /* StandingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingRouter.swift; sourceTree = "<group>"; };
-		0DB1A68E2A7CF003008D0ECE /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
-		0DB1A68F2A7CF003008D0ECE /* SportContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportContext.swift; sourceTree = "<group>"; };
-		0DB1A6902A7CF003008D0ECE /* SportModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportModule.swift; sourceTree = "<group>"; };
-		0DB1A6912A7CF003008D0ECE /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		0DB1A68E2A7CF003008D0ECE /* CompetitionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionInteractor.swift; sourceTree = "<group>"; };
+		0DB1A68F2A7CF003008D0ECE /* CompetitionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionContext.swift; sourceTree = "<group>"; };
+		0DB1A6902A7CF003008D0ECE /* CompetitionModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionModule.swift; sourceTree = "<group>"; };
+		0DB1A6912A7CF003008D0ECE /* CompetitionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionRouter.swift; sourceTree = "<group>"; };
 		0DB1A69F2A7CF00B008D0ECE /* RestSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestSchedule.swift; sourceTree = "<group>"; };
 		0DB1A6A02A7CF00B008D0ECE /* RestCompetitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCompetitions.swift; sourceTree = "<group>"; };
 		0DB1A6A42A7CF012008D0ECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,6 +230,14 @@
 				0D25A6D72A8EBD2500348AD5 /* XCTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D2CA0392A93E7C200E9EF53 /* CompetitionModule */ = {
+			isa = PBXGroup;
+			children = (
+				0DB1A6D52A7CF0DE008D0ECE /* Competition */,
+			);
+			path = CompetitionModule;
 			sourceTree = "<group>";
 		};
 		0D4D524C2A8A2E090096DCA5 /* MockCompetition */ = {
@@ -377,10 +385,10 @@
 		0DB1A68D2A7CF003008D0ECE /* Competition */ = {
 			isa = PBXGroup;
 			children = (
-				0DB1A68E2A7CF003008D0ECE /* Interactor.swift */,
-				0DB1A68F2A7CF003008D0ECE /* SportContext.swift */,
-				0DB1A6902A7CF003008D0ECE /* SportModule.swift */,
-				0DB1A6912A7CF003008D0ECE /* Router.swift */,
+				0DB1A68E2A7CF003008D0ECE /* CompetitionInteractor.swift */,
+				0DB1A68F2A7CF003008D0ECE /* CompetitionContext.swift */,
+				0DB1A6902A7CF003008D0ECE /* CompetitionModule.swift */,
+				0DB1A6912A7CF003008D0ECE /* CompetitionRouter.swift */,
 			);
 			path = Competition;
 			sourceTree = "<group>";
@@ -421,6 +429,7 @@
 			children = (
 				0DB1A6B82A7CF0DE008D0ECE /* GameModule */,
 				0DB1A6CA2A7CF0DE008D0ECE /* StandingModule */,
+				0D2CA0392A93E7C200E9EF53 /* CompetitionModule */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -479,7 +488,6 @@
 			isa = PBXGroup;
 			children = (
 				0DB1A6CB2A7CF0DE008D0ECE /* Standing */,
-				0DB1A6D52A7CF0DE008D0ECE /* Competition */,
 			);
 			path = StandingModule;
 			sourceTree = "<group>";
@@ -811,7 +819,7 @@
 				0DB1A6F52A7CF0DE008D0ECE /* StandingModuleKit.swift in Sources */,
 				0DB1A6B62A7CF043008D0ECE /* TabBarViewController.swift in Sources */,
 				0DB1A6ED2A7CF0DE008D0ECE /* GameViewController.swift in Sources */,
-				0DB1A69A2A7CF003008D0ECE /* Interactor.swift in Sources */,
+				0DB1A69A2A7CF003008D0ECE /* CompetitionInteractor.swift in Sources */,
 				0DB1A6A12A7CF00B008D0ECE /* RestSchedule.swift in Sources */,
 				0DB1A6A22A7CF00B008D0ECE /* RestCompetitions.swift in Sources */,
 				0DB1A6F12A7CF0DE008D0ECE /* GameCollectionView.swift in Sources */,
@@ -819,7 +827,7 @@
 				0DB1A7022A7CF0DE008D0ECE /* CompetitionDisplayLogic.swift in Sources */,
 				0DB1A6B12A7CF012008D0ECE /* SceneDelegate.swift in Sources */,
 				0DB1A6E92A7CF0DE008D0ECE /* GameModuleKit.swift in Sources */,
-				0DB1A69D2A7CF003008D0ECE /* Router.swift in Sources */,
+				0DB1A69D2A7CF003008D0ECE /* CompetitionRouter.swift in Sources */,
 				0DB1A7182A82D9FF008D0ECE /* StandingCell.swift in Sources */,
 				0DB1A7002A7CF0DE008D0ECE /* CompetitionInteractionLogic.swift in Sources */,
 				0DB1A6EA2A7CF0DE008D0ECE /* GameModels.swift in Sources */,
@@ -831,12 +839,12 @@
 				0DB1A6922A7CF003008D0ECE /* GameInteractor.swift in Sources */,
 				0DB1A6F02A7CF0DE008D0ECE /* GameDisplayLogic.swift in Sources */,
 				0DB1A6E82A7CF0DE008D0ECE /* Color.swift in Sources */,
-				0DB1A69B2A7CF003008D0ECE /* SportContext.swift in Sources */,
+				0DB1A69B2A7CF003008D0ECE /* CompetitionContext.swift in Sources */,
 				0DB1A6972A7CF003008D0ECE /* StandingModule.swift in Sources */,
 				0DB1A6F62A7CF0DE008D0ECE /* StandingModels.swift in Sources */,
 				0DB1A71A2A855AA2008D0ECE /* HeaderCell.swift in Sources */,
 				0DB1A7092A7CFA0B008D0ECE /* GameResponse.swift in Sources */,
-				0DB1A69C2A7CF003008D0ECE /* SportModule.swift in Sources */,
+				0DB1A69C2A7CF003008D0ECE /* CompetitionModule.swift in Sources */,
 				0DB1A6B42A7CF02A008D0ECE /* HTTPRequest.swift in Sources */,
 				0DB1A6952A7CF003008D0ECE /* GameRouter.swift in Sources */,
 				0DB1A7132A81827A008D0ECE /* StandingCollectionView.swift in Sources */,

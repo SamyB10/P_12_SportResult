@@ -1,5 +1,5 @@
 //
-//  Interactor.swift
+//  CompetitionInteractor.swift
 //  Sport
 //
 //  Created by Samy Boussair on 26/07/2023.
@@ -24,10 +24,10 @@ class CompetitionInteractor {
         self.presenter = presenter
     }
     
-    private var contextSport = SportContext() {
+    private var contextSport = CompetitionContext() {
         didSet {
             guard contextSport != oldValue else { return }
-            switch (contextSport.sportContext, contextSport.didFailLoading) {
+            switch (contextSport.competitionContext, contextSport.didFailLoading) {
             case (_, true):
                 let error = NetworkError.failedLoading
                 self.presenter?.presentError(with: error)
@@ -43,7 +43,7 @@ class CompetitionInteractor {
         contextSport.willLoadContent()
           switch await request.fetchCountryAndLeague(id: id) {
         case .success(let competitions):
-            contextSport.sportContext = competitions
+            contextSport.competitionContext = competitions
         case .failure:
             contextSport.didFailLoading = true
         }
@@ -53,7 +53,7 @@ class CompetitionInteractor {
         contextSport.willLoadContent()
         switch await request.fetchCountryAndLeague() {
         case .success(let competitions):
-            contextSport.sportContext = competitions
+            contextSport.competitionContext = competitions
         case .failure:
             contextSport.didFailLoading = true
         }

@@ -1,6 +1,5 @@
 //
-//  Router.swift
-//  Sport
+//  CompetitionRouter.swift
 //
 //  Created by Samy Boussair on 26/07/2023.
 //

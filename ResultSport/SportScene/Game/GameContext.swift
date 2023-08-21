@@ -1,12 +1,10 @@
 //
-//  SportContext.swift
-//  Sport
+//  GameContext.swift
 //
 //  Created by Samy Boussair on 28/07/2023.
 //
 
 import Foundation
-//import SportModuleKit
 
 struct GameContext: Equatable {
 

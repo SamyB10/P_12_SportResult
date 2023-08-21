@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  GameModels.swift
 //  
 //
 //  Created by Samy Boussair on 28/07/2023.

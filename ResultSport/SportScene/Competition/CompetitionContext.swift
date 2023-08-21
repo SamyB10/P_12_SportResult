@@ -1,20 +1,18 @@
 //
-//  SportContext.swift
-//  Sport
+//  CompetitionContext.swift
 //
 //  Created by Samy Boussair on 28/07/2023.
 //
 
 import Foundation
-//import SportModuleKit
 
-struct SportContext: Equatable {
+struct CompetitionContext: Equatable {
     
-    var sportContext: [RestCompetitions]?
+    var competitionContext: [RestCompetitions]?
     var didFailLoading: Bool = false
     
     mutating func willLoadContent() {
-        sportContext = nil
+        competitionContext = nil
         didFailLoading = false
     }
 }

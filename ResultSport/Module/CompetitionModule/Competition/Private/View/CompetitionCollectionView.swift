@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  CompetitionCollectionView.swift
 //  
 //
 //  Created by Samy Boussair on 29/07/2023.

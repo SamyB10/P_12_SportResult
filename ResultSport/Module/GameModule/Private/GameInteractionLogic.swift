@@ -1,5 +1,5 @@
 //
-//  File 2.swift
+//  GameInteractionLogic.swift
 //  
 //
 //  Created by Samy Boussair on 28/07/2023.

@@ -4,7 +4,6 @@
 //  Created by Samy Boussair on 28/07/2023.
 //
 
-//import SportModuleKit
 import UIKit
 
 class TabBarController: UITabBarController {

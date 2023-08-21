@@ -1,5 +1,5 @@
 //
-//  SportViewController.swift
+//  CompetitionViewController.swift
 //  
 //
 //  Created by Samy Boussair on 26/07/2023.

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  CompetitionInteractionLogic.swift
 //  
 //
 //  Created by Samy Boussair on 26/07/2023.

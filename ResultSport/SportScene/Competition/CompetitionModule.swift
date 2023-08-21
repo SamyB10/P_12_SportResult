@@ -1,15 +1,12 @@
 //
-//  SportModule.swift
-//  Sport
+//  CompetitionModule.swift
 //
 //  Created by Samy Boussair on 26/07/2023.
 //
 
-import Foundation
 import UIKit
-//import SportModuleKit
 
-final class SportModule {
+final class CompetitionModule {
     
     var viewController: UIViewController
 

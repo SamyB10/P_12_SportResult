@@ -18,16 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let router = CompetitionRouter()
         let interactor = CompetitionInteractor(router: router)
         let presenter = CompetitionPresenter(interactor: interactor)
-        let sportModule = SportModule(interactor: interactor,
-                                      presenter: presenter,
-                                      router: router)
+        let sportModule = CompetitionModule(interactor: interactor,
+                                            presenter: presenter,
+                                            router: router)
         
         let gameRouter = GameRouter()
         let gameInteractor = GameInteractor(router: gameRouter)
         let gamePresenter = GamePresenter(interactor: gameInteractor)
         let gameModule = GameModule(interactor: gameInteractor,
-                                      presenter: gamePresenter,
-                                      router: gameRouter)
+                                    presenter: gamePresenter,
+                                    router: gameRouter)
         
         let standingRouter = StandingRouter()
         let standingInteractor = StandingInteractor(router: standingRouter)
