@@ -79,7 +79,7 @@ final class TestCompetitionsApi: XCTestCase {
         let presenter = CompetitionPresenter(interactor: interactor)
         let mockDisplay = MockDisplay()
         presenter.inject(display: mockDisplay)
-        
+
         presenter.presentError(with: NetworkError.failedLoading)
         XCTAssertTrue(mockDisplay.didDisplayError)
     }
@@ -92,6 +92,86 @@ final class TestCompetitionsApi: XCTestCase {
         presenter.didLoad()
         Task {
             XCTAssertTrue(mockInteractor.didStart)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+    }
+
+    func testDidCountry() {
+        let mockInteractor = MockInteractor()
+        let presenter = CompetitionPresenter(interactor: mockInteractor)
+
+        let expectation = XCTestExpectation(description: "didLoad expectation")
+
+        let testViewModel: [CompetitionModels.Response] = [
+            CompetitionModels.Response(countryId: "1",
+                                       countryName: "England",
+                                       leagueId: "3",
+                                       leagueName: "BPL",
+                                       leagueSeason: "2023",
+                                       leagueLogo: "",
+                                       countryLogo: "")]
+
+
+        presenter.presentInterface(with: testViewModel)
+        let validText = presenter.textFieldGood(country: "England")
+        Task {
+            XCTAssertTrue(mockInteractor.didFetchCountry)
+            XCTAssertNil(validText)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+    }
+
+    func testUnknownCountry() {
+        let mockInteractor = MockInteractor()
+        let presenter = CompetitionPresenter(interactor: mockInteractor)
+
+        let expectation = XCTestExpectation(description: "didLoad expectation")
+
+        let testViewModel: [CompetitionModels.Response] = [
+            CompetitionModels.Response(countryId: "1",
+                                       countryName: "England",
+                                       leagueId: "3",
+                                       leagueName: "BPL",
+                                       leagueSeason: "2023",
+                                       leagueLogo: "",
+                                       countryLogo: "")]
+
+
+        presenter.presentInterface(with: testViewModel)
+        let validText = presenter.textFieldGood(country: "France")
+        Task {
+            XCTAssertFalse(mockInteractor.didFetchCountry)
+            XCTAssertEqual(validText, .unknownCountry)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+    }
+
+    func testContainsNonLetters() {
+        let mockInteractor = MockInteractor()
+        let presenter = CompetitionPresenter(interactor: mockInteractor)
+
+        let expectation = XCTestExpectation(description: "didLoad expectation")
+        let validText = presenter.textFieldGood(country: "......")
+        Task {
+            XCTAssertFalse(mockInteractor.didFetchCountry)
+            XCTAssertEqual(validText, .containsNonLetters)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+    }
+
+    func testCountryNil() {
+        let mockInteractor = MockInteractor()
+        let presenter = CompetitionPresenter(interactor: mockInteractor)
+
+        let expectation = XCTestExpectation(description: "didLoad expectation")
+        let validText = presenter.textFieldGood(country: "")
+        Task {
+            XCTAssertFalse(mockInteractor.didFetchCountry)
+            XCTAssertNil(validText)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 5.0)

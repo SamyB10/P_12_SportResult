@@ -50,8 +50,9 @@ public final class GamePresenter {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let weekdays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
 
-        for i in 0..<7 {
-            if let dateForDay = calendar.date(byAdding: .day, value: i, to: startDate) {
+        for day in weekdays {
+            guard let dayIndex = weekdays.firstIndex(of: day) else { return }
+            if let dateForDay = calendar.date(byAdding: .day, value: dayIndex, to: startDate) {
                 var isActive = false
                 if calendar.isDate(dateForDay, inSameDayAs: currentDate) {
                     isActive = true
@@ -146,6 +147,10 @@ public final class GamePresenter {
             display?.updateInterfaceGame(with: viewModel.italyLeague)
         case League.germanyLeague.rawValue:
             display?.updateInterfaceGame(with: viewModel.germanyLeague)
+        case League.championsLeague.rawValue:
+            display?.updateInterfaceGame(with: viewModel.championsLeague)
+        case League.europaLeague.rawValue:
+            display?.updateInterfaceGame(with: viewModel.europaLeague)
         default:
             display?.updateInterfaceGame(with: viewModel.word)
         }

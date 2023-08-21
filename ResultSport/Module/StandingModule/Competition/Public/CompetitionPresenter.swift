@@ -13,27 +13,18 @@ public protocol CompetitionPresentationLogic: AnyObject {
     func presentError(with error: Error)
 }
 
+enum CountryError: String, Error {
+    case containsNonLetters = "The character string contains numbers or special characters."
+    case unknownCountry = "Unknown Country"
+//    case countryAlreadyDisplay = "Country already display"
+}
+
 public final class CompetitionPresenter {
     
     private weak var display: CompetitionDisplayLogic?
     private var interactor: CompetitionBusinessLogic
     private var viewModel: CompetitionModels.ViewModel?
-    private var countryId: [String : String]? = [:] {
-        didSet {
-            guard let countryId, countryId != oldValue else { return }
-            }
-        }
-    private var country: String? {
-        didSet {
-            guard let country, country != oldValue else { return }
-            countryId?.forEach({ countryName in
-                guard countryName.key == country else { return }
-                Task {
-                    await interactor.fetchCountry(id: countryName.value)
-                }
-            })
-        }
-    }
+    private var countryId: [String : String]? = [:]
 
     public init(interactor: CompetitionBusinessLogic) {
         self.interactor = interactor
@@ -53,8 +44,35 @@ public final class CompetitionPresenter {
                                                countryId: $0.countryId)
         }
     }
-}
 
+    private func checkArrayIngredients(text: String) -> CountryError? {
+        let regex = try! NSRegularExpression(pattern: "^[a-zA-Z]+$")
+        let range = NSRange(location: 0, length: text.utf16.count)
+        let isOnlyLetters = regex.firstMatch(in: text, options: [], range: range) != nil
+        var unknownCountry = true
+
+        guard text != "" else {
+            didLoad()
+            return nil
+        }
+
+        guard isOnlyLetters else {
+            return .containsNonLetters
+        }
+
+        countryId?.forEach({ countryName in
+            if countryName.key == text {
+                searchCompetition(country: countryName.value)
+                unknownCountry = false
+            }
+        })
+
+        guard unknownCountry == false else {
+            return .unknownCountry
+        }
+        return nil
+    }
+}
 
 extension CompetitionPresenter: CompetitionPresentationLogic {
     public func presentInterface(with response: [CompetitionModels.Response]) {
@@ -77,6 +95,13 @@ extension CompetitionPresenter: CompetitionPresentationLogic {
 }
 
 extension CompetitionPresenter: CompetitionInteractionLogic {
+    func textFieldGood(country: String) -> CountryError? {
+        if let error = checkArrayIngredients(text: country) {
+            return error
+        }
+        return nil
+    }
+
     func didLoad() {
         Task {
             await interactor.start()
@@ -88,6 +113,8 @@ extension CompetitionPresenter: CompetitionInteractionLogic {
     }
 
     func searchCompetition(country: String) {
-        self.country = country
+        Task {
+            await interactor.fetchCountry(id: country)
+        }
     }
 }

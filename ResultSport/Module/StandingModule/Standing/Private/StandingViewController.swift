@@ -17,14 +17,20 @@ class StandingViewController: UIViewController {
     private var viewModel: [StandingModels.ViewModel]? {
         didSet {
             guard let viewModel, viewModel != oldValue else { return }
-            collectionView.snapShot(with: viewModel)
+                self.collectionView.snapShot(with: viewModel)
         }
     }
+
+    private var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .white
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return activityIndicator
+    }()
 
     private lazy var collectionView: StandingCollectionView = {
         let collectionView = StandingCollectionView()
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        //        collectionView.delegate = self
         collectionView.backgroundColor = .clear
         return collectionView
     }()
@@ -43,6 +49,24 @@ class StandingViewController: UIViewController {
         setupConstraints()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        activityIndicatorStart()
+    }
+
+    private func activityIndicatorStart() {
+        Task {
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+        }
+    }
+
+    private func activityIndicatorEnd() {
+        Task {
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+        }
+    }
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         if let gradientLayer = view.layer.sublayers?.first(where: { $0 is CAGradientLayer }) as? CAGradientLayer {
@@ -56,6 +80,7 @@ class StandingViewController: UIViewController {
 
     private func setupInterface() {
         view.addSubview(collectionView)
+        collectionView.addSubview(activityIndicator)
     }
 
     private func setupConstraints() {
@@ -64,6 +89,10 @@ class StandingViewController: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+
+            activityIndicator.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor),
+
         ])
     }
     
@@ -74,19 +103,29 @@ class StandingViewController: UIViewController {
 
 extension StandingViewController: StandingDisplayLogic {
     func displayInterface(with viewModel: [StandingModels.ViewModel]) {
+        activityIndicatorEnd()
+        updateInterface(with: viewModel)
+    }
+
+    func updateInterface(with viewModel: [StandingModels.ViewModel]) {
         self.viewModel = viewModel
     }
 
-    func updateInterface(with viewModel: [StandingModels.ViewModel]) {}
-
     func displayError(with error: Error) {
-        let alertController = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        Task {
-            present(alertController, animated: true, completion: nil)
+        activityIndicatorEnd()
+        let alertController = UIAlertController(title: "Error",
+                                                message: "\(error.localizedDescription) Please selected other championsShip",
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.navigationController?.popViewController(animated: true)
         }
+        alertController.addAction(okAction)
+
+        present(alertController, animated: true,
+                completion: nil)
     }
 
-    func displayLoader() {}
+    func displayLoader() {
+        activityIndicatorStart()
+    }
 }

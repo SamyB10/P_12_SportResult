@@ -20,6 +20,7 @@
       }
     },
     {
+      "enabled" : false,
       "target" : {
         "containerPath" : "container:ResultSport.xcodeproj",
         "identifier" : "0DB1A66E2A7CEF6D008D0ECE",

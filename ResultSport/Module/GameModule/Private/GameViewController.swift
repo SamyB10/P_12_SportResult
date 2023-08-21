@@ -27,9 +27,6 @@ class GameViewController: UIViewController {
         didSet {
             guard let viewModelGame, viewModelGame != oldValue else { return }
             gameCollectionView.inject(viewModel: viewModelGame)
-            DispatchQueue.main.async {
-                self.activityIndicatorEnd()
-            }
         }
     }
 
@@ -37,6 +34,7 @@ class GameViewController: UIViewController {
         let date = DateCollectionView()
         date.translatesAutoresizingMaskIntoConstraints = false
         date.backgroundColor = .clear
+        date.showsHorizontalScrollIndicator = false
         date.delegate = self
 
         return date
@@ -152,8 +150,19 @@ class GameViewController: UIViewController {
     }
 
     private func activityIndicatorEnd() {
-        activityIndicator.isHidden = true
-        activityIndicator.stopAnimating()
+        Task {
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+        }
+    }
+
+    private func alertController(error: String) {
+        let alertController = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        Task {
+            present(alertController, animated: true, completion: nil)
+        }
     }
 }
 
@@ -214,20 +223,21 @@ extension GameViewController: GameDisplayLogic {
     }
 
     func displayInterfaceGame(with viewModel: GameModels.ViewModel.Championship) {
+        self.activityIndicatorEnd()
         self.viewModelGame = viewModel.word
     }
 
     func updateInterfaceGame(with viewModel: [GameModels.ViewModel.Game]) {
-        self.viewModelGame = viewModel
+        guard viewModel.isEmpty else {
+            self.viewModelGame = viewModel
+            return
+        }
+        alertController(error: "No games for this championship")
     }
 
     func displayError(with error: Error) {
-        let alertController = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        Task {
-            present(alertController, animated: true, completion: nil)
-        }
+        self.activityIndicatorEnd()
+        alertController(error: error.localizedDescription)
     }
 
     func displayLoader() {

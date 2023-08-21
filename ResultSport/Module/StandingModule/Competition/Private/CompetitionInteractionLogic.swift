@@ -11,4 +11,5 @@ protocol CompetitionInteractionLogic {
     func didLoad()
     func didSelect(id: String)
     func searchCompetition(country: String)
+    func textFieldGood(country: String) -> CountryError?
 }

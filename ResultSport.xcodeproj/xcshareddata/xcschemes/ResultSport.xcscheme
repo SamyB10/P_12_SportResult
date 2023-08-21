@@ -20,6 +20,20 @@
                ReferencedContainer = "container:ResultSport.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0DB1A66E2A7CEF6D008D0ECE"
+               BuildableName = "ResultSportUITests.xctest"
+               BlueprintName = "ResultSportUITests"
+               ReferencedContainer = "container:ResultSport.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -44,17 +58,6 @@
                BlueprintIdentifier = "0DB1A6642A7CEF6D008D0ECE"
                BuildableName = "ResultSportTests.xctest"
                BlueprintName = "ResultSportTests"
-               ReferencedContainer = "container:ResultSport.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0DB1A66E2A7CEF6D008D0ECE"
-               BuildableName = "ResultSportUITests.xctest"
-               BlueprintName = "ResultSportUITests"
                ReferencedContainer = "container:ResultSport.xcodeproj">
             </BuildableReference>
          </TestableReference>

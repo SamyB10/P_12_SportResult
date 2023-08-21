@@ -117,5 +117,5 @@ final class Standing: XCTestCase {
         wait(for: [expectation], timeout: 5.0)
     }
 
-    
+
 }

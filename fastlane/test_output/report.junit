@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='ResultSportTests.xctest' tests='29' failures='0'>
+  <testsuite name='ResultSportTests.Game' tests='9' failures='0'>
+    <testcase classname='ResultSportTests.Game' name='testApiGameOk' time='0.010'/>
+    <testcase classname='ResultSportTests.Game' name='testDidSelectItem' time='0.001'/>
+    <testcase classname='ResultSportTests.Game' name='testDidSelectLeague' time='0.001'/>
+    <testcase classname='ResultSportTests.Game' name='testError' time='0.000'/>
+    <testcase classname='ResultSportTests.Game' name='testFetchGame' time='0.000'/>
+    <testcase classname='ResultSportTests.Game' name='testLoader' time='0.000'/>
+    <testcase classname='ResultSportTests.Game' name='testPresentError' time='0.000'/>
+    <testcase classname='ResultSportTests.Game' name='testPresentInterface' time='0.000'/>
+    <testcase classname='ResultSportTests.Game' name='testPresentLoader' time='0.000'/>
+  </testsuite>
+  <testsuite name='ResultSportTests.Standing' tests='6' failures='0'>
+    <testcase classname='ResultSportTests.Standing' name='testApiLeagueOk' time='0.004'/>
+    <testcase classname='ResultSportTests.Standing' name='testDidFetchLeague' time='0.000'/>
+    <testcase classname='ResultSportTests.Standing' name='testPresentError' time='0.000'/>
+    <testcase classname='ResultSportTests.Standing' name='testPresentInterface' time='0.001'/>
+    <testcase classname='ResultSportTests.Standing' name='testPresentLoader' time='0.000'/>
+    <testcase classname='ResultSportTests.Standing' name='testStart' time='0.001'/>
+  </testsuite>
+  <testsuite name='ResultSportTests.TestCompetitionsApi' tests='14' failures='0'>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testApiLeagueOk' time='0.004'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testContainsNonLetters' time='0.001'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testCountryNil' time='0.001'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testDidCountry' time='0.001'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testDidLoad' time='0.000'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testDidSelect' time='0.000'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testFetchCountry' time='0.001'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testNextPage' time='0.000'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testPresentError' time='0.000'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testPresentInterface' time='0.000'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testPresentLoader' time='0.000'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testSearchCompetition' time='0.000'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testStart' time='0.004'/>
+    <testcase classname='ResultSportTests.TestCompetitionsApi' name='testUnknownCountry' time='0.001'/>
+  </testsuite>
+</testsuites>

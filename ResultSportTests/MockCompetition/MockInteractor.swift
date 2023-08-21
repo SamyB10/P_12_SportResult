@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import ResultSport
+@testable import ResultSport
 
 class MockInteractor: CompetitionBusinessLogic {
     var didStart = false

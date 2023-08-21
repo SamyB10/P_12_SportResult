@@ -67,7 +67,6 @@ class StandingCollectionView: UICollectionView {
                                                                          for: index)
             return headerCell
         }
-
         return dataSource
     }()
 

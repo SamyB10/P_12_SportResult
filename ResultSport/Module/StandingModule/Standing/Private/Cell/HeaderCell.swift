@@ -18,6 +18,17 @@ class HeaderCell: UICollectionViewCell {
     }
 
     // MARK: - Subviews
+
+    private lazy var overallPts: UILabel = {
+        let win = UILabel()
+        win.font = .systemFont(ofSize: 15, weight: .bold)
+        win.textColor = .white
+        win.textAlignment = .center
+        win.text = "PTS"
+        win.translatesAutoresizingMaskIntoConstraints = false
+        return win
+    }()
+
     private lazy var labelWin: UILabel = {
         let win = UILabel()
         win.font = .systemFont(ofSize: 15, weight: .bold)
@@ -68,10 +79,11 @@ class HeaderCell: UICollectionViewCell {
     }()
 
     private lazy var stackViewGlobalGame: UIStackView = {
-        let stackViewGlobalGame = UIStackView(arrangedSubviews: [gamePlayed,
+        let stackViewGlobalGame = UIStackView(arrangedSubviews: [overallPts,
                                                                  labelWin,
                                                                  labelNul,
-                                                                 labelLose])
+                                                                 labelLose,
+                                                                 gamePlayed])
         stackViewGlobalGame.alignment = .center
         stackViewGlobalGame.distribution = .fillEqually
         stackViewGlobalGame.translatesAutoresizingMaskIntoConstraints = false

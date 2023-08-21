@@ -19,6 +19,15 @@ class StandingCell: UICollectionViewCell {
         return posititon
     }()
 
+    private lazy var overallPts: UILabel = {
+        let posititon = UILabel()
+        posititon.textAlignment = .center
+        posititon.font = .systemFont(ofSize: 15, weight: .regular)
+        posititon.textColor = .white
+        posititon.translatesAutoresizingMaskIntoConstraints = false
+        return posititon
+    }()
+
     private lazy var teamName: UILabel = {
         let name = UILabel()
         name.textAlignment = .left
@@ -72,10 +81,11 @@ class StandingCell: UICollectionViewCell {
     }()
 
     private lazy var stackViewGlobalGame: UIStackView = {
-        let stackViewGlobalGame = UIStackView(arrangedSubviews: [gamePlayed,
+        let stackViewGlobalGame = UIStackView(arrangedSubviews: [overallPts,
                                                                  labelWin,
                                                                  labelNul,
-                                                                 labelLose])
+                                                                 labelLose,
+                                                                 gamePlayed])
         stackViewGlobalGame.alignment = .center
         stackViewGlobalGame.distribution = .fillEqually
         stackViewGlobalGame.translatesAutoresizingMaskIntoConstraints = false
@@ -149,6 +159,7 @@ class StandingCell: UICollectionViewCell {
         labelNul.text = viewModel.gameNul
         labelLose.text = viewModel.gameLose
         gamePlayed.text = String(gamePlayedInt)
+        overallPts.text = viewModel.standingPts
     }
 
     private func borderCercle() {

@@ -15,14 +15,13 @@ final class DateCollectionView: UICollectionView {
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(50),
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
                                                heightDimension: .absolute(50))
 
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
                                                      subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets.leading = 20
 
         let config = UICollectionViewCompositionalLayoutConfiguration()
         config.scrollDirection = .horizontal
