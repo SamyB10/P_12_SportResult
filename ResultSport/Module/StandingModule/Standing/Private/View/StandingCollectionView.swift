@@ -22,6 +22,8 @@ class StandingCollectionView: UICollectionView {
                                                                      elementKind: UICollectionView.elementKindSectionHeader,
                                                                      alignment: .topLeading)
 
+        headerItem.pinToVisibleBounds = true
+
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .absolute(50))
 

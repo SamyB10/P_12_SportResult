@@ -49,10 +49,6 @@ class StandingViewController: UIViewController {
         setupConstraints()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        activityIndicatorStart()
-    }
-
     private func activityIndicatorStart() {
         Task {
             activityIndicator.isHidden = false

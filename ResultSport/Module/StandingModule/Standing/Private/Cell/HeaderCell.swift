@@ -73,7 +73,7 @@ class HeaderCell: UICollectionViewCell {
         let win = UILabel()
         win.font = .systemFont(ofSize: 15, weight: .bold)
         win.textColor = .white
-        win.textAlignment = .center
+        win.textAlignment = .left
         win.translatesAutoresizingMaskIntoConstraints = false
         return win
     }()
@@ -102,6 +102,7 @@ class HeaderCell: UICollectionViewCell {
     private func setupInterface() {
         contentView.addSubview(stackViewGlobalGame)
         contentView.addSubview(labelChampionship)
+        contentView.backgroundColor = .mainColor
     }
 
     private func setUpConstraints() {
@@ -113,7 +114,7 @@ class HeaderCell: UICollectionViewCell {
 
             labelChampionship.topAnchor.constraint(equalTo: contentView.topAnchor),
             labelChampionship.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            labelChampionship.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            labelChampionship.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 35),
             labelChampionship.trailingAnchor.constraint(equalTo: stackViewGlobalGame.leadingAnchor, constant: -10),
         ])
     }
