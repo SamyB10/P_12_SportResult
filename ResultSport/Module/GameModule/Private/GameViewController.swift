@@ -9,6 +9,7 @@ import UIKit
 
 class GameViewController: UIViewController {
 
+    //MARK: - Property
     let viewModelPicker = GameModels.ViewModel.ViewModelPicker()
     private var presenter: GameInteractionLogic?
     private var viewModel: [GameModels.ViewModel]? {
@@ -30,6 +31,7 @@ class GameViewController: UIViewController {
         }
     }
 
+    //MARK: - Subviews
     private lazy var dateCollectionView: DateCollectionView = {
         let date = DateCollectionView()
         date.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +55,6 @@ class GameViewController: UIViewController {
         separator.backgroundColor = .white
         return separator
     }()
-
 
     private var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .large)

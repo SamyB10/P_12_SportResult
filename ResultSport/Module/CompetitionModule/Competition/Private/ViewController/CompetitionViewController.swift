@@ -9,6 +9,15 @@ import UIKit
 
 class CompetitionViewController: UIViewController {
 
+    // MARK: - Property
+    private var presenter: CompetitionInteractionLogic?
+    private var viewModel: [CompetitionModels.ViewModel]? {
+        didSet {
+            guard let viewModel, viewModel != oldValue else { return }
+            competitionCollectionView.snapShot(withViewModel: viewModel)
+        }
+    }
+
     // MARK: - Subviews
     private lazy var competitionCollectionView: CompetitionCollectionView = {
         let collectionView = CompetitionCollectionView()
@@ -43,15 +52,6 @@ class CompetitionViewController: UIViewController {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         return activityIndicator
     }()
-
-    // MARK: - Properties
-    private var presenter: CompetitionInteractionLogic?
-    private var viewModel: [CompetitionModels.ViewModel]? {
-        didSet {
-            guard let viewModel, viewModel != oldValue else { return }
-            competitionCollectionView.snapShot(withViewModel: viewModel)
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

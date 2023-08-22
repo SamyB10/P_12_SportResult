@@ -7,6 +7,7 @@ import UIKit
 
 class StandingViewController: UIViewController {
 
+    //MARK: - Property
     private var presenter: StandingInteractionLogic?
     private var idLeague: String? {
         didSet {
@@ -21,6 +22,7 @@ class StandingViewController: UIViewController {
         }
     }
 
+    //MARK: - Subviews
     private var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.color = .white
@@ -74,6 +76,10 @@ class StandingViewController: UIViewController {
         self.idLeague = leagueId
     }
 
+    func inject(presenter: StandingInteractionLogic) {
+        self.presenter = presenter
+    }
+
     private func setupInterface() {
         view.addSubview(collectionView)
         collectionView.addSubview(activityIndicator)
@@ -90,10 +96,6 @@ class StandingViewController: UIViewController {
             activityIndicator.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor),
 
         ])
-    }
-    
-    func inject(presenter: StandingInteractionLogic) {
-        self.presenter = presenter
     }
 }
 

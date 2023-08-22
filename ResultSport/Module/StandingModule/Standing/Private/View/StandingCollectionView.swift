@@ -1,6 +1,5 @@
 //
 //  StandingCollectionView.swift
-//  ResultSport
 //
 //  Created by Samy Boussair on 07/08/2023.
 //
@@ -8,7 +7,9 @@
 import UIKit
 
 class StandingCollectionView: UICollectionView {
+
     private var viewModel: [StandingModels.ViewModel]?
+
     private func createLayoutStanding() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .absolute(50))
@@ -85,6 +86,7 @@ class StandingCollectionView: UICollectionView {
         var snapShot = NSDiffableDataSourceSnapshot<Int, StandingModels.ViewModel>()
         snapShot.appendSections([0])
         snapShot.appendItems(viewModel, toSection: 0)
+        snapShot.reloadSections([0])
         DispatchQueue.main.async {
             self.diffableDataSource.apply(snapShot, animatingDifferences: true)
         }
