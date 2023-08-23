@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D1AD3BD2A8A1C1D001D1E24 /* MockDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AD3BC2A8A1C1D001D1E24 /* MockDisplay.swift */; };
+		0D2CA03D2A96127D00E9EF53 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CA03C2A96127D00E9EF53 /* GoogleService-Info.plist */; };
 		0D2E5F412A8EC39B00191CDF /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F402A8EC39B00191CDF /* Competitions.swift */; };
 		0D2E5F432A8EC3ED00191CDF /* MockPresenterStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F422A8EC3ED00191CDF /* MockPresenterStanding.swift */; };
 		0D2E5F452A8EC4C200191CDF /* MockDisplayGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F442A8EC4C200191CDF /* MockDisplayGame.swift */; };
@@ -87,7 +88,6 @@
 		0DDC26002A8B77FC004BD42F /* MockDisplayStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDC25FC2A8B77FC004BD42F /* MockDisplayStanding.swift */; };
 		0DDC26032A8B77FC004BD42F /* MockInteractorStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDC25FF2A8B77FC004BD42F /* MockInteractorStanding.swift */; };
 		0DDC260B2A8C2236004BD42F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0DDC260A2A8C2236004BD42F /* FirebaseAnalytics */; };
-		0DDC260D2A8CC585004BD42F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DDC260C2A8CC585004BD42F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +110,7 @@
 /* Begin PBXFileReference section */
 		0D1AD3BC2A8A1C1D001D1E24 /* MockDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDisplay.swift; sourceTree = "<group>"; };
 		0D25A6D72A8EBD2500348AD5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0D2CA03C2A96127D00E9EF53 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D2E5F402A8EC39B00191CDF /* Competitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Competitions.swift; sourceTree = "<group>"; };
 		0D2E5F422A8EC3ED00191CDF /* MockPresenterStanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPresenterStanding.swift; sourceTree = "<group>"; };
 		0D2E5F442A8EC4C200191CDF /* MockDisplayGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDisplayGame.swift; sourceTree = "<group>"; };
@@ -191,7 +192,6 @@
 		0DDC25F92A8B7606004BD42F /* MockStanding.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockStanding.json; sourceTree = "<group>"; };
 		0DDC25FC2A8B77FC004BD42F /* MockDisplayStanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDisplayStanding.swift; sourceTree = "<group>"; };
 		0DDC25FF2A8B77FC004BD42F /* MockInteractorStanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockInteractorStanding.swift; sourceTree = "<group>"; };
-		0DDC260C2A8CC585004BD42F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,7 +313,7 @@
 			children = (
 				0DB1A6602A7CEF6D008D0ECE /* Info.plist */,
 				0DB1A6B52A7CF043008D0ECE /* TabBarViewController.swift */,
-				0DDC260C2A8CC585004BD42F /* GoogleService-Info.plist */,
+				0D2CA03C2A96127D00E9EF53 /* GoogleService-Info.plist */,
 				0DB1A6A32A7CF012008D0ECE /* Ressources */,
 				0DB1A6B72A7CF0DE008D0ECE /* Module */,
 				0DB1A6822A7CF003008D0ECE /* SportScene */,
@@ -742,8 +742,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D2CA03D2A96127D00E9EF53 /* GoogleService-Info.plist in Resources */,
 				0DB1A6AE2A7CF012008D0ECE /* Main.storyboard in Resources */,
-				0DDC260D2A8CC585004BD42F /* GoogleService-Info.plist in Resources */,
 				0DB1A6AD2A7CF012008D0ECE /* LaunchScreen.storyboard in Resources */,
 				0DB1A6AC2A7CF012008D0ECE /* Assets.xcassets in Resources */,
 			);
