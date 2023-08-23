@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D1AD3BD2A8A1C1D001D1E24 /* MockDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AD3BC2A8A1C1D001D1E24 /* MockDisplay.swift */; };
-		0D2CA0372A93C05000E9EF53 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0D2CA0362A93C05000E9EF53 /* FirebaseCrashlytics */; };
 		0D2E5F412A8EC39B00191CDF /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F402A8EC39B00191CDF /* Competitions.swift */; };
 		0D2E5F432A8EC3ED00191CDF /* MockPresenterStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F422A8EC3ED00191CDF /* MockPresenterStanding.swift */; };
 		0D2E5F452A8EC4C200191CDF /* MockDisplayGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F442A8EC4C200191CDF /* MockDisplayGame.swift */; };
@@ -200,7 +199,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D2CA0372A93C05000E9EF53 /* FirebaseCrashlytics in Frameworks */,
 				0DDC260B2A8C2236004BD42F /* FirebaseAnalytics in Frameworks */,
 				0DB1A7072A7CF1D6008D0ECE /* Kingfisher in Frameworks */,
 			);
@@ -646,7 +644,6 @@
 			packageProductDependencies = (
 				0DB1A7062A7CF1D6008D0ECE /* Kingfisher */,
 				0DDC260A2A8C2236004BD42F /* FirebaseAnalytics */,
-				0D2CA0362A93C05000E9EF53 /* FirebaseCrashlytics */,
 			);
 			productName = ResultSport;
 			productReference = 0DB1A64F2A7CEF6C008D0ECE /* ResultSport.app */;
@@ -775,7 +772,7 @@
 		0D2CA0382A93C11700E9EF53 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -1239,11 +1236,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0D2CA0362A93C05000E9EF53 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0DDC26092A8C2236004BD42F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
 		0D8B07732A8F762D004B096F /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0DDC26092A8C2236004BD42F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
