@@ -24,11 +24,70 @@ jobs:
       - name: Install project dependencies
         run: bundle install
 
-      - name: Copy ConfigApi.swift
-        run: cp /Users/samyboussair/Desktop/OC_Parcours/P12/ResultSport/Service/ConfigApi.swift ./ConfigApi.swift
+      - name: Set up secrets
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+        run: |
+          cat <<EOL > ResultSport/Service/ConfigApi.swift
+          import Foundation
 
-      - name: Copy GoogleService-Info.plist
-        run: cp /Users/samyboussair/Desktop/OC_Parcours/P12/ResultSport/GoogleService-Info.plist ./GoogleService-Info.plist
+          public struct Key {
+            static let apiKey = "$API_KEY"
+          }
+          EOL
+
+      - name: Create Additional Files
+        run: |
+          touch ResultSport/GoogleService-Info.plist
+
+      - name: Generate GoogleService-Info.plist
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          REVERSED_CLIENT_ID: ${{ secrets.REVERSED_CLIENT_ID }}
+          API_KEY_GOOGLE: ${{ secrets.API_KEY_GOOGLE }}
+          GCM_SENDER_ID: ${{ secrets.GCM_SENDER_ID }}
+          GOOGLE_APP_ID: ${{ secrets.GOOGLE_APP_ID }}
+        run: |
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > ResultSport/GoogleService-Info.plist
+          echo '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">' >>ResultSport/GoogleService-Info.plist
+          echo '<plist version="1.0">' >> ResultSport/GoogleService-Info.plist
+          echo '<dict>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>CLIENT_ID</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<string>'"$CLIENT_ID"'</string>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>REVERSED_CLIENT_ID</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<string>'"$REVERSED_CLIENT_ID"'</string>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>API_KEY</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<string>'"$API_KEY_GOOGLE"'</string>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>GCM_SENDER_ID</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<string>'"$GCM_SENDER_ID"'</string>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>PLIST_VERSION</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<string>1</string>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>BUNDLE_ID</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<string>fr.Boussair.samy.ResultSport</string>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>PROJECT_ID</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<string>sportresult-p12</string>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>STORAGE_BUCKET</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<string>sportresult-p12.appspot.com</string>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>IS_ADS_ENABLED</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<false/>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>IS_ANALYTICS_ENABLED</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<false/>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>IS_APPINVITE_ENABLED</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<true/>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>IS_GCM_ENABLED</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<true/>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>IS_SIGNIN_ENABLED</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<true/>' >> ResultSport/GoogleService-Info.plist
+          echo '<key>GOOGLE_APP_ID</key>' >> ResultSport/GoogleService-Info.plist
+          echo '<string>'"$GOOGLE_APP_ID"'</string>' >> ResultSport/GoogleService-Info.plist
+          echo '</dict>' >> ResultSport/GoogleService-Info.plist
+          echo '</plist>' >> ResultSport/GoogleService-Info.plist
+
+      - name: Verify Info.plist for Tests
+        run: ls ResultSport
+
+      - name: Verify ConfigApi.swift
+        run: ls ResultSport/Service/ConfigApi.swift
 
       - name: Build and Test
         run: bundle exec fastlane ios tests
