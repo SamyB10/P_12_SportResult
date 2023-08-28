@@ -21,7 +21,7 @@
             <Locations>
                <Location
                   uuid = "5D1FB26B-9452-42A3-A6B6-DD3A038323AE - 6f22c199ae6fcd41"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "ResultSport.GameModels.Response.viewModel.getter : Swift.Optional&lt;ResultSport.GameModels.ViewModel.Game&gt;"
@@ -36,7 +36,7 @@
                </Location>
                <Location
                   uuid = "5D1FB26B-9452-42A3-A6B6-DD3A038323AE - 6f22c199ae6fcd41"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "ResultSport.GameModels.Response.viewModel.getter : Swift.Optional&lt;ResultSport.GameModels.ViewModel.Game&gt;"

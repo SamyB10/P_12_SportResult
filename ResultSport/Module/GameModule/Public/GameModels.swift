@@ -114,6 +114,35 @@ public enum GameModels: Equatable {
                 self.leagueLogo = leagueLogo
             }
         }
+
+        public struct League {
+            public var spanishLeague: [Game]
+            public var englishLeague: [Game]
+            public var frenchLeague: [Game]
+            public var italyLeague: [Game]
+            public var germanyLeague: [Game]
+            public var championsLeague: [Game]
+            public var europaLeague: [Game]
+            public var word: [Game]
+
+            public init(spanishLeague: [Game] = [],
+                        englishLeague: [Game] = [],
+                        frenchLeague: [Game] = [],
+                        italyLeague: [Game] = [],
+                        germanyLeague: [Game] = [],
+                        championsLeague: [Game] = [],
+                        europaLeague: [Game] = [],
+                        word: [Game] = []) {
+                self.spanishLeague = spanishLeague
+                self.englishLeague = englishLeague
+                self.frenchLeague = frenchLeague
+                self.italyLeague = italyLeague
+                self.germanyLeague = germanyLeague
+                self.championsLeague = championsLeague
+                self.europaLeague = europaLeague
+                self.word = word
+            }
+        }
         
         public struct Championship: Equatable, Hashable {
             public let spanishLeague: [Game]

@@ -93,45 +93,38 @@ public final class GamePresenter {
     }
 
     private func mapResponseGame(with response: [GameModels.Response]) -> GameModels.ViewModel.Championship {
-        var englishLeague: [GameModels.ViewModel.Game] = []
-        var frenchLeague: [GameModels.ViewModel.Game] = []
-        var spanishLeague: [GameModels.ViewModel.Game] = []
-        var italyLeague: [GameModels.ViewModel.Game] = []
-        var germanyLeague: [GameModels.ViewModel.Game] = []
-        var championsLeague: [GameModels.ViewModel.Game] = []
-        var europaLeague: [GameModels.ViewModel.Game] = []
-        var word: [GameModels.ViewModel.Game] = []
+        var viewModelLeague = GameModels.ViewModel.League()
 
         response.forEach { gameResponse in
             guard let gameViewModel = gameResponse.viewModel else { return }
 
             switch gameViewModel.leagueId {
             case League.englishLeague.rawValue:
-                englishLeague.append(gameViewModel)
+                viewModelLeague.englishLeague.append(gameViewModel)
             case League.frenchLeague.rawValue:
-                frenchLeague.append(gameViewModel)
+                viewModelLeague.frenchLeague.append(gameViewModel)
             case League.spanishLeague.rawValue:
-                spanishLeague.append(gameViewModel)
+                viewModelLeague.spanishLeague.append(gameViewModel)
             case League.italyLeague.rawValue:
-                italyLeague.append(gameViewModel)
+                viewModelLeague.italyLeague.append(gameViewModel)
             case League.germanyLeague.rawValue:
-                germanyLeague.append(gameViewModel)
+                viewModelLeague.germanyLeague.append(gameViewModel)
             case League.championsLeague.rawValue:
-                championsLeague.append(gameViewModel)
+                viewModelLeague.championsLeague.append(gameViewModel)
             case League.europaLeague.rawValue:
-                europaLeague.append(gameViewModel)
+                viewModelLeague.europaLeague.append(gameViewModel)
             default:
-                word.append(gameViewModel)
+                viewModelLeague.word.append(gameViewModel)
             }
         }
-        return GameModels.ViewModel.Championship(spanishLeague: spanishLeague,
-                                                 frenchLeague: frenchLeague,
-                                                 englishLeague: englishLeague,
-                                                 italyLeague: italyLeague,
-                                                 germanyLeague: germanyLeague,
-                                                 word: word,
-                                                 championsLeague: championsLeague,
-                                                 europaLeague: europaLeague)
+        return GameModels.ViewModel.Championship(spanishLeague: viewModelLeague.spanishLeague,
+                                                 frenchLeague: viewModelLeague.frenchLeague,
+                                                 englishLeague: viewModelLeague.englishLeague,
+                                                 italyLeague: viewModelLeague.italyLeague,
+                                                 germanyLeague: viewModelLeague.germanyLeague,
+                                                 word: viewModelLeague.word,
+                                                 championsLeague: viewModelLeague.championsLeague,
+                                                 europaLeague: viewModelLeague.europaLeague)
     }
 
     private func selectLeague(id: String) {
@@ -174,13 +167,21 @@ extension GamePresenter: GamePresentationLogic {
 }
 
 extension GamePresenter: GameInteractionLogic {
+
     func didLoad() {
         day()
     }
 
-    func fetchGame(from: String, to: String) {
-        Task {
-            await interactor.start(from: from, to: to)
+    func fetchGame(from: String, to: String, withLive: Bool) {
+        switch withLive {
+        case false:
+            Task {
+                await interactor.start(from: from, to: to, withLive: withLive)
+            }
+        case true :
+            Task {
+                await interactor.start(from: from, to: to, withLive: withLive)
+            }
         }
     }
 
@@ -190,5 +191,17 @@ extension GamePresenter: GameInteractionLogic {
 
     func didSelectLeague(id: String) {
         selectLeague(id: id)
+    }
+
+    func didSelectStatusGame(index: Int) {
+        guard let date = viewModels.first(where: { $0.isActive == true }) else { return }
+        switch index {
+        case 0:
+            fetchGame(from: date.dayNumber, to: date.dayNumber, withLive: false)
+        case 1:
+            fetchGame(from: date.dayNumber, to: date.dayNumber, withLive: true)
+        default:
+            break
+        }
     }
 }

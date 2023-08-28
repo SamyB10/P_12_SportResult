@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D1AD3BD2A8A1C1D001D1E24 /* MockDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AD3BC2A8A1C1D001D1E24 /* MockDisplay.swift */; };
 		0D2CA03D2A96127D00E9EF53 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CA03C2A96127D00E9EF53 /* GoogleService-Info.plist */; };
+		0D2CA0412A9CCAC900E9EF53 /* MatchStatusSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CA0402A9CCAC900E9EF53 /* MatchStatusSegmented.swift */; };
 		0D2E5F412A8EC39B00191CDF /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F402A8EC39B00191CDF /* Competitions.swift */; };
 		0D2E5F432A8EC3ED00191CDF /* MockPresenterStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F422A8EC3ED00191CDF /* MockPresenterStanding.swift */; };
 		0D2E5F452A8EC4C200191CDF /* MockDisplayGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F442A8EC4C200191CDF /* MockDisplayGame.swift */; };
@@ -111,6 +112,7 @@
 		0D1AD3BC2A8A1C1D001D1E24 /* MockDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDisplay.swift; sourceTree = "<group>"; };
 		0D25A6D72A8EBD2500348AD5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0D2CA03C2A96127D00E9EF53 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0D2CA0402A9CCAC900E9EF53 /* MatchStatusSegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatusSegmented.swift; sourceTree = "<group>"; };
 		0D2E5F402A8EC39B00191CDF /* Competitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Competitions.swift; sourceTree = "<group>"; };
 		0D2E5F422A8EC3ED00191CDF /* MockPresenterStanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPresenterStanding.swift; sourceTree = "<group>"; };
 		0D2E5F442A8EC4C200191CDF /* MockDisplayGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDisplayGame.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 			children = (
 				0DB1A6C82A7CF0DE008D0ECE /* GameCollectionView.swift */,
 				0DB1A6C92A7CF0DE008D0ECE /* DateCollectionView.swift */,
+				0D2CA0402A9CCAC900E9EF53 /* MatchStatusSegmented.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				0DB1A71C2A878DBA008D0ECE /* ConfigApi.swift in Sources */,
 				0DB1A7032A7CF0DE008D0ECE /* CompetitionCollectionView.swift in Sources */,
 				0DB1A6F92A7CF0DE008D0ECE /* StandingViewController.swift in Sources */,
+				0D2CA0412A9CCAC900E9EF53 /* MatchStatusSegmented.swift in Sources */,
 				0DB1A6F32A7CF0DE008D0ECE /* StandingProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1042,10 +1046,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3U3GP8J227;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ResultSport/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1074,9 +1078,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3U3GP8J227;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ResultSport/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

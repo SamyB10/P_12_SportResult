@@ -35,9 +35,9 @@ class GameInteractor {
         self.presenter = presenter
     }
 
-    private func fetch(from: String, to: String) async {
+    private func fetch(from: String, to: String, withLive: Bool) async {
         contextGame.willLoadContent()
-        switch await request.fetchSchedule(from: from, to: to) {
+        switch await request.fetchSchedule(from: from, to: to, withLive: withLive) {
         case .success(let game):
             contextGame.gameContext = game
         case .failure:
@@ -73,7 +73,7 @@ class GameInteractor {
 
 extension GameInteractor: GameBusinessLogic {
 
-    func start(from: String, to: String) async {
-        await fetch(from: from, to: to)
+    func start(from: String, to: String, withLive: Bool) async {
+        await fetch(from: from, to: to, withLive: withLive)
     }
 }

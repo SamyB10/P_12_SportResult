@@ -9,7 +9,8 @@ import Foundation
 
 protocol GameInteractionLogic {
     func didLoad()
-    func fetchGame(from: String, to: String)
+    func fetchGame(from: String, to: String, withLive: Bool)
     func didSelectItem(indexPath: Int)
     func didSelectLeague(id: String)
+    func didSelectStatusGame(index: Int)
 }

@@ -34,7 +34,7 @@ struct HttpRequest {
         }
 
         var request = URLRequest(url: url)
-           request.httpMethod = "GET"
+        request.httpMethod = "GET"
 
         guard let (data, response) = try? await URLSession.shared.data(for: request, delegate: nil) else { return .failure(.unknown)
         }
@@ -71,7 +71,7 @@ struct HttpRequest {
         }
 
         var request = URLRequest(url: url)
-           request.httpMethod = "GET"
+        request.httpMethod = "GET"
 
         guard let (data, response) = try? await URLSession.shared.data(for: request, delegate: nil) else { return .failure(.unknown)
         }
@@ -92,18 +92,37 @@ struct HttpRequest {
     }
 
 
-    func fetchSchedule(from: String, to: String) async -> Result<[RestSchedule], HTTPError> {
+    func fetchSchedule(from: String, to: String, withLive: Bool) async -> Result<[RestSchedule], HTTPError> {
 
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "apiv3.apifootball.com"
-        urlComponents.path = "/"
-        urlComponents.queryItems = [
-            URLQueryItem(name: "action", value: "get_events"),
-            URLQueryItem(name: "from", value: from),
-            URLQueryItem(name: "to", value: to),
-            URLQueryItem(name: "APIkey", value: Key.apiKey)
-        ]
+        var urlComponents: URLComponents
+
+        switch withLive {
+        case true:
+            urlComponents = URLComponents()
+            urlComponents.scheme = "https"
+            urlComponents.host = "apiv3.apifootball.com"
+            urlComponents.path = "/"
+            urlComponents.queryItems = [
+                URLQueryItem(name: "action", value: "get_events"),
+                URLQueryItem(name: "from", value: from),
+                URLQueryItem(name: "to", value: to),
+                URLQueryItem(name: "timezone", value: "Europe/Paris"),
+                URLQueryItem(name: "match_live", value: "1"),
+                URLQueryItem(name: "APIkey", value: Key.apiKey)
+            ]
+        case false:
+            urlComponents = URLComponents()
+            urlComponents.scheme = "https"
+            urlComponents.host = "apiv3.apifootball.com"
+            urlComponents.path = "/"
+            urlComponents.queryItems = [
+                URLQueryItem(name: "action", value: "get_events"),
+                URLQueryItem(name: "from", value: from),
+                URLQueryItem(name: "to", value: to),
+                URLQueryItem(name: "timezone", value: "Europe/Paris"),
+                URLQueryItem(name: "APIkey", value: Key.apiKey)
+            ]
+        }
 
         guard let url = urlComponents.url else {
             return .failure(.invalidURL)

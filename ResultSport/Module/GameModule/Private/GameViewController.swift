@@ -18,7 +18,7 @@ class GameViewController: UIViewController {
             dateCollectionView.snapShot(withViewModel: viewModel)
             viewModel.forEach {
                 if $0.isActive == true {
-                    presenter?.fetchGame(from: $0.dayNumber, to: $0.dayNumber)
+                    presenter?.fetchGame(from: $0.dayNumber, to: $0.dayNumber, withLive: false)
                 }
             }
         }
@@ -73,6 +73,15 @@ class GameViewController: UIViewController {
         return pickerLeague
     }()
 
+    private lazy var matchStatusSegmented: MatchStatusSegmented = {
+        let segmentedControl = MatchStatusSegmented()
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.backgroundColor = .mainColor
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(matchStatusSegmentedValueChanged(_:)), for: .valueChanged)
+        return segmentedControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let gradientLayer = CAGradientLayer()
@@ -105,6 +114,7 @@ class GameViewController: UIViewController {
         view.addSubview(separatorView)
         view.addSubview(gameCollectionView)
         view.addSubview(pickerLeague)
+        view.addSubview(matchStatusSegmented)
         gameCollectionView.addSubview(activityIndicator)
     }
 
@@ -120,7 +130,7 @@ class GameViewController: UIViewController {
             separatorView.trailingAnchor.constraint(equalTo: dateCollectionView.trailingAnchor),
             separatorView.heightAnchor.constraint(equalToConstant: 2),
 
-            gameCollectionView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 10),
+            gameCollectionView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 30),
             gameCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gameCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gameCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -130,6 +140,11 @@ class GameViewController: UIViewController {
             pickerLeague.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             pickerLeague.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 
+            matchStatusSegmented.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 10),
+            matchStatusSegmented.bottomAnchor.constraint(equalTo: gameCollectionView.topAnchor),
+            matchStatusSegmented.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            matchStatusSegmented.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+
             activityIndicator.centerXAnchor.constraint(equalTo: gameCollectionView.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: gameCollectionView.centerYAnchor),
         ])
@@ -137,6 +152,10 @@ class GameViewController: UIViewController {
 
     func inject(presenter: GameInteractionLogic) {
         self.presenter = presenter
+    }
+
+    @objc func matchStatusSegmentedValueChanged(_ sender: MatchStatusSegmented) {
+        presenter?.didSelectStatusGame(index: sender.selectedSegmentIndex)
     }
 
     @objc func displayPickerLeague() {

@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol GameBusinessLogic {
-    func start(from: String, to: String) async
+    func start(from: String, to: String, withLive: Bool) async
 }
