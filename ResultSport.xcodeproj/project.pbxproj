@@ -10,6 +10,9 @@
 		0D1AD3BD2A8A1C1D001D1E24 /* MockDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AD3BC2A8A1C1D001D1E24 /* MockDisplay.swift */; };
 		0D2CA03D2A96127D00E9EF53 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D2CA03C2A96127D00E9EF53 /* GoogleService-Info.plist */; };
 		0D2CA0412A9CCAC900E9EF53 /* MatchStatusSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CA0402A9CCAC900E9EF53 /* MatchStatusSegmented.swift */; };
+		0D2CA0432A9E120C00E9EF53 /* SoccerPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CA0422A9E120C00E9EF53 /* SoccerPitch.swift */; };
+		0D2CA0462A9E305600E9EF53 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CA0452A9E305600E9EF53 /* PlayerView.swift */; };
+		0D2CA0482A9E3A4400E9EF53 /* SoccerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2CA0472A9E3A4400E9EF53 /* SoccerViewController.swift */; };
 		0D2E5F412A8EC39B00191CDF /* Competitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F402A8EC39B00191CDF /* Competitions.swift */; };
 		0D2E5F432A8EC3ED00191CDF /* MockPresenterStanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F422A8EC3ED00191CDF /* MockPresenterStanding.swift */; };
 		0D2E5F452A8EC4C200191CDF /* MockDisplayGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E5F442A8EC4C200191CDF /* MockDisplayGame.swift */; };
@@ -113,6 +116,9 @@
 		0D25A6D72A8EBD2500348AD5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0D2CA03C2A96127D00E9EF53 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D2CA0402A9CCAC900E9EF53 /* MatchStatusSegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatusSegmented.swift; sourceTree = "<group>"; };
+		0D2CA0422A9E120C00E9EF53 /* SoccerPitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerPitch.swift; sourceTree = "<group>"; };
+		0D2CA0452A9E305600E9EF53 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		0D2CA0472A9E3A4400E9EF53 /* SoccerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerViewController.swift; sourceTree = "<group>"; };
 		0D2E5F402A8EC39B00191CDF /* Competitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Competitions.swift; sourceTree = "<group>"; };
 		0D2E5F422A8EC3ED00191CDF /* MockPresenterStanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPresenterStanding.swift; sourceTree = "<group>"; };
 		0D2E5F442A8EC4C200191CDF /* MockDisplayGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDisplayGame.swift; sourceTree = "<group>"; };
@@ -240,6 +246,16 @@
 			path = CompetitionModule;
 			sourceTree = "<group>";
 		};
+		0D2CA0442A9E304100E9EF53 /* ViewSoccer */ = {
+			isa = PBXGroup;
+			children = (
+				0D2CA0422A9E120C00E9EF53 /* SoccerPitch.swift */,
+				0D2CA0452A9E305600E9EF53 /* PlayerView.swift */,
+				0D2CA0472A9E3A4400E9EF53 /* SoccerViewController.swift */,
+			);
+			path = ViewSoccer;
+			sourceTree = "<group>";
+		};
 		0D4D524C2A8A2E090096DCA5 /* MockCompetition */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +337,7 @@
 				0DB1A6822A7CF003008D0ECE /* SportScene */,
 				0DB1A69E2A7CF00B008D0ECE /* RestModels */,
 				0DB1A6B22A7CF02A008D0ECE /* Service */,
+				0D2CA0442A9E304100E9EF53 /* ViewSoccer */,
 				0DB1A6D82A7CF0DE008D0ECE /* Extension */,
 			);
 			path = ResultSport;
@@ -809,6 +826,7 @@
 				0DB1A7042A7CF0DE008D0ECE /* CompetitionViewController.swift in Sources */,
 				0DB1A6F42A7CF0DE008D0ECE /* StandingPresenter.swift in Sources */,
 				0DB1A6942A7CF003008D0ECE /* GameModule.swift in Sources */,
+				0D2CA0482A9E3A4400E9EF53 /* SoccerViewController.swift in Sources */,
 				0DB1A6F82A7CF0DE008D0ECE /* StandingDisplayLogic.swift in Sources */,
 				0DB1A6B02A7CF012008D0ECE /* AppDelegate.swift in Sources */,
 				0DB1A6F22A7CF0DE008D0ECE /* DateCollectionView.swift in Sources */,
@@ -823,6 +841,7 @@
 				0DB1A6A12A7CF00B008D0ECE /* RestSchedule.swift in Sources */,
 				0DB1A6A22A7CF00B008D0ECE /* RestCompetitions.swift in Sources */,
 				0DB1A6F12A7CF0DE008D0ECE /* GameCollectionView.swift in Sources */,
+				0D2CA0432A9E120C00E9EF53 /* SoccerPitch.swift in Sources */,
 				0DB1A6FC2A7CF0DE008D0ECE /* NavigationController.swift in Sources */,
 				0DB1A7022A7CF0DE008D0ECE /* CompetitionDisplayLogic.swift in Sources */,
 				0DB1A6B12A7CF012008D0ECE /* SceneDelegate.swift in Sources */,
@@ -852,6 +871,7 @@
 				0DB1A6EB2A7CF0DE008D0ECE /* GameBusinessLogic.swift in Sources */,
 				0DB1A7012A7CF0DE008D0ECE /* CompetitionCell.swift in Sources */,
 				0DB1A71C2A878DBA008D0ECE /* ConfigApi.swift in Sources */,
+				0D2CA0462A9E305600E9EF53 /* PlayerView.swift in Sources */,
 				0DB1A7032A7CF0DE008D0ECE /* CompetitionCollectionView.swift in Sources */,
 				0DB1A6F92A7CF0DE008D0ECE /* StandingViewController.swift in Sources */,
 				0D2CA0412A9CCAC900E9EF53 /* MatchStatusSegmented.swift in Sources */,

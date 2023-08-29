@@ -46,6 +46,7 @@ class GameViewController: UIViewController {
         let game = GameCollectionView()
         game.translatesAutoresizingMaskIntoConstraints = false
         game.backgroundColor = .clear
+        game.delegate = self
         return game
     }()
 
@@ -188,8 +189,13 @@ class GameViewController: UIViewController {
 
 extension GameViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter?.didSelectItem(indexPath: indexPath.row)
-        activityIndicatorStart()
+        if collectionView == dateCollectionView {
+            presenter?.didSelectItem(indexPath: indexPath.row)
+            activityIndicatorStart()
+        } else {
+            let soccerVC = SoccerViewController()
+            self.navigationController?.pushViewController(soccerVC, animated: true)
+        }
     }
 }
 

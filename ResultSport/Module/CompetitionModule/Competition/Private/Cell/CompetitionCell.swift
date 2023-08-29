@@ -46,15 +46,6 @@ class CompetitionCell: UICollectionViewCell {
         return image
     }()
 
-//    private lazy var seasonLeague: UILabel = {
-//        let season = UILabel()
-//        season.textAlignment = .right
-//        season.textColor = .gray
-//        season.font = .systemFont(ofSize: 8, weight: .light)
-//        season.translatesAutoresizingMaskIntoConstraints = false
-//        return season
-//    }()
-
     private var viewModel: CompetitionModels.ViewModel? {
         didSet {
             guard let viewModel, viewModel != oldValue else { return }
@@ -75,13 +66,10 @@ class CompetitionCell: UICollectionViewCell {
 
     private func setupInterface() {
         contentView.backgroundColor = .mainColor.withAlphaComponent(0.6)
-//        contentView.layer.borderColor = UIColor.black.cgColor
-//        contentView.layer.borderWidth = 1
         contentView.addSubview(imageCountry)
         contentView.addSubview(nameCountry)
         contentView.addSubview(nameLeague)
         contentView.addSubview(imageLeague)
-//        contentView.addSubview(seasonLeague)
     }
 
     private func setUpConstraints() {
@@ -113,9 +101,6 @@ class CompetitionCell: UICollectionViewCell {
         let imageCountry = URL(string: "\(viewModel.countryLogo)")
         let imageLeague = URL(string: "\(viewModel.leagueLogo)")
 
-//        self.imageCountry.image = .actions
-//        self.imageLeague.image = .checkmark
-
         self.imageCountry.kf.setImage(with: imageCountry)
         self.imageLeague.kf.setImage(with: imageLeague)
         nameCountry.text = viewModel.countryName
@@ -129,8 +114,6 @@ class CompetitionCell: UICollectionViewCell {
     private func borderCell() {
         let cornerRadius: CGFloat = 10
         contentView.layer.cornerRadius = cornerRadius
-//        contentView.layer.borderColor = UIColor.systemGray.cgColor
-//        contentView.layer.borderWidth = 0.2
     }
 
     private func borderCercle() {
