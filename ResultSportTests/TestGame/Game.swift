@@ -26,10 +26,10 @@ final class Game: XCTestCase {
         let request = HttpRequest()
         
         if let jsonData = MockURLProtocol.loadJSONData(filename: "MockGame") {
-            let url = "https://apiv3.apifootball.com/?action=get_events&from=2023-04-05&to=2023-04-05&APIkey=\(Key.apiKey)"
+            let url = "https://apiv3.apifootball.com/?action=get_events&from=2023-04-05&to=2023-04-05&timezone=Europe/Paris&APIkey=\(Key.apiKey)"
             MockURLProtocol.mockData[url] = jsonData
             let expectation = XCTestExpectation(description: "Network request")
-            let result = await request.fetchSchedule(from: "2023-04-05", to: "2023-04-05")
+            let result = await request.fetchSchedule(from: "2023-04-05", to: "2023-04-05", withLive: false)
             
             switch result {
             case .success(let decodedResponse):
@@ -96,7 +96,7 @@ final class Game: XCTestCase {
         let presenter = GamePresenter(interactor: mockInteractor)
         
         let expectation = XCTestExpectation(description: "didLoad expectation")
-        presenter.fetchGame(from: "2-10-2023", to: "2-10-2023")
+        presenter.fetchGame(from: "2-10-2023", to: "2-10-2023", withLive: false)
         Task {
             XCTAssertTrue(mockInteractor.didStart)
             expectation.fulfill()

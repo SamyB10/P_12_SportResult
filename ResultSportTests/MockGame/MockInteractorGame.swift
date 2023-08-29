@@ -11,7 +11,7 @@ import ResultSport
 class MockInteractorGame: GameBusinessLogic {
     var didStart = false
 
-    func start(from: String, to: String) async {
+    func start(from: String, to: String, withLive: Bool) async {
         didStart = true
     }
 }
