@@ -1,0 +1,794 @@
+[
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "727",
+"league_name": "AFC Champions League",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "10",
+"league_name": "AFC Champions League",
+"league_season": "2023",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/10_afc-champions-league.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "29",
+"league_name": "Africa Cup of Nations",
+"league_season": "2012",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/29_africa-cup-of-nations-qualification.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "346",
+"league_name": "CAF Champions League",
+"league_season": "2023/2024",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/346_caf-champions-league.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "390",
+"league_name": "CAF Confederation Cup",
+"league_season": "2023/2024",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/390_caf-confederation-cup.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "15",
+"league_name": "Concacaf Gold Cup",
+"league_season": "2023",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/15_concacaf-gold-cup.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "18",
+"league_name": "CONMEBOL Libertadores",
+"league_season": "2023",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/18_conmebol-libertadores.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "385",
+"league_name": "CONMEBOL Sudamericana",
+"league_season": "2023",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/385_conmebol-sudamericana.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "17",
+"league_name": "Copa America",
+"league_season": "2020",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/17_copa-america.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "16",
+"league_name": "Confederations Cup",
+"league_season": "2017",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/16_confederations-cup.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "347",
+"league_name": "AFC Asian Cup",
+"league_season": "2023",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/347_afc-asian-cup.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "9",
+"league_name": "AFC Challenge Cup",
+"league_season": "2014",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/9_afc-challenge-cup.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "11",
+"league_name": "AFC Cup",
+"league_season": "2023",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/11_afc-cup.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "570",
+"league_name": "AFC U23 Asian Cup",
+"league_season": "2022",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/570_afc-u23-asian-cup.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "703",
+"league_name": "AFC U23 Asian Cup Qualification",
+"league_season": "2024",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7105",
+"league_name": "AFC Women's Asian Cup",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "12",
+"league_name": "AFF Championship",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "479",
+"league_name": "AFF Championship",
+"league_season": "2022",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/479_aff-championship.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7550",
+"league_name": "AFF U19 Championship",
+"league_season": "2020",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7110",
+"league_name": "AFF U23 Championship",
+"league_season": "2024",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7098",
+"league_name": "Africa Cup of Nations Qualification",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "619",
+"league_name": "Africa U20 Cup of Nations",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7547",
+"league_name": "Africa Women Cup of Nations",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "480",
+"league_name": "African Nations Championship",
+"league_season": "2021",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/480_african-nations-championship.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7102",
+"league_name": "Algarve Cup",
+"league_season": "2021",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "646",
+"league_name": "Arab Club Champions Cup",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "684",
+"league_name": "Arab Cup",
+"league_season": "2021",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "418",
+"league_name": "Asian Cup Qualification",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "477",
+"league_name": "Asian Games",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "687",
+"league_name": "Baltic Cup",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "30",
+"league_name": "CAF Super Cup",
+"league_season": "2023/2024",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/30_caf-super-cup.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "723",
+"league_name": "Campeones Cup",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "405",
+"league_name": "Caribbean Cup",
+"league_season": "2016",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "714",
+"league_name": "CECAFA Club Cup",
+"league_season": "2020",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "402",
+"league_name": "CECAFA Senior Challenge Cup",
+"league_season": "2021",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "638",
+"league_name": "China Cup",
+"league_season": "2019",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "355",
+"league_name": "Club Friendlies",
+"league_season": "2023",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/355_club-friendlies.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "690",
+"league_name": "Concacaf Caribbean Club Championship",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "661",
+"league_name": "Concacaf Caribbean Club Shield",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "5",
+"league_name": "Concacaf Champions League",
+"league_season": "2022/2023",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/5_concacaf-champions-league.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "689",
+"league_name": "Concacaf Gold Cup Qualification",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "624",
+"league_name": "Concacaf League",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "664",
+"league_name": "Concacaf Nations League",
+"league_season": "2023/2024",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "635",
+"league_name": "Concacaf Nations League Qualification",
+"league_season": "2018/2019",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "528",
+"league_name": "Concacaf U20",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7104",
+"league_name": "Concacaf Women's U17",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7555",
+"league_name": "Concacaf Women's World Cup Qualifiers",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "634",
+"league_name": "CONMEBOL Libertadores U20",
+"league_season": "2024",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "386",
+"league_name": "CONMEBOL Recopa",
+"league_season": "2023",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/386_conmebol-recopa.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7540",
+"league_name": "CONMEBOL/UEFA Finalissima",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7553",
+"league_name": "Copa America Femenina",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "597",
+"league_name": "Copa Centroamericana",
+"league_season": "2016",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "688",
+"league_name": "COSAFA Cup",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "441",
+"league_name": "COSAFA U20 Championship",
+"league_season": "2021",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "526",
+"league_name": "EAFF E-1 Football Championship",
+"league_season": "2021",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/526_eaff-e-1-football-championship.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7538",
+"league_name": "EAFF E-1 Football Championship",
+"league_season": "2021",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7534",
+"league_name": "Emirates Cup",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "356",
+"league_name": "Friendlies",
+"league_season": "2023",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/356_friendlies.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "440",
+"league_name": "Friendlies Women",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "478",
+"league_name": "Gulf Cup of Nations",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "572",
+"league_name": "International Champions Cup",
+"league_season": "2019",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/572_international-champions-cup.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7536",
+"league_name": "Kirin Cup",
+"league_season": "2022",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "431",
+"league_name": "Leagues Cup",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7549",
+"league_name": "Mediterranean Games",
+"league_season": "2019",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "404",
+"league_name": "OFC Champions League",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "665",
+"league_name": "OFC Nations Cup",
+"league_season": "2013",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "500",
+"league_name": "Olympics",
+"league_season": "2020",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/500_olympics.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "522",
+"league_name": "Olympics Women",
+"league_season": "2020",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "571",
+"league_name": "Pacific Games",
+"league_season": "2019",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "535",
+"league_name": "Premier League Asia Trophy",
+"league_season": "2019",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/1",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "600",
+"league_name": "SAFF Championship",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7109",
+"league_name": "SheBelieves Cup",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7106",
+"league_name": "Southeast Asian Games",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "484",
+"league_name": "Sudamericano U20",
+"league_season": "2021",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7090",
+"league_name": "The Atlantic Cup",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7093",
+"league_name": "Tipsport Malta Cup",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7535",
+"league_name": "Tournoi Maurice Revello",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7545",
+"league_name": "U20 Arab Championship",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7548",
+"league_name": "U20 Women's World Cup",
+"league_season": "2020",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7099",
+"league_name": "UEFA U17 Championship",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "706",
+"league_name": "UEFA U17 Championship Qualification",
+"league_season": "2023/2024",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7551",
+"league_name": "UEFA U19 Championship Women",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "511",
+"league_name": "UEFA U21 Championship",
+"league_season": "2023",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/511_uefa-u21-championship.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "666",
+"league_name": "UEFA U21 Championship Qualification",
+"league_season": "2025",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "2",
+"league_name": "UEFA Women's Champions League",
+"league_season": "2023/2024",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "499",
+"league_name": "UEFA Women's Championship",
+"league_season": "2021",
+"league_logo": "https://apiv3.apifootball.com/badges/logo_leagues/499_uefa-women's-championship.png",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "676",
+"league_name": "Women's Olympic Qualifying Asia",
+"league_season": "2024",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+},
+{
+"country_id": "2",
+"country_name": "intl",
+"league_id": "7101",
+"league_name": "Youth Viareggio Cup",
+"league_season": "2023",
+"league_logo": "",
+"country_logo": "https://apiv3.apifootball.com/badges/logo_country/2_intl.png"
+}
+]

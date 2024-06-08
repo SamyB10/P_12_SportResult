@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "3D041D4B-3828-44F7-91DD-88D9C25EAC71",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ResultSport.xcodeproj",
+        "identifier" : "0DB1A6642A7CEF6D008D0ECE",
+        "name" : "ResultSportTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "target" : {
+        "containerPath" : "container:ResultSport.xcodeproj",
+        "identifier" : "0DB1A66E2A7CEF6D008D0ECE",
+        "name" : "ResultSportUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
